@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/Gymkak/assets/logo_w.png" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="../navbar/navbar.css" />
+    <link rel="stylesheet" href="bodyanalysis.css" />
+    <title>Bodyanalysis</title>
+</head>
+
+<body>
+    <header class="main-header">
+        <nav>
+            <div class="nav__logo">
+                <a href="/Gymkak/src/dashboard/dashboard.html"><img src="/Gymkak/assets/Logo main color w.png" alt="logo" /></a>
+            </div>
+            <ul class="nav__links">
+                <li class="link"><a href="/Gymkak/src/dashboard/dashboard.html">Home</a></li>
+                <li class="link"><a href="/Gymkak/src/dashboard/dashboard.html#program">Program</a></li>
+                <li class="link"><a href="/Gymkak/src/membership/regisgym/regisgym.html">Membership</a></li>
+                <li class="link"><a href="/Gymkak/src/bodyanalysis/bodyanalysis.html">Bodyanalysis</a></li>
+                <li class="link"><a href="/Gymkak/src/dashboard/dashboard.html#about">About</a></li>
+            </ul>
+            <!-- Redesigned dropdown menu for simplicity and elegance -->
+            <div class="dropdown-container" style="position: relative;">
+                <button class="btn dropdown-toggle redesigned-menu" id="menuButton" data-bs-toggle="dropdown"
+                    aria-expanded="false" style="background: var(--primary-color-extra-light); color: var(--white); border-radius: 10px; box-shadow: 0 3px 16px rgba(0,0,0,0.16); padding: 0.48rem 1.05rem; font-size: 0.97rem; font-weight: 600; border: none; letter-spacing: 0.4px; display: flex; align-items: center; gap: 0.4rem; min-width: 135px; justify-content: center;">
+                    <i class="ri-menu-line" style="font-size: 1.05rem;"></i> Menu
+                </button>
+                <ul class="dropdown-menu redesigned-dropdown" aria-labelledby="menuButton" style="position: absolute; top: calc(100% + 12px); right: 0; background: var(--primary-color-light); border-radius: 11px; min-width: 135px; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: all 0.19s cubic-bezier(.4,1.3,.6,1); z-index: 1000; overflow: visible; border: none; box-shadow: 0 6px 22px rgba(0,0,0,0.19); padding: 0.35rem 0; list-style: none; margin: 0;">
+                    <li><a class="dropdown-item redesigned-item" href="/Gymkak/src/user/profile/profile.html" style="display: flex; align-items: center; gap: 0.6rem; padding: 0.62rem 1rem; color: var(--white); text-decoration: none; font-size: 0.93rem; background: none; border-bottom: none; border-radius: 6px; transition: background 0.14s, color 0.14s;">
+                            <i class="ri-user-line" style="font-size: 0.98rem; color: var(--text-light); margin-right: 0.22rem; transition: color 0.14s;"></i> Profile
+                        </a></li>
+                    <li><a class="dropdown-item redesigned-item" href="/Gymkak/src/user/plans/plans.html" style="display: flex; align-items: center; gap: 0.6rem; padding: 0.62rem 1rem; color: var(--white); text-decoration: none; font-size: 0.93rem; background: none; border-bottom: none; border-radius: 6px; transition: background 0.14s, color 0.14s;">
+                            <i class="ri-calendar-line" style="font-size: 0.98rem; color: var(--text-light); margin-right: 0.22rem; transition: color 0.14s;"></i> Plans
+                        </a></li>
+                    <li><a class="dropdown-item redesigned-item" href="/Gymkak/src/user/login/login.html" style="display: flex; align-items: center; gap: 0.6rem; padding: 0.62rem 1rem; color: var(--white); text-decoration: none; font-size: 0.93rem; background: none; border-bottom: none; border-radius: 6px; transition: background 0.14s, color 0.14s;">
+                            <i class="ri-logout-box-line" style="font-size: 0.98rem; color: var(--text-light); margin-right: 0.22rem; transition: color 0.14s;"></i> Logout
+                        </a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="ba-hero">
+        <div class="ba-hero__bg">
+            <img src="/Gymkak/assets/bg-gym4.jpg" alt="Body Analysis" />
+        </div>
+        <div class="ba-hero__overlay"></div>
+        <div class="ba-hero__content container-narrow">
+            <h1>Body Analysis</h1>
+            <p>ทำความเข้าใจร่างกายของคุณแบบครบวงจร — คำนวณ BMI, BMR, TDEE และไขมันโดยประมาณ
+                เพื่อวางแผนการออกกำลังกายและโภชนาการที่เหมาะกับคุณ</p>
+            <div class="ba-hero__actions">
+                <a class="btn-primary" href="/Gymkak/src/bodyanalysis/plan/plananalysis.html"><i class="ri-body-scan-line"></i>
+                    เริ่มวิเคราะห์ทันที</a>
+                <a class="btn-secondary" href="#how-it-works"><i class="ri-question-line"></i> วิธีทำงาน</a>
+            </div>
+            <ul class="ba-hero__badges">
+                <li><i class="ri-shield-check-line"></i> แม่นยำในขั้นตอนเดียว</li>
+                <li><i class="ri-flashlight-line"></i> เร็วและใช้งานง่าย</li>
+                <li><i class="ri-pie-chart-2-line"></i> แผนแนะนำอัตโนมัติ</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="ba-highlights container-narrow" id="highlights">
+        <div class="hl-grid">
+            <div class="hl-card">
+                <i class="ri-scales-3-line"></i>
+                <h3>ตัวชี้วัดหลัก</h3>
+                <p>BMI, BMR, TDEE และ % ไขมันโดยประมาณ เพื่อประเมินสถานะปัจจุบันของคุณ</p>
+            </div>
+            <div class="hl-card">
+                <i class="ri-barbell-line"></i>
+                <h3>โปรแกรมที่เหมาะ</h3>
+                <p>แนะนำโปรแกรมเช่น Cardio, Weight, Calisthenics หรือแบบผสม ตามเป้าหมาย</p>
+            </div>
+            <div class="hl-card">
+                <i class="ri-restaurant-line"></i>
+                <h3>โภชนาการ & Recovery</h3>
+                <p>แนะนำแคลอรี่/มาโคร น้ำ พักผ่อน และการฟื้นตัวที่เหมาะกับไลฟ์สไตล์</p>
+            </div>
+            <div class="hl-card">
+                <i class="ri-vip-crown-line"></i>
+                <h3>อัปเกรดเป็น Premium</h3>
+                <p>โปรแกรม 12 สัปดาห์ ปรับโหลดอัตโนมัติ Weekly Check-in และ Export PDF/Calendar</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="ba-steps" id="how-it-works">
+        <div class="container-narrow steps-inner">
+            <h2>วิธีการทำงาน</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <span class="step-number">1</span>
+                    <h4>กรอกข้อมูล</h4>
+                    <p>เพศ อายุ ส่วนสูง น้ำหนัก และรอบเอว/สะโพก (ถ้ามี) เพื่อคำนวณ</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">2</span>
+                    <h4>ระบบคำนวณทันที</h4>
+                    <p>ได้ค่า BMI, BMR, TDEE และคำแนะนำโภชนาการที่เหมาะสม</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">3</span>
+                    <h4>รับแผนแนะนำ</h4>
+                    <p>เลือกโปรแกรมฝึกที่เหมาะสม พร้อมแนวทางปรับใช้ในชีวิตประจำวัน</p>
+                </div>
+            </div>
+            <div class="steps-cta">
+                <a class="btn-primary" href="/Gymkak/src/bodyanalysis/plan/plananalysis.html"><i class="ri-rocket-line"></i>
+                    เริ่มต้นตอนนี้</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preview metrics (sample) -->
+    <section class="ba-preview container-narrow" aria-label="ตัวอย่างผลลัพธ์">
+        <div class="preview-wrap">
+            <div class="preview-info">
+                <h3>ตัวอย่างผลวิเคราะห์</h3>
+                <p>นี่คือภาพรวมที่คุณจะได้รับหลังวิเคราะห์ ทั้งตัวเลขสำคัญและคำแนะนำโปรแกรม</p>
+                <ul class="preview-bullets">
+                    <li><i class="ri-check-line"></i> ค่า BMI, BMR, TDEE แบบชัดเจน</li>
+                    <li><i class="ri-check-line"></i> แผนแคลอรี่สำหรับ Cut / Bulk / Maintain</li>
+                    <li><i class="ri-check-line"></i> โปรแกรมแนะนำและรูปแบบผสม (Split)</li>
+                </ul>
+            </div>
+            <div class="preview-card" role="img" aria-label="การ์ดตัวอย่างผลลัพธ์">
+                <div class="pv-head">
+                    <span class="pv-title"><i class="ri-user-heart-line"></i> สรุปผลตัวอย่าง</span>
+                    <span class="pv-tag">Demo</span>
+                </div>
+                <div class="pv-metrics">
+                    <div class="pv-item"><span>BMI</span><strong class="count" data-target="22.4">0</strong></div>
+                    <div class="pv-item"><span>BMR</span><strong class="count"
+                            data-target="1600">0</strong><em>kcal</em></div>
+                    <div class="pv-item"><span>TDEE</span><strong class="count"
+                            data-target="2400">0</strong><em>kcal</em></div>
+                    <div class="pv-item"><span>Body Fat</span><strong>~</strong><strong class="count"
+                            data-target="20">0</strong><span>%</span></div>
+                </div>
+                <div class="pv-divider"></div>
+                <div class="pv-calories">
+                    <div class="cal-box">
+                        <h5>Maintain</h5>
+                        <div class="cal-val">2400</div>
+                    </div>
+                    <div class="cal-box">
+                        <h5>Cut (-500)</h5>
+                        <div class="cal-val">1900</div>
+                    </div>
+                    <div class="cal-box">
+                        <h5>Bulk (+300)</h5>
+                        <div class="cal-val">2700</div>
+                    </div>
+                </div>
+                <div class="pv-actions">
+                    <a class="btn-secondary" href="/Gymkak/src/bodyanalysis/plan/plananalysis.html">ดูผลของฉัน</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer__container">
+        <span class="bg__blur"></span>
+        <span class="bg__blur footer__blur"></span>
+        <div class="footer__content">
+            <div class="footer__col">
+                <div class="footer__logo"> <a href="/Gymkak/src/dashboard/dashboard.html"><img src="/Gymkak/assets/Logo main color w.png" alt="logo" /></a>
+                </div>
+                <p>
+                    Take the first step towards a healthier, stronger you with our
+                    unbeatable pricing plans. Let's sweat, achieve, and conquer together!
+                </p>
+                <div class="footer__socials">
+                    <a href="#"><i class="ri-facebook-fill"></i></a>
+                    <a href="#"><i class="ri-instagram-line"></i></a>
+                    <a href="#"><i class="ri-twitter-fill"></i></a>
+                </div>
+            </div>
+            <div class="footer__col">
+                <h4>Menu</h4>
+                <a href="/Gymkak/src/dashboard/dashboard.html#home">Home</a>
+                <a href="/Gymkak/src/dashboard/dashboard.html#program">Program</a>
+                <a href="/Gymkak/src/membership/membership.html">Membership</a>
+                <a href="/Gymkak/src/dashboard/dashboard.html#products">Products</a>
+                <a href="/Gymkak/src/dashboard/dashboard.html#about">About</a>
+            </div>
+            <div class="footer__col">
+                <h4>About Us</h4>
+                <a href="/Gymkak/src/dashboard/dashboard.html#blogs">Blogs</a>
+                <a href="/Gymkak/src/dashboard/dashboard.html#security">Security</a>
+                <a href="/Gymkak/src/dashboard/dashboard.html#careers">Careers</a>
+            </div>
+            <div class="footer__col">
+                <h4>Contact</h4>
+                <a href="/Gymkak/src/dashboard/dashboard.html#contact">Contact Us</a>
+                <a href="/Gymkak/src/dashboard/dashboard.html#privacy">Privacy Policy</a>
+                <a href="/Gymkak/src/dashboard/dashboard.html#terms">Terms & Conditions</a>
+                <a href="/Gymkak/src/bodyanalysis/bodyanalysis.html">BMI Calculator</a>
+            </div>
+        </div>
+    </footer>
+    <div class="footer__bar">
+        Gymkak © 2025 Web Design by yollaex.
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+    <script src="/Gymkak/src/bodyanalysis/bodyanalysis-protection.js"></script>
+    <script src="/src/bodyanalysis/bodyanalysis.js"></script>
+</body>
+
+</html>
+
+<style>
+    /* Container helpers */
+    .container-narrow {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border-radius: 40px;
+        padding: 12px 22px 13px;
+        font-weight: 700;
+        letter-spacing: .3px;
+        text-decoration: none;
+    }
+
+    .btn-primary {
+        background: #fff;
+        color: #000;
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px -10px rgba(255, 255, 255, .45);
+    }
+
+    .btn-secondary {
+        background: rgba(255, 255, 255, .12);
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, .25);
+    }
+
+    .btn-secondary:hover {
+        background: rgba(255, 255, 255, .18);
+    }
+
+    .btn-large {
+        padding: 15px 28px 16px;
+        font-size: 1.05rem;
+    }
+
+    /* Hero */
+    .ba-hero {
+        position: relative;
+        min-height: 68vh;
+        display: flex;
+        align-items: center;
+    }
+
+    .ba-hero__bg {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+    }
+
+    .ba-hero__bg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(.2) brightness(.6) contrast(1.1);
+    }
+
+    .ba-hero__overlay {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 15% 35%, rgba(255, 255, 255, .06), transparent 55%), radial-gradient(circle at 85% 70%, rgba(255, 255, 255, .05), transparent 60%);
+    }
+
+    .ba-hero__content {
+        position: relative;
+        color: #fff;
+        text-align: left;
+    }
+
+    .ba-hero__content h1 {
+        font-size: 3rem;
+        margin: 0 0 14px;
+    }
+
+    .ba-hero__content p {
+        max-width: 760px;
+        opacity: .9;
+        margin: 0 0 22px;
+        line-height: 1.7;
+    }
+
+    .ba-hero__actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 6px;
+    }
+
+    .ba-hero__badges {
+        list-style: none;
+        display: flex;
+        gap: 18px;
+        padding: 0;
+        margin: 24px 0 0;
+        flex-wrap: wrap;
+    }
+
+    .ba-hero__badges li {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, .08);
+        border: 1px solid rgba(255, 255, 255, .18);
+        border-radius: 30px;
+        color: #fff;
+        padding: 8px 12px 9px;
+        font-size: .82rem;
+    }
+
+    /* Highlights */
+    .ba-highlights {
+        padding: 60px 0;
+    }
+
+    .hl-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 22px;
+    }
+
+    .hl-card {
+        background: #1f1f21;
+        border: 1px solid #2f2f31;
+        border-radius: 14px;
+        padding: 24px 20px 26px;
+        color: #fff;
+        transition: transform .25s ease, border-color .25s ease;
+    }
+
+    .hl-card i {
+        font-size: 1.6rem;
+        opacity: .9;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .hl-card h3 {
+        font-size: 1.05rem;
+        margin: 0 0 6px;
+    }
+
+    .hl-card p {
+        margin: 0;
+        color: #b5b5b8;
+        line-height: 1.6;
+    }
+
+    .hl-card:hover {
+        transform: translateY(-6px);
+        border-color: #4b4b4d;
+    }
+
+    /* Steps */
+    .ba-steps {
+        padding: 60px 0;
+        background: #0f0f10;
+    }
+
+    .steps-inner h2 {
+        color: #fff;
+        text-align: center;
+        margin: 0 0 24px;
+        font-size: 2rem;
+    }
+
+    .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 22px;
+    }
+
+    .step-card {
+        background: #1a1a1b;
+        border: 1px solid #2f2f31;
+        border-radius: 14px;
+        padding: 24px 20px 26px;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .step-number {
+        position: absolute;
+        top: 12px;
+        right: 14px;
+        font-size: 2rem;
+        opacity: .08;
+        font-weight: 900;
+    }
+
+    .step-card h4 {
+        margin: 0 0 8px;
+    }
+
+    .step-card p {
+        margin: 0;
+        color: #b5b5b8;
+    }
+
+    .steps-cta {
+        display: flex;
+        justify-content: center;
+        margin-top: 26px;
+    }
+
+    /* Preview */
+    .ba-preview {
+        padding: 60px 0;
+    }
+
+    .preview-wrap {
+        display: grid;
+        grid-template-columns: 1.1fr .9fr;
+        gap: 34px;
+        align-items: stretch;
+    }
+
+    .preview-info h3 {
+        margin: 0 0 10px;
+        color: #fff;
+    }
+
+    .preview-info p {
+        color: #b5b5b8;
+    }
+
+    .preview-bullets {
+        list-style: none;
+        margin: 16px 0 0;
+        padding: 0;
+        color: #b5b5b8;
+        display: grid;
+        gap: 8px;
+    }
+
+    .preview-bullets i {
+        color: #fff;
+        margin-right: 6px;
+    }
+
+    .preview-card {
+        background: #1f1f21;
+        border: 1px solid #2f2f31;
+        border-radius: 16px;
+        padding: 20px 18px 22px;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .pv-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .pv-title {
+        font-weight: 700;
+        letter-spacing: .4px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .pv-tag {
+        font-size: .65rem;
+        letter-spacing: .9px;
+        border: 1px solid #3a3a3d;
+        border-radius: 30px;
+        padding: 6px 10px 7px;
+        color: #b5b5b8;
+    }
+
+    .pv-metrics {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .pv-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        background: #262628;
+        border: 1px solid #2f2f31;
+        border-radius: 10px;
+        padding: 12px 14px 13px;
+    }
+
+    .pv-item strong {
+        font-size: 1.2rem;
+    }
+
+    .pv-item em {
+        font-style: normal;
+        font-size: .7rem;
+        color: #b5b5b8;
+        margin-left: 6px;
+    }
+
+    .pv-divider {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #333, transparent);
+    }
+
+    .pv-calories {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .pv-calories .cal-box {
+        background: #262628;
+        border: 1px solid #2f2f31;
+        border-radius: 10px;
+        padding: 10px 12px 12px;
+        text-align: center;
+    }
+
+    .pv-calories h5 {
+        margin: 0 0 6px;
+        font-size: .75rem;
+        color: #b5b5b8;
+    }
+
+    .pv-calories .cal-val {
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    .pv-actions {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    /* CTA */
+    .ba-cta {
+        padding: 70px 0;
+        background: linear-gradient(135deg, #141415, #101012 60%, #151517);
+        color: #fff;
+        text-align: center;
+    }
+
+    .ba-cta h2 {
+        margin: 0 0 8px;
+        font-size: 2rem;
+    }
+
+    .ba-cta p {
+        margin: 0 0 18px;
+        color: #b5b5b8;
+    }
+
+    .cta-glow:hover { box-shadow:0 12px 40px #00e6ff77,0 2px 8px #0008; background:linear-gradient(90deg,#00b8d4,#00e6ff 80%); color:#000; }
+    .cta-badge { background:rgba(255,255,255,0.09); border-radius:22px; padding:7px 18px 8px; color:#fff; font-size:.98rem; font-weight:500; display:inline-flex; align-items:center; gap:7px; border:1px solid #00e6ff33; box-shadow:0 2px 8px #00e6ff11; }
+
+    /* Responsive */
+    @media (max-width:980px) {
+        .preview-wrap {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width:680px) {
+        .ba-hero__content h1 {
+            font-size: 2.2rem;
+        }
+
+        .pv-metrics {
+            grid-template-columns: 1fr;
+        }
+
+        .pv-calories {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<script>
+    // Animate preview counters when visible
+    document.addEventListener('DOMContentLoaded', () => {
+        const els = [...document.querySelectorAll('.count')];
+        if (!('IntersectionObserver' in window) || els.length === 0) { return; }
+        const run = (el) => { const target = parseFloat(el.dataset.target); const isInt = Number.isInteger(target); const dur = 900; const start = performance.now(); const from = 0; const step = (t) => { const p = Math.min(1, (t - start) / dur); const val = from + (target - from) * p; el.textContent = isInt ? Math.round(val) : val.toFixed(1); if (p < 1) requestAnimationFrame(step); }; requestAnimationFrame(step); };
+        const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { const el = e.target; if (!el.dataset.done) { el.dataset.done = '1'; run(el); } } }); }, { threshold: .4 });
+        els.forEach(el => io.observe(el));
+    });
+
+    // Menu Dropdown Handler
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuBtn = document.getElementById('menuButton');
+        const dropdown = document.querySelector('.redesigned-dropdown');
+        
+        if (menuBtn && dropdown) {
+            menuBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const isOpen = dropdown.style.opacity === '1';
+                dropdown.style.opacity = isOpen ? '0' : '1';
+                dropdown.style.visibility = isOpen ? 'hidden' : 'visible';
+                dropdown.style.transform = isOpen ? 'translateY(-8px)' : 'translateY(0)';
+            });
+            
+            document.addEventListener('click', function(e) {
+                if (!menuBtn.contains(e.target) && !dropdown.contains(e.target)) {
+                    dropdown.style.opacity = '0';
+                    dropdown.style.visibility = 'hidden';
+                    dropdown.style.transform = 'translateY(-8px)';
+                }
+            });
+            
+            dropdown.querySelectorAll('.dropdown-item').forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.background = 'rgba(255, 255, 255, 0.09)';
+                    const icon = this.querySelector('i');
+                    if (icon) icon.style.color = 'var(--white)';
+                });
+                item.addEventListener('mouseleave', function() {
+                    this.style.background = 'none';
+                    const icon = this.querySelector('i');
+                    if (icon) icon.style.color = 'var(--text-light)';
+                });
+            });
+        }
+    });
+</script>

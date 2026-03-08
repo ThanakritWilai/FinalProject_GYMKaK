@@ -1,0 +1,1402 @@
+/* ==========================================
+   MEMBERSHIP PAGE STYLES
+   ========================================== */
+
+/* Base Styles */
+
+/* CSS Variables & Reset */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+    --primary-color: #0b0d0f;
+    --primary-color-light: #1f2125;
+    --primary-color-extra-light: #35373b;
+    --secondary-color: rgb(0, 0, 0);
+    --secondary-color-white: #ffffff;
+    --text-light: #d1d5db;
+    --white: #ffffff;
+    --max-width: 1200px;
+
+    /* Popular Badge Color Options - แนะนำสีที่ดึงดูดลูกค้า */
+    --accent-orange: #ff5722;
+    /* Orange (ปัจจุบัน) - เพิ่มความอบอุ่น */
+    --accent-orange-light: #ff8a65;
+    --accent-red: #e53e3e;
+    /* Red - ดึงดูดสายตา เร่งด่วน */
+    --accent-red-light: #fc8181;
+    --accent-coral: #ff6b6b;
+    /* Coral - อบอุ่นและเป็นมิตร */
+    --accent-coral-light: #ffa8a8;
+    --accent-crimson: #dc2626;
+    /* Crimson - หรูหราและแพง */
+    --accent-crimson-light: #f87171;
+    --accent-gold: #f59e0b;
+    /* Gold - พรีเมียมและคุณภาพ */
+    --accent-gold-light: #fbbf24;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.section__container {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 5rem 1rem;
+}
+
+.section__header {
+    margin-bottom: 1rem;
+    font-size: 2.25rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--white);
+}
+
+.section__subheader {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    color: var(--text-light);
+}
+
+.btn {
+    padding: 1rem 2rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    color: var(--white);
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color-white);
+}
+
+img {
+    width: 100%;
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+}
+
+.bg__blur {
+    position: absolute;
+    box-shadow: 0 0 1000px 50px darkgrey;
+    z-index: -1;
+}
+
+.footer__container::before {
+    content: "GYMKAK";
+    position: absolute;
+    bottom: 14rem;
+    right: 2rem;
+    font-size: 10rem;
+    font-weight: 700;
+    line-height: 7rem;
+    color: var(--white);
+    opacity: 0.05;
+    z-index: -1;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--primary-color);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navigation Styles */
+nav {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 1rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    min-height: 70px;
+}
+
+.nav__logo {
+    max-width: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.nav__logo img {
+    width: 100%;
+    height: auto;
+    max-height: 50px;
+    object-fit: contain;
+}
+
+.nav__links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.link a {
+    position: relative;
+    padding-bottom: 0.75rem;
+    color: var(--white);
+}
+
+.link a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    left: 0;
+    bottom: 0;
+    background-color: var(--white);
+    transition: 0.3s;
+}
+
+.link a:hover::after {
+    width: 50%;
+}
+
+.btn-nav {
+    padding: 1rem 2rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    color: var(--white);
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-nav:hover {
+    background-color: var(--secondary-color-white);
+    color: var(--primary-color);
+}
+
+.section__container {
+    margin-top: -5rem;
+}
+
+.section__container h2 {
+    font-size: 50px
+}
+
+.class__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.class__image {
+    position: relative;
+}
+
+.class__image .class__img-1 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.class__image .class__img-2 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+.class__content {
+    padding: 2rem 0;
+}
+
+.class__content .section__header {
+    text-align: left;
+    max-width: 400px;
+}
+
+.class__content p {
+    margin-bottom: 4rem;
+    color: var(--text-light);
+}
+
+.join__image {
+    margin-top: 4rem;
+    width: 100%;
+}
+
+.join__grid {
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background-color: var(--primary-color-light);
+    border-radius: 10px;
+    justify-content: center;
+}
+
+.join__card {
+    flex: 1 1 250px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.join__card span {
+    padding: 5px 12px;
+    font-size: 1.75rem;
+    color: var(--white);
+    background-color: var(--primary-color-extra-light);
+    border-radius: 5px;
+}
+
+.join__card h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.join__card p {
+    color: var(--text-light);
+}
+
+/* Pricing Section Styles */
+
+.price__grid {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.price__card {
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color-light);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    min-height: 320px;
+}
+
+.price__card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary-color-white), var(--text-light));
+    transform: translateX(-100%);
+    transition: 0.3s;
+}
+
+.price__card:hover::before {
+    transform: translateX(0);
+}
+
+.price__card:hover {
+    background-color: var(--primary-color-extra-light);
+    border-color: var(--secondary-color-white);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.price__card__content {
+    flex: 1;
+    margin-bottom: 1.5rem;
+}
+
+.price__card h4 {
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.price__card h3 {
+    padding-bottom: 0.8rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--white);
+    border-bottom: 2px solid var(--white);
+    position: relative;
+}
+
+.price__card p {
+    margin-bottom: 0.5rem;
+    color: var(--white);
+    font-size: 0.9rem;
+}
+
+.price__card p i {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+
+.price__btn {
+    color: var(--white);
+    background-color: transparent;
+    border: 2px solid var(--text-light);
+}
+
+.price__btn:hover {
+    color: var(--secondary-color);
+    background-color: var(--secondary-color-white);
+}
+
+/* Program Button Styling */
+.program-btn {
+    background: linear-gradient(135deg, var(--secondary-color), var(--secondary-color-white)) !important;
+    color: var(--white) !important;
+    border-color: var(--secondary-color) !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.program-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.6s;
+}
+
+.program-btn:hover::before {
+    left: 100%;
+}
+
+.program-btn:hover {
+    background: linear-gradient(135deg, var(--secondary-color-white), #00d4ff) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 150, 255, 0.4);
+}
+
+.program-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Popular Plan Styling */
+/* 
+   สีที่แนะนำสำหรับ Popular Badge:
+   1. Orange (ปัจจุบัน) - สีอบอุ่น เพิ่มความรู้สึกเร่งด่วน
+   2. Red: - ดึงดูดสายตามากที่สุด เหมาะกับโปรโมชั่น
+   3. Coral - อบอุ่นและเป็นมิตร
+   4. Crimson - ดูหรูหราและแพง
+   5. Gold - สื่อถึงความพรีเมียมและคุณภาพ
+   
+   เปลี่ยนสีได้ที่ตัวแปร --accent-orange และ --accent-orange-light
+*/
+.price__card.popular {
+    border-color: var(--accent-orange);
+    background: linear-gradient(135deg, var(--primary-color-light), var(--primary-color-extra-light));
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 87, 34, 0.3);
+    position: relative;
+}
+
+.price__card.popular::before {
+    background: linear-gradient(90deg, var(--accent-orange), var(--accent-orange-light));
+    transform: translateX(0);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -8px;
+    right: 1rem;
+    background: linear-gradient(135deg, var(--accent-orange), var(--accent-orange-light));
+    color: var(--white);
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 3px 12px rgba(255, 87, 34, 0.4);
+    z-index: 10;
+    /* ลบไอคอนไฟเพื่อดูเรียบง่าย */
+}
+
+.price__card.popular h4 {
+    color: var(--accent-orange-light);
+}
+
+.price__card.popular h3 {
+    border-bottom-color: var(--accent-orange);
+}
+
+.popular-badge::before {
+    content: "";
+    margin-right: 0;
+}
+
+.popular-btn {
+    background: linear-gradient(135deg, var(--accent-orange), var(--accent-orange-light)) !important;
+    color: var(--white) !important;
+    border-color: var(--accent-orange) !important;
+    font-weight: 600;
+}
+
+.popular-btn:hover {
+    background: linear-gradient(135deg, var(--accent-orange-light), #ffab91) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 87, 34, 0.5);
+}
+
+/* ==========================================
+   ALTERNATIVE COLOR THEMES FOR POPULAR BADGE
+   ========================================== */
+
+/* สำหรับเปลี่ยนสี Popular Badge ให้เพิ่มคลาสนี้ใน HTML */
+
+/* Red Theme - สีแดงดึงดูดสายตา เหมาะกับโปรโมชั่น */
+.price__card.popular.red-theme {
+    border-color: var(--accent-red);
+    box-shadow: 0 10px 30px rgba(229, 62, 62, 0.3);
+}
+
+.price__card.popular.red-theme .popular-badge {
+    background: linear-gradient(135deg, var(--accent-red), var(--accent-red-light));
+    box-shadow: 0 3px 12px rgba(229, 62, 62, 0.4);
+}
+
+.price__card.popular.red-theme h4 {
+    color: var(--accent-red-light);
+}
+
+.price__card.popular.red-theme h3 {
+    border-bottom-color: var(--accent-red);
+}
+
+.price__card.popular.red-theme .popular-btn {
+    background: linear-gradient(135deg, var(--accent-red), var(--accent-red-light)) !important;
+    border-color: var(--accent-red) !important;
+}
+
+/* Coral Theme - สีอบอุ่นและเป็นมิตร */
+.price__card.popular.coral-theme {
+    border-color: var(--accent-coral);
+    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+}
+
+.price__card.popular.coral-theme .popular-badge {
+    background: linear-gradient(135deg, var(--accent-coral), var(--accent-coral-light));
+    box-shadow: 0 3px 12px rgba(255, 107, 107, 0.4);
+}
+
+.price__card.popular.coral-theme h4 {
+    color: var(--accent-coral-light);
+}
+
+.price__card.popular.coral-theme h3 {
+    border-bottom-color: var(--accent-coral);
+}
+
+.price__card.popular.coral-theme .popular-btn {
+    background: linear-gradient(135deg, var(--accent-coral), var(--accent-coral-light)) !important;
+    border-color: var(--accent-coral) !important;
+}
+
+/* Gold Theme - สีทองสื่อถึงความพรีเมียมและคุณภาพ */
+.price__card.popular.gold-theme {
+    border-color: var(--accent-gold);
+    box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+}
+
+.price__card.popular.gold-theme .popular-badge {
+    background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light));
+    box-shadow: 0 3px 12px rgba(245, 158, 11, 0.4);
+}
+
+.price__card.popular.gold-theme h4 {
+    color: var(--accent-gold-light);
+}
+
+.price__card.popular.gold-theme h3 {
+    border-bottom-color: var(--accent-gold);
+}
+
+.price__card.popular.gold-theme .popular-btn {
+    background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-light)) !important;
+    border-color: var(--accent-gold) !important;
+}
+
+/* วิธีใช้: เพิ่มคลาสในไฟล์ HTML
+   เช่น: <div class="price__card popular red-theme"> สำหรับสีแดง
+        <div class="price__card popular coral-theme"> สำหรับสีคอรัล  
+        <div class="price__card popular gold-theme"> สำหรับสีทอง
+*/
+
+/* Footer Styles */
+
+.footer__container {
+    position: relative;
+    width: 100%;
+    background-color: var(--primary-color);
+    padding: 3rem 0 1rem;
+}
+
+.footer__content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
+.footer__blur {
+    bottom: 0;
+    right: 0;
+}
+
+.footer__logo {
+    max-width: 150px;
+    margin-bottom: 2rem;
+}
+
+.footer__col p {
+    margin-bottom: 2rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.footer__socials {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer__socials a {
+    padding: 8px 12px;
+    font-size: 1.25rem;
+    color: var(--white);
+    border: 1px solid var(--primary-color-extra-light);
+    border-radius: 50%;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.footer__socials a:hover {
+    color: var(--secondary-color);
+    background-color: var(--secondary-color-white);
+}
+
+.footer__col h4 {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.footer__col>a {
+    display: block;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+    transition: 0.3s;
+}
+
+.footer__col>a:hover {
+    color: var(--white);
+}
+
+.footer__bar {
+    width: 100%;
+    padding: 1rem;
+    font-size: 0.8rem;
+    color: var(--white);
+    text-align: center;
+    background-color: var(--primary-color);
+    border-top: 1px solid var(--primary-color-extra-light);
+}
+
+/* Hero Section */
+.hero-section {
+    width: 100%;
+    position: relative;
+    margin-bottom: 5rem;
+}
+
+.hero-image {
+    position: relative;
+    height: 70vh;
+    min-height: 500px;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 600px;
+    padding: 2rem;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.hero-btn.primary {
+    background-color: var(--secondary-color-white);
+    color: var(--primary-color);
+}
+
+.hero-btn.primary:hover {
+    background-color: var(--text-light);
+    transform: translateY(-2px);
+}
+
+.hero-btn.secondary {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.hero-btn.secondary:hover {
+    background-color: var(--white);
+    color: var(--primary-color);
+}
+
+/* Features Section Styles */
+
+.features__container {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.features__card {
+    background-color: var(--primary-color-light);
+    border-radius: 10px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.features__icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.features__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.features__description {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.features__btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.features__btn:hover {
+    background-color: var(--secondary-color-white);
+    color: var(--primary-color);
+}
+
+/* Tex Plan Styles */
+
+.tex-plan {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.tex-plan .section__header {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.tex-plan .section__subheader {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Profile Dropdown Styles */
+.profile-dropdown {
+    position: relative;
+}
+
+.profile-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: transparent;
+    border: 1px solid var(--primary-color-extra-light);
+    border-radius: 8px;
+    color: var(--white);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.profile-btn:hover {
+    background: var(--primary-color-extra-light);
+    border-color: var(--secondary-color-white);
+}
+
+.profile-img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-btn span {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.profile-btn i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.profile-dropdown.active .profile-btn i {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 0.5rem;
+    background: var(--primary-color-light);
+    border: 1px solid var(--primary-color-extra-light);
+    border-radius: 8px;
+    min-width: 200px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.profile-dropdown.active .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: var(--white);
+    text-decoration: none;
+    transition: background 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.dropdown-item:hover {
+    background: var(--primary-color-extra-light);
+    color: var(--secondary-color-white);
+}
+
+.dropdown-item i {
+    font-size: 1rem;
+    width: 16px;
+}
+
+.dropdown-divider {
+    height: 1px;
+    background: var(--primary-color-extra-light);
+    margin: 0.5rem 0;
+}
+
+.dropdown-item.logout {
+    color: #ef4444;
+}
+
+.dropdown-item.logout:hover {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+/* Program Selection Section Styles */
+.program__container {
+    margin-top: 5rem;
+    padding: 3rem 1rem;
+}
+
+.program__header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.program__header .section__header {
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.program__header .section__subheader {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.program__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.program__card {
+    background: var(--primary-color-light);
+    border-radius: 15px;
+    padding: 2.5rem;
+    border: 2px solid var(--primary-color-extra-light);
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.program__card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    border-color: var(--secondary-color-white);
+}
+
+.program__icon {
+    width: 80px;
+    height: 80px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    transition: all 0.3s ease;
+}
+
+.program__card:hover .program__icon {
+    background: var(--secondary-color-white);
+    transform: scale(1.1);
+}
+
+.program__icon i {
+    font-size: 2.5rem;
+    color: var(--white);
+    transition: color 0.3s ease;
+}
+
+.program__card:hover .program__icon i {
+    color: var(--primary-color);
+}
+
+.program__content h3 {
+    color: var(--secondary-color-white);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.program__content h4 {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.program__content p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.program__features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.program__features li {
+    color: var(--text-light);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.program__features i {
+    color: var(--secondary-color-white);
+    font-size: 1rem;
+}
+
+.program__btn {
+    width: 100%;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.weight-loss-btn {
+    background: linear-gradient(135deg, #e53e3e, #fc8181);
+    color: var(--white);
+}
+
+.weight-loss-btn:hover {
+    background: linear-gradient(135deg, #c53030, #e53e3e);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(229, 62, 62, 0.4);
+}
+
+.muscle-gain-btn {
+    background: linear-gradient(135deg, #38a169, #68d391);
+    color: var(--white);
+}
+
+.muscle-gain-btn:hover {
+    background: linear-gradient(135deg, #2f855a, #38a169);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(56, 161, 105, 0.4);
+}
+
+.health-btn {
+    background: linear-gradient(135deg, #3182ce, #63b3ed);
+    color: var(--white);
+}
+
+.health-btn:hover {
+    background: linear-gradient(135deg, #2c5282, #3182ce);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(49, 130, 206, 0.4);
+}
+
+/* Special effects for program cards */
+.weight-loss-card {
+    border-left: 4px solid #e53e3e;
+}
+
+.muscle-gain-card {
+    border-left: 4px solid #38a169;
+}
+
+.health-card {
+    border-left: 4px solid #3182ce;
+}
+
+/* Program Selection Grid Styles */
+.program-selection-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    max-width: 1200px;
+    margin: 3rem auto 0 auto;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* Responsive Styles for Program Selection */
+@media (max-width: 992px) {
+    .program-selection-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem;
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 768px) {
+    .program-selection-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+        max-width: 400px;
+        padding: 0 1rem;
+    }
+
+    .price__card {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .program-selection-grid {
+        gap: 1.5rem;
+        max-width: 350px;
+    }
+
+    .price__card {
+        padding: 1.25rem 0.75rem;
+        min-height: 280px;
+    }
+}
+
+/* Responsive Design for Program Section */
+@media (max-width: 768px) {
+    .program__grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .program__card {
+        padding: 2rem;
+    }
+
+    .program__icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .program__icon i {
+        font-size: 2rem;
+    }
+
+    .program__content h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Body Analysis Responsive Styles */
+@media (max-width: 768px) {
+    .analysis__grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .body-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .week-calendar {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 0.25rem;
+    }
+
+    .calendar-day {
+        padding: 0.5rem 0.25rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .goal-options {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-header,
+    .modal-body {
+        padding: 1.5rem;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .analysis__container {
+        padding: 2rem 1rem;
+    }
+
+    .analysis__card {
+        padding: 1.5rem;
+    }
+
+    .card__header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+
+    .body-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Notification System Styles */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--primary-color-light);
+    border: 1px solid var(--primary-color-extra-light);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    z-index: 1000;
+    min-width: 300px;
+    max-width: 500px;
+    animation: slideIn 0.3s ease-out;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.notification-success {
+    border-left: 4px solid #38a169;
+    background: linear-gradient(135deg, rgba(56, 161, 105, 0.1), rgba(104, 211, 145, 0.05));
+}
+
+.notification-error {
+    border-left: 4px solid #e53e3e;
+    background: linear-gradient(135deg, rgba(229, 62, 62, 0.1), rgba(252, 129, 129, 0.05));
+}
+
+.notification-info {
+    border-left: 4px solid #3182ce;
+    background: linear-gradient(135deg, rgba(49, 130, 206, 0.1), rgba(99, 179, 237, 0.05));
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1;
+}
+
+.notification-content i {
+    font-size: 1.25rem;
+}
+
+.notification-success .notification-content i {
+    color: #38a169;
+}
+
+.notification-error .notification-content i {
+    color: #e53e3e;
+}
+
+.notification-info .notification-content i {
+    color: #3182ce;
+}
+
+.notification-content span {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.notification-close:hover {
+    background: var(--primary-color-extra-light);
+    color: var(--white);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive notification */
+@media (max-width: 768px) {
+    .notification {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        min-width: auto;
+        max-width: none;
+    }
+}
+
+/* Horizontal Banner Styles */
+.horizontal-banner {
+    background: linear-gradient(120deg, #232526, #414345);
+    padding: 40px 0;
+    font-family: 'Sarabun', 'Prompt', Arial, sans-serif;
+}
+
+.banner-container {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.banner-image {
+    flex: 0 0 40%;
+    max-height: 300px;
+    overflow: hidden;
+}
+
+.banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-content {
+    flex: 1;
+    padding: 20px;
+    color: #fff;
+}
+
+.banner-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.banner-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.banner-button {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 12px 32px;
+    font-size: 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.banner-button:hover {
+    background: #333;
+    transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+    .banner-container {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .banner-image {
+        flex: 0 0 auto;
+        width: 100%;
+        max-height: 200px;
+    }
+
+    .banner-title {
+        font-size: 2rem;
+    }
+
+    .banner-button {
+        width: 100%;
+        text-align: center;
+    }
+}

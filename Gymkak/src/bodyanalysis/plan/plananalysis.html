@@ -1,0 +1,2949 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/Gymkak/assets/logo_w.png" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="plananalysis.css" />
+    <title>Bodyanalysis</title>
+</head>
+
+<body>
+    <header class="main-header">
+        <nav>
+            <div class="nav__logo">
+                <a href="/Gymkak/src/dashboard/dashboard.html"><img src="/Gymkak/assets/Logo main color w.png" alt="logo" /></a>
+            </div>
+            <ul class="nav__links">
+                <li class="link"><a href="/Gymkak/src/dashboard/dashboard.html">Home</a></li>
+                <li class="link"><a href="/Gymkak/src/dashboard/dashboard.html#program">Program</a></li>
+                <li class="link"><a href="/Gymkak/src/membership/regisgym/regisgym.html">Membership</a></li>
+                <li class="link"><a href="/Gymkak/src/bodyanalysis/bodyanalysis.html">Bodyanalysis</a></li>
+                <li class="link"><a href="/Gymkak/src/dashboard/dashboard.html#about">About</a></li>
+            </ul>
+            <!-- Redesigned dropdown menu for simplicity and elegance -->
+            <div class="dropdown-container" style="position: relative;">
+                <button class="btn dropdown-toggle redesigned-menu" id="menuButton" data-bs-toggle="dropdown"
+                    aria-expanded="false" style="background: var(--primary-color-extra-light); color: var(--white); border-radius: 10px; box-shadow: 0 3px 16px rgba(0,0,0,0.16); padding: 0.48rem 1.05rem; font-size: 0.97rem; font-weight: 600; border: none; letter-spacing: 0.4px; display: flex; align-items: center; gap: 0.4rem; min-width: 135px; justify-content: center;">
+                    <i class="ri-menu-line" style="font-size: 1.05rem;"></i> Menu
+                </button>
+                <ul class="dropdown-menu redesigned-dropdown" aria-labelledby="menuButton" style="position: absolute; top: calc(100% + 12px); right: 0; background: var(--primary-color-light); border-radius: 11px; min-width: 135px; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: all 0.19s cubic-bezier(.4,1.3,.6,1); z-index: 1000; overflow: visible; border: none; box-shadow: 0 6px 22px rgba(0,0,0,0.19); padding: 0.35rem 0; list-style: none; margin: 0;">
+                    <li><a class="dropdown-item redesigned-item" href="/Gymkak/src/user/profile/profile.html" style="display: flex; align-items: center; gap: 0.6rem; padding: 0.62rem 1rem; color: var(--white); text-decoration: none; font-size: 0.93rem; background: none; border-bottom: none; border-radius: 6px; transition: background 0.14s, color 0.14s;">
+                            <i class="ri-user-line" style="font-size: 0.98rem; color: var(--text-light); margin-right: 0.22rem; transition: color 0.14s;"></i> Profile
+                        </a></li>
+                    <li><a class="dropdown-item redesigned-item" href="/Gymkak/src/user/plans/plans.html" style="display: flex; align-items: center; gap: 0.6rem; padding: 0.62rem 1rem; color: var(--white); text-decoration: none; font-size: 0.93rem; background: none; border-bottom: none; border-radius: 6px; transition: background 0.14s, color 0.14s;">
+                            <i class="ri-calendar-line" style="font-size: 0.98rem; color: var(--text-light); margin-right: 0.22rem; transition: color 0.14s;"></i> Plans
+                        </a></li>
+                    <li><a class="dropdown-item redesigned-item" href="/Gymkak/src/user/login/login.html" style="display: flex; align-items: center; gap: 0.6rem; padding: 0.62rem 1rem; color: var(--white); text-decoration: none; font-size: 0.93rem; background: none; border-bottom: none; border-radius: 6px; transition: background 0.14s, color 0.14s;">
+                            <i class="ri-logout-box-line" style="font-size: 0.98rem; color: var(--text-light); margin-right: 0.22rem; transition: color 0.14s;"></i> Logout
+                        </a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero & Analysis Section -->
+    <main id="plan-root">
+        <section class="pa-hero">
+            <div class="pa-hero__inner">
+                <div class="pa-hero__text">
+                    <h1>วิเคราะห์ร่างกาย & วางแผน</h1>
+                    <p>กรอกข้อมูลพื้นฐานของคุณ ระบบจะคำนวณ BMI, BMR, TDEE, ไขมันโดยประมาณ และสร้างคำแนะนำโปรแกรม (เช่น
+                        Cardio + Weight) พร้อมแนวทางโภชนาการและการพักผ่อน</p>
+                    <button class="btn-primary" onclick="scrollToSection('#analysisWizard')"><i
+                            class="ri-scan-line"></i> เริ่มวิเคราะห์</button>
+                </div>
+                <div class="pa-hero__panel">
+                    <ul class="quick-metrics">
+                        <li><span class="qm-label">BMI</span><span id="qm-bmi" class="qm-value">—</span></li>
+                        <li><span class="qm-label">BMR</span><span id="qm-bmr" class="qm-value">—</span></li>
+                        <li><span class="qm-label">TDEE</span><span id="qm-tdee" class="qm-value">—</span></li>
+                        <li><span class="qm-label">Body Fat</span><span id="qm-bf" class="qm-value">—</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="analysisWizard" class="pa-wizard">
+            <div class="pw-header">
+                <h2>ข้อมูลร่างกาย</h2>
+                <p>ใส่ข้อมูลให้ครบเพื่อความแม่นยำ (สะโพก เพื่อคำนวณ % ไขมัน)</p>
+                <div class="pw-toolbar">
+                    <button type="button" class="tool-btn" onclick="toggleMode()"><i class="ri-layout-row-line"></i>
+                        Compact</button>
+                    <button type="button" class="tool-btn" onclick="toggleTheme()"><i class="ri-contrast-2-line"></i>
+                        Theme</button>
+                </div>
+                <div class="adv-toggle-wrapper">
+                    <button id="advToggleBtn" type="button" class="adv-btn" aria-expanded="false"
+                        onclick="toggleAdvanced()">
+                        <span class="adv-icon"><i class="ri-tools-line"></i></span>
+                        <span class="adv-text">
+                            <strong>Advanced Options</strong>
+                            <em>Manual Body Fat / US Navy</em>
+                        </span>
+                        <span class="adv-state">Off</span>
+                    </button>
+                </div>
+            </div>
+            <div class="pw-layout">
+                <form id="analysisForm" class="pw-form" onsubmit="event.preventDefault(); analyzeBody();">
+                    <div class="form-progress" aria-hidden="true">
+                        <div class="form-progress__bar" id="formProgressBar" style="width:0%" aria-valuemin="0"
+                            aria-valuemax="100" aria-valuenow="0"></div>
+                    </div>
+                    <div id="formMessages" class="form-messages" aria-live="polite"></div>
+                    <div class="pw-grid">
+                        <div class="pw-group reveal">
+                            <label for="gender">เพศ</label>
+                            <select id="gender" required>
+                                <option value="">เลือก</option>
+                                <option value="male">ชาย</option>
+                                <option value="female">หญิง</option>
+                            </select>
+                        </div>
+                        <div class="pw-group reveal">
+                            <label for="age">อายุ (ปี)</label>
+                            <span class="input-wrapper"><i class="ri-user-3-line"></i><input type="number" id="age"
+                                    placeholder="25" required /></span>
+                        </div>
+                        <div class="pw-group reveal">
+                            <label for="height">ส่วนสูง (ซม.)</label>
+                            <span class="input-wrapper"><i class="ri-ruler-line"></i><input type="number" id="height"
+                                    placeholder="170" required /></span>
+                        </div>
+                        <div class="pw-group reveal">
+                            <label for="weight">น้ำหนัก (กก.)</label>
+                            <span class="input-wrapper"><i class="ri-weight-line"></i><input type="number" id="weight"
+                                    step="0.1" placeholder="65" required /></span>
+                        </div>
+                        <div class="pw-group female-only reveal" style="display:none;">
+                            <label for="hip">รอบสะโพก (นิ้ว)</label>
+                            <span class="input-wrapper"><i class="ri-tape-line"></i><input type="number" id="hip"
+                                    min="10" placeholder="37" /></span>
+                        </div>
+                        <div class="pw-group reveal">
+                            <label for="activity">ระดับกิจกรรม</label>
+                            <select id="activity" required>
+                                <option value="sedentary">นั่งทำงาน</option>
+                                <option value="light">เบา 1-3 วัน</option>
+                                <option value="moderate" selected>ปานกลาง 3-5 วัน</option>
+                                <option value="active">หนัก 6-7 วัน</option>
+                                <option value="very-active">หนักมาก / ใช้แรง</option>
+                            </select>
+                        </div>
+                        <div class="pw-group reveal">
+                            <label for="bmrFormula">สูตร BMR <span class="info"
+                                    data-tip="Mifflin: ใช้เพศ อายุ ส่วนสูง น้ำหนัก (เหมาะกับคนทั่วไป) | Harris: ใช้เพศ อายุ ส่วนสูง น้ำหนัก เหมือนกัน แต่อาจได้ค่าต่างเล็กน้อย | Katch: ใช้น้ำหนักและสัดส่วนไขมันในร่างกาย เพื่อคำนวณจากมวลร่างกายที่ไม่ใช่ไขมัน">i</span></label>
+                            <select id="bmrFormula">
+                                <option value="mifflin" selected>Mifflin-St Jeor (ใช้ เพศ+อายุ+ส่วนสูง+น้ำหนัก)</option>
+                                <option value="harris">Harris-Benedict (ใช้ข้อมูลพื้นฐานเหมือนกัน)</option>
+                                <option value="katch">Katch-McArdle (ใช้ข้อมูลไขมันในร่างกายร่วมด้วย)</option>
+                            </select>
+                            <div class="form-messages" style="margin:6px 0 0; color:var(--tx-faint);">
+                                ถ้าไม่แน่ใจให้เลือก <strong>Mifflin-St Jeor</strong> ได้เลย เพราะเหมาะกับผู้ใช้ส่วนใหญ่
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="advancedSection" class="pw-advanced" style="display:none;">
+                        <div class="pw-subheader">ตัวเลือกขั้นสูง (ไม่บังคับ)</div>
+                        <div class="pw-grid advanced-grid">
+                            <div class="pw-group reveal">
+                                <label for="manualBf">Body Fat % (Manual) <span class="info"
+                                        data-tip="ถ้ามีค่า InBody / Skinfold ใส่ตรงนี้ จะใช้แทนการประเมินอัตโนมัติ">i</span></label>
+                                <span class="input-wrapper"><i class="ri-percent-line"></i><input type="number"
+                                        id="manualBf" step="0.1" placeholder="18" max="60" /></span>
+                            </div>
+                            <div class="pw-group reveal">
+                                <label for="waist">รอบเอว (นิ้ว) <span class="info"
+                                        data-tip="ใช้คำนวณ %BF (US Navy) พร้อมคอ และ (สะโพกสำหรับผู้หญิง)">i</span></label>
+                                <span class="input-wrapper"><i class="ri-tape-line"></i><input type="number" id="waist"
+                                        min="10" placeholder="31" /></span>
+                            </div>
+                            <div class="pw-group reveal">
+                                <label for="neck">รอบคอ (นิ้ว)</label>
+                                <span class="input-wrapper"><i class="ri-tape-line"></i><input type="number" id="neck"
+                                        min="10" placeholder="15" /></span>
+                            </div>
+                        </div>
+                        <div class="adv-hint">ระบบจะเลือกลำดับความแม่นยำ: Manual %BF > US Navy (เอว/คอ[/สะโพก]) >
+                            ประเมินจาก BMI</div>
+                    </div>
+
+                    <div class="pw-subheader">เป้าหมายหลัก</div>
+                    <div class="goal-row" id="goalRow">
+                        <div class="goal-card reveal" data-goal="lose-weight"><i class="ri-arrow-down-line"></i>
+                            <h4>ลดน้ำหนัก</h4>
+                            <p>ลดไขมัน / เผาผลาญ</p>
+                        </div>
+                        <div class="goal-card reveal" data-goal="build-muscle"><i class="ri-barbell-line"></i>
+                            <h4>เพิ่มกล้ามเนื้อ</h4>
+                            <p>เพิ่มขนาด / แรง</p>
+                        </div>
+                        <div class="goal-card reveal" data-goal="maintain"><i class="ri-heart-pulse-line"></i>
+                            <h4>รักษาสุขภาพ</h4>
+                            <p>บาลานซ์ / เสถียร</p>
+                        </div>
+                        <div class="goal-card reveal" data-goal="tone"><i class="ri-shining-line"></i>
+                            <h4>กระชับ</h4>
+                            <p>เฟิร์ม / คมชัด</p>
+                        </div>
+                    </div>
+                    <input type="hidden" id="goal" />
+
+                    <div class="pw-actions">
+                        <button type="button" class="btn-secondary" onclick="resetForm()"><i
+                                class="ri-refresh-line"></i>
+                            ล้างข้อมูล</button>
+                        <button type="submit" id="analyzeBtn" class="btn-primary"><span class="btn-label"><i
+                                    class="ri-scales-3-line"></i> วิเคราะห์</span><span class="loading-dot"
+                                aria-hidden="true"></span></button>
+                        <div id="inlineError" class="inline-error" aria-live="polite"></div>
+                    </div>
+                    <div id="liveStatus" class="visually-hidden" aria-live="polite"></div>
+                </form>
+
+                <aside class="pw-preview">
+                    <div class="pv-card">
+                        <div class="pv-head"><span class="pv-title"><i class="ri-pulse-line"></i> Live
+                                Preview</span><span id="pv-goal-tag" class="pv-tag">-</span></div>
+                        <div class="pv-gauge">
+                            <div id="pv-bmi-gauge" class="gauge"><span class="gauge-label">BMI</span><strong
+                                    id="pv-bmi">—</strong></div>
+                        </div>
+                        <div class="pv-metrics">
+                            <div class="pv-item"><span>BMR</span><strong id="pv-bmr">—</strong><em>kcal</em></div>
+                            <div class="pv-item"><span>TDEE</span><strong id="pv-tdee">—</strong><em>kcal</em></div>
+                            <div class="pv-item"><span>Body Fat</span><strong id="pv-bf">—</strong></div>
+                        </div>
+                        <div class="pv-foot"><small class="pv-note">อัปเดตอัตโนมัติเมื่อพิมพ์</small></div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section id="resultsSection" class="pa-results" style="display:none;">
+            <div class="results-header">
+                <h2>ผลการวิเคราะห์</h2>
+                <p id="resultSummary">สรุปภาพรวมร่างกายของคุณ</p>
+                <div id="apiNotice" class="api-notice" style="display:none;"><i class="ri-wifi-off-line"></i>
+                    ใช้โหมดคำนวณภายในชั่วคราว (อาจต่างจากผลลัพธ์จริงเล็กน้อย)</div>
+            </div>
+
+                <div class="metric-cards" id="metricsCards">
+                <div class="metric-card"><span class="m-label">BMI <small class="m-desc">ดัชนีมวลกาย</small></span><span id="r-bmi" class="m-value">-</span><span
+                        id="r-bmi-status" class="m-status">-</span></div>
+                <div class="metric-card"><span class="m-label">BMR <small class="m-desc">พลังงานพื้นฐาน</small></span><span id="r-bmr" class="m-value">-</span><span
+                        class="m-status">kcal</span></div>
+                <div class="metric-card"><span class="m-label">TDEE <small class="m-desc">พลังงานรวม/วัน</small></span><span id="r-tdee"
+                        class="m-value">-</span><span class="m-status">kcal</span></div>
+                <div class="metric-card"><span class="m-label">Body Fat <small class="m-desc">เปอร์เซ็นต์ไขมัน</small></span><span id="r-bf"
+                        class="m-value">-</span><span id="r-bf-status" class="m-status">-</span></div>
+                <div class="metric-card"><span class="m-label">Protein <small class="m-desc">โปรตีนต่อวัน</small></span><span id="r-protein"
+                        class="m-value">-</span><span class="m-status">g/day</span></div>
+                <div class="metric-card"><span class="m-label">Fat <small class="m-desc">ไขมันดีต่อวัน</small></span><span id="r-fat" class="m-value">-</span><span
+                        class="m-status">g/day</span></div>
+            </div>
+
+            <div class="recommend-block" id="caloriePlanBlock">
+                <h3><i class="ri-fire-line"></i> แผนแคลอรี่</h3>
+                <p class="section-hint">เลือกปริมาณแคลอรี่ตามเป้าหมาย: <strong>MAINTAIN</strong> = รักษาน้ำหนัก, <strong>CUT</strong> = ลดน้ำหนัก, <strong>BULK</strong> = เพิ่มกล้ามเนื้อ</p>
+                <div id="caloriePlan" class="calorie-grid"></div>
+            </div>
+
+            <div class="recommend-block" id="programSuggestBlock">
+                <h3><i class="ri-medal-line"></i> โปรแกรมที่เหมาะกับคุณ</h3>
+                <p class="section-hint">เริ่มจากโปรแกรมที่ทำได้ต่อเนื่อง 3-4 วัน/สัปดาห์ แล้วค่อยเพิ่มความหนักทีละนิด</p>
+                <div id="programSuggest" class="program-grid"></div>
+            </div>
+
+            <div class="recommend-block" id="workoutScheduleBlock" style="display:none;">
+                <div class="schedule-header-with-download">
+                    <h3><i class="ri-calendar-line"></i> ตารางออกกำลังกาย 5 วัน</h3>
+                    <button class="btn-download" onclick="downloadSchedule()" title="ดาวน์โหลดตาราง">
+                        <i class="ri-download-2-line"></i> ดาวน์โหลด
+                    </button>
+                </div>
+                <p class="section-hint">โฟกัสท่าหลักให้ถูกฟอร์มก่อน แล้วค่อยเพิ่มจำนวนครั้งหรือเพิ่มน้ำหนัก</p>
+                <div id="workoutScheduleGrid" class="schedule-grid"></div>
+            </div>
+
+            <div class="recommend-block" id="comboBlock">
+                <h3><i class="ri-stack-line"></i> รูปแบบผสม (Split)</h3>
+                <p class="section-hint">เลือกรูปแบบการแบ่งกล้ามเนื้อแต่ละวัน เพื่อให้ร่างกายฟื้นตัวทันและพัฒนาได้ดี</p>
+                <div id="comboGrid" class="combo-grid"></div>
+            </div>
+
+            <div class="recommend-block" id="lifestyleBlock">
+                <h3><i class="ri-heart-2-line"></i> ไลฟ์สไตล์ & Recovery</h3>
+                <p class="section-hint">นอนให้พอ ดื่มน้ำให้พอ และมีวันพักสม่ำเสมอ จะช่วยให้เห็นผลเร็วขึ้น</p>
+                <div id="lifestyleGrid" class="lifestyle-grid"></div>
+            </div>
+
+            <div class="premium-upsell" id="premiumUpsell" style="display:none;">
+                <div class="premium-badge">PREMIUM</div>
+                <h3>ปลดล็อกโปรแกรมเฉพาะตัว</h3>
+                <p>เปลี่ยนร่างกายคุณด้วยแผน 12 สัปดาห์ ที่ปรับเฉพาะคุณ พร้อมการติดตามความคืบหน้า รายงาน Macro รายวัน Weekly Check-in และ Export PDF/Calendar</p>
+                <ul class="premium-benefits">
+                    <li><i class="ri-check-line"></i> ปรับตามความก้าวหน้าอัตโนมัติ</li>
+                    <li><i class="ri-check-line"></i> แจ้งเตือน Recovery / Deload</li>
+                    <li><i class="ri-check-line"></i> วิเคราะห์สัดส่วนรายสัปดาห์</li>
+                    <li><i class="ri-check-line"></i> ปรับ Macro ตามน้ำหนักจริง</li>
+                </ul>
+                <a class="premium-btn" href="/Gymkak/src/membership/regisgym/regisgym.html?plan=premium"><i
+                        class="ri-vip-crown-line"></i> อัปเกรด Premium</a>
+            </div>
+        </section>
+    </main>
+
+    <div class="loading-overlay" id="loadingOverlay" aria-hidden="true">
+        <div class="loading-card" role="status" aria-live="polite">
+            <div class="loading-spinner"></div>
+            <div class="loading-title">กำลังประมวลผล</div>
+            <div class="loading-subtitle">กรุณารอสักครู่...</div>
+        </div>
+    </div>
+
+    <footer class="footer__container">
+        <span class="bg__blur"></span>
+        <span class="bg__blur footer__blur"></span>
+        <div class="footer__content">
+            <div class="footer__col">
+                <div class="footer__logo"> <a href="/Gymkak/src/dashboard/dashboard.html#"><img src="/Gymkak/assets/Logo main color w.png" alt="logo" /></a>
+                </div>
+                <p>
+                    Take the first step towards a healthier, stronger you with our
+                    unbeatable pricing plans. Let's sweat, achieve, and conquer together!
+                </p>
+                <div class="footer__socials">
+                    <a href="#"><i class="ri-facebook-fill"></i></a>
+                    <a href="#"><i class="ri-instagram-line"></i></a>
+                    <a href="#"><i class="ri-twitter-fill"></i></a>
+                </div>
+            </div>
+            <div class="footer__col">
+                <h4>Menu</h4>
+                <a href="/Gymkak/src/dashboard/dashboard.html">Home</a>
+                <a href="/Gymkak/src/dashboard/dashboard.html#program">Program</a>
+                <a href="/Gymkak/src/membership/regisgym/regisgym.html">Membership</a>
+                <a href="/Gymkak/src/dashboard/dashboard.html#products">Products</a>
+                <a href="/Gymkak/src/dashboard/dashboard.html#about">About</a>
+            </div>
+            <div class="footer__col">
+                <h4>About Us</h4>
+                <a href="/Gymkak/src/dashboard/dashboard.html#blogs">Blogs</a>
+                <a href="/Gymkak/src/dashboard/dashboard.html#security">Security</a>
+                <a href="/Gymkak/src/dashboard/dashboard.html#careers">Careers</a>
+            </div>
+            <div class="footer__col">
+                <h4>Contact</h4>
+                <a href="/Gymkak/src/dashboard/dashboard.html#contact">Contact Us</a>
+                <a href="/Gymkak/src/dashboard/dashboard.html#privacy">Privacy Policy</a>
+                <a href="/Gymkak/src/dashboard/dashboard.html#terms">Terms & Conditions</a>
+                <a href="/Gymkak/src/bodyanalysis/bodyanalysis.html">BMI Calculator</a>
+            </div>
+        </div>
+    </footer>
+    <div class="footer__bar">
+        Gymkak © 2025 Web Design by yollaex.
+    </div>
+
+    <script src="/Gymkak/src/bodyanalysis/bodyanalysis-protection.js"></script>
+    <script src="/Gymkak/src/bodyanalysis/plan/plananalysis-protection.js"></script>
+    <script src="/Gymkak/src/bodyanalysis/plan/plananalysis.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+<style>
+    :root {
+        --bg: #0f0f10;
+        --bg-alt: #161617;
+        --panel: #1f1f21;
+        --panel-alt: #262628;
+        --br: #2f2f31;
+        --br-soft: #3a3a3d;
+        --tx: #f5f5f5;
+        --tx-dim: #b5b5b8;
+        --tx-faint: #8a8a8d;
+        --rad-sm: 6px;
+        --rad-md: 12px;
+        --rad-lg: 18px;
+        --tr: 0.28s cubic-bezier(.4, .0, .2, 1);
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--tx);
+        font-family: 'Sarabun', 'Prompt', sans-serif;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    /* Hero */
+    .pa-hero {
+        padding: 120px 0 80px;
+        background: linear-gradient(125deg, #121213, #0c0c0d 55%, #181819);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .pa-hero:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 15% 35%, rgba(255, 255, 255, .07), transparent 60%), radial-gradient(circle at 85% 70%, rgba(255, 255, 255, .05), transparent 65%);
+        pointer-events: none;
+    }
+
+    .pa-hero__inner {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 34px;
+        display: flex;
+        gap: 70px;
+        align-items: stretch;
+    }
+
+    .pa-hero__text {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .pa-hero__text h1 {
+        font-size: 3rem;
+        margin: 0 0 22px;
+        line-height: 1.1;
+        background: linear-gradient(90deg, #fff, #cfcfcf);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .pa-hero__text p {
+        margin: 0 0 34px;
+        line-height: 1.65;
+        color: var(--tx-dim);
+        font-size: 1.05rem;
+        max-width: 620px;
+    }
+
+    .pa-hero__panel {
+        width: 340px;
+        background: var(--panel);
+        border: 1px solid var(--br);
+        border-radius: var(--rad-lg);
+        padding: 28px 28px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+    }
+
+    .quick-metrics {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 18px;
+    }
+
+    .quick-metrics li {
+        display: flex;
+        justify-content: space-between;
+        background: var(--panel-alt);
+        border: 1px solid var(--br);
+        padding: 14px 16px 15px;
+        border-radius: var(--rad-sm);
+        font-size: .85rem;
+        letter-spacing: .6px;
+    }
+
+    .qm-value {
+        font-weight: 600;
+        color: #fff;
+    }
+
+    /* Wizard */
+    .pa-wizard {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 40px 34px 30px;
+    }
+
+    /* Toolbar and two-column layout */
+    .pw-toolbar {
+        display: flex;
+        gap: 10px;
+        margin: 6px 0 8px;
+    }
+
+    .tool-btn {
+        background: #1a1a1b;
+        color: var(--tx-dim);
+        border: 1px solid var(--br-soft);
+        border-radius: 40px;
+        padding: 8px 14px 9px;
+        font-size: .78rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        transition: var(--tr);
+    }
+
+    .tool-btn:hover {
+        color: #fff;
+        border-color: #fff;
+        transform: translateY(-2px);
+    }
+
+    .adv-toggle-wrapper {
+        margin: 10px 0 24px;
+    }
+
+    .adv-btn {
+        width: 100%;
+        background: linear-gradient(115deg, #202022, #2a2a2d 55%, #1b1b1c);
+        border: 1px solid var(--br);
+        border-radius: var(--rad-md);
+        padding: 14px 18px 16px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        cursor: pointer;
+        position: relative;
+        transition: var(--tr);
+        text-align: left;
+    }
+
+    .adv-btn:hover {
+        border-color: #fff;
+        transform: translateY(-4px);
+        box-shadow: 0 10px 28px -14px rgba(255, 255, 255, .35);
+    }
+
+    .adv-btn[aria-expanded="true"] {
+        background: linear-gradient(115deg, #262628, #323235 55%, #1f1f21);
+        border-color: #fff;
+    }
+
+    .adv-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        display: grid;
+        place-items: center;
+        background: #161617;
+        border: 1px solid var(--br-soft);
+        font-size: 1.4rem;
+        color: #eaeaea;
+    }
+
+    .adv-btn[aria-expanded="true"] .adv-icon {
+        background: #fff;
+        color: #000;
+        border-color: #fff;
+    }
+
+    .adv-text {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        line-height: 1.2;
+    }
+
+    .adv-text strong {
+        font-size: .9rem;
+        letter-spacing: .8px;
+    }
+
+    .adv-text em {
+        font-style: normal;
+        font-size: .65rem;
+        letter-spacing: .6px;
+        color: var(--tx-dim);
+        margin-top: 4px;
+        text-transform: uppercase;
+    }
+
+    .adv-state {
+        font-size: .6rem;
+        letter-spacing: .7px;
+        padding: 6px 10px 7px;
+        border: 1px solid var(--br-soft);
+        border-radius: 30px;
+        color: var(--tx-faint);
+        text-transform: uppercase;
+    }
+
+    .adv-btn[aria-expanded="true"] .adv-state {
+        background: #fff;
+        color: #000;
+        border-color: #fff;
+    }
+
+    .pw-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 360px;
+        gap: 24px;
+        align-items: start;
+    }
+
+    .pw-preview {
+        position: sticky;
+        top: 90px;
+        height: fit-content;
+    }
+
+    .pv-card {
+        background: var(--panel);
+        border: 1px solid var(--br);
+        border-radius: var(--rad-lg);
+        padding: 18px 18px 20px;
+    }
+
+    .pv-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+
+    .pv-title {
+        font-weight: 700;
+        letter-spacing: .4px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .pv-tag {
+        font-size: .65rem;
+        letter-spacing: .9px;
+        border: 1px solid var(--br-soft);
+        border-radius: 30px;
+        padding: 6px 10px 7px;
+        color: var(--tx-dim);
+    }
+
+    .pv-gauge {
+        display: grid;
+        place-items: center;
+        padding: 8px 0;
+    }
+
+    .gauge {
+        --ang: 0deg;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: conic-gradient(#fff var(--ang), rgba(255, 255, 255, .12) 0);
+        border: 1px solid var(--br);
+        position: relative;
+        display: grid;
+        place-items: center;
+        color: #fff;
+    }
+
+    .gauge:after {
+        content: "";
+        position: absolute;
+        inset: 12px;
+        border-radius: 50%;
+        background: var(--panel);
+        border: 1px solid var(--br);
+    }
+
+    .gauge strong,
+    .gauge .gauge-label {
+        position: relative;
+        z-index: 1;
+    }
+
+    .gauge .gauge-label {
+        font-size: .7rem;
+        color: var(--tx-faint);
+        letter-spacing: .7px;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 2px;
+    }
+
+    .pv-metrics {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .pv-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        background: var(--panel-alt);
+        border: 1px solid var(--br);
+        border-radius: 10px;
+        padding: 10px 12px 11px;
+    }
+
+    .pv-item em {
+        font-style: normal;
+        font-size: .7rem;
+        color: var(--tx-dim);
+        margin-left: 6px;
+    }
+
+    .pv-foot {
+        margin-top: 8px;
+        text-align: right;
+        color: var(--tx-faint);
+        font-size: .7rem;
+    }
+
+    .pw-header h2 {
+        margin: 0 0 10px;
+        font-size: 2.2rem;
+        background: linear-gradient(90deg, #fff, #d5d5d5);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .pw-header p {
+        margin: 0 0 34px;
+        color: var(--tx-dim);
+    }
+
+    .pw-form {
+        background: linear-gradient(145deg, #141516, #101112);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 22px;
+        padding: 42px 46px 48px;
+        position: relative;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .pw-grid {
+        display: grid;
+        gap: 22px 26px;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        margin: 0 0 28px;
+    }
+
+    .pw-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .pw-group label {
+        font-size: .7rem;
+        letter-spacing: .8px;
+        text-transform: uppercase;
+        color: var(--tx-faint);
+        font-weight: 700;
+    }
+
+    .pw-group input,
+    .pw-group select {
+        background: #141417;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: var(--tx);
+        padding: 14px 16px 13px;
+        border-radius: 12px;
+        font-size: .95rem;
+        transition: var(--tr);
+    }
+
+    .pw-group input:hover,
+    .pw-group select:hover {
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .pw-advanced {
+        background: linear-gradient(145deg, #18191b, #141517);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 28px 30px 32px;
+        border-radius: 16px;
+        margin-top: 20px;
+        position: relative;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+    }
+
+    .pw-advanced .adv-hint {
+        font-size: .65rem;
+        margin-top: 16px;
+        letter-spacing: .6px;
+        color: var(--tx-faint);
+    }
+
+    .advanced-grid {
+        margin-top: 6px;
+    }
+
+    .info {
+        display: inline-block;
+        background: var(--panel-alt);
+        border: 1px solid var(--br-soft);
+        width: 16px;
+        height: 16px;
+        line-height: 14px;
+        text-align: center;
+        font-size: .55rem;
+        border-radius: 50%;
+        cursor: pointer;
+        color: var(--tx-faint);
+        position: relative;
+        margin-left: 4px;
+    }
+
+    .info:hover:after {
+        content: attr(data-tip);
+        position: absolute;
+        left: 50%;
+        top: -8px;
+        transform: translate(-50%, -100%);
+        background: #000;
+        color: #fff;
+        padding: 8px 10px 9px;
+        font-size: .6rem;
+        width: max-content;
+        max-width: 240px;
+        white-space: normal;
+        border-radius: 6px;
+        line-height: 1.4;
+        letter-spacing: .5px;
+        box-shadow: 0 6px 20px -8px rgba(0, 0, 0, .6);
+        z-index: 50;
+    }
+
+    .pw-group input:focus,
+    .pw-group select:focus {
+        outline: none;
+        border-color: #fff;
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, .08);
+    }
+
+    .pw-subheader {
+        font-size: .72rem;
+        letter-spacing: 1px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--tx-faint);
+        margin: 6px 0 16px;
+    }
+
+    .goal-row {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .goal-card {
+        background: linear-gradient(145deg, #181a1d, #121315);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 26px 20px 28px;
+        border-radius: 16px;
+        text-align: center;
+        cursor: pointer;
+        transition: var(--tr);
+        position: relative;
+        overflow: hidden;
+        min-height: 160px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .goal-card:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 50% 35%, rgba(255, 255, 255, .08), transparent 70%);
+        opacity: 0;
+        transition: var(--tr);
+    }
+
+    .goal-card i {
+        font-size: 1.9rem;
+        display: block;
+        margin: 0 0 14px;
+        color: #ececec;
+    }
+
+    .goal-card h4 {
+        margin: 0 0 6px;
+        font-size: 1.05rem;
+        letter-spacing: .5px;
+    }
+
+    .goal-card p {
+        margin: 0;
+        font-size: .68rem;
+        letter-spacing: .6px;
+        text-transform: uppercase;
+        color: var(--tx-dim);
+    }
+
+    .goal-card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(255, 255, 255, 0.3);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+    }
+
+    .goal-card:hover:before {
+        opacity: 1;
+    }
+
+    .goal-card.active {
+        border-color: #fff;
+        box-shadow: 0 14px 32px rgba(255, 255, 255, .18);
+    }
+
+    .goal-card.active:before {
+        opacity: 1;
+    }
+
+    /* Reveal animation */
+    .reveal {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    .reveal.show {
+        opacity: 1;
+        transform: none;
+        transition: opacity .6s var(--tr), transform .6s var(--tr);
+    }
+
+    .pw-actions {
+        display: flex;
+        gap: 18px;
+        margin-top: 34px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        border: none;
+        cursor: pointer;
+        font-weight: 700;
+        letter-spacing: .8px;
+        border-radius: 50px;
+        font-size: .85rem;
+        padding: 14px 36px 15px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: var(--tr);
+        position: relative;
+    }
+
+    .btn-primary {
+        background: #fff;
+        color: #000;
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 26px -10px rgba(255, 255, 255, .45);
+    }
+
+    .btn-secondary {
+        background: #1a1a1b;
+        color: var(--tx-dim);
+        border: 1px solid var(--br-soft);
+    }
+
+    .btn-secondary:hover {
+        color: #fff;
+        border-color: #fff;
+        transform: translateY(-3px);
+    }
+
+    .btn-primary .loading-dot {
+        width: 16px;
+        height: 16px;
+        border: 2px solid rgba(0, 0, 0, .3);
+        border-top-color: #000;
+        border-radius: 50%;
+        animation: spin .9s linear infinite;
+        display: none;
+    }
+
+    .btn-primary.loading .btn-label {
+        opacity: .3;
+    }
+
+    .btn-primary.loading .loading-dot {
+        display: inline-block;
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Results */
+    .pa-results {
+        max-width: 1200px;
+        margin: 46px auto 120px;
+        padding: 0 34px;
+    }
+
+    .results-header h2 {
+        margin: 0 0 12px;
+        font-size: 2.2rem;
+        background: linear-gradient(90deg, #fff, #d5d5d5);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .results-header p {
+        margin: 0 0 40px;
+        color: var(--tx-dim);
+    }
+
+    .api-notice {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #1a1a1b;
+        border: 1px dashed var(--br-soft);
+        color: var(--tx-dim);
+        border-radius: 8px;
+        padding: 8px 12px 9px;
+        font-size: .8rem;
+    }
+
+    .metric-cards {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 0 auto 48px;
+        max-width: 1120px;
+        width: 100%;
+    }
+
+    .metric-card {
+        background: linear-gradient(145deg, #17191c, #121315);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        padding: 26px 22px 28px;
+        position: relative;
+        text-align: center;
+        overflow: hidden;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .metric-card:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 50% 25%, rgba(255, 255, 255, .08), transparent 70%);
+        opacity: .9;
+    }
+
+    .m-label {
+        font-size: .9rem;
+        letter-spacing: .3px;
+        font-weight: 700;
+        display: block;
+        margin-bottom: 12px;
+        color: #f0f3ff;
+        text-transform: none;
+    }
+
+    .m-desc {
+        display: block;
+        margin-top: 5px;
+        font-size: .84rem;
+        font-weight: 500;
+        color: #b7c8ea;
+        letter-spacing: .2px;
+    }
+
+    .m-value {
+        font-size: 2.35rem;
+        font-weight: 700;
+        display: block;
+        letter-spacing: .6px;
+        color: #ffffff;
+    }
+
+    .m-status {
+        font-size: .92rem;
+        letter-spacing: .2px;
+        text-transform: none;
+        color: #d0daef;
+        font-weight: 600;
+    }
+
+    .recommend-block {
+        background: linear-gradient(145deg, #151617, #101112);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        padding: 40px 42px 46px;
+        margin: 0 auto 46px;
+        max-width: 1120px;
+        width: 100%;
+        position: relative;
+        box-shadow: 0 16px 34px rgba(0, 0, 0, 0.28);
+    }
+
+    .recommend-block h3 {
+        margin: 0 0 26px;
+        font-size: 1.3rem;
+        letter-spacing: .2px;
+        font-weight: 700;
+        text-transform: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .section-hint {
+        margin: -8px 0 18px;
+        color: #c7d3eb;
+        font-size: 1rem;
+        line-height: 1.65;
+    }
+
+    .calorie-grid {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: repeat(5, minmax(150px, 185px));
+        justify-content: center;
+        max-width: 1050px;
+        margin: 0 auto;
+    }
+
+    .calorie-grid .cal-box {
+        background: linear-gradient(145deg, #17191b, #121315);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 18px 16px 20px;
+        border-radius: 14px;
+        text-align: center;
+        transition: var(--tr);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    }
+
+    .cal-box h5 {
+        margin: 0 0 6px;
+        font-size: .86rem;
+        letter-spacing: .4px;
+        text-transform: uppercase;
+        color: #c8d2ea;
+    }
+
+    .cal-box .cal-val {
+        font-size: 1.55rem;
+        font-weight: 700;
+        color: #ffffff;
+    }
+
+    .cal-box:hover {
+        transform: translateY(-4px);
+        border-color: #4b4b4d;
+    }
+
+    .program-grid {
+        display: grid;
+        gap: 28px;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .pg-card {
+        background: linear-gradient(145deg, #181a1d, #121315);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 28px 24px 32px;
+        border-radius: 16px;
+        position: relative;
+        overflow: hidden;
+        transition: var(--tr);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+    }
+
+    .pg-card:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, .08), transparent 70%);
+        opacity: 0;
+        transition: var(--tr);
+    }
+
+    .pg-card h4 {
+        margin: 0 0 10px;
+        font-size: 1.05rem;
+    }
+
+    .pg-card p {
+        margin: 0 0 18px;
+        font-size: .75rem;
+        line-height: 1.5;
+        color: var(--tx-dim);
+    }
+
+    .pg-card a {
+        background: #fff;
+        color: #000;
+        padding: 9px 22px 10px;
+        border-radius: 40px;
+        font-size: .7rem;
+        letter-spacing: .6px;
+        font-weight: 600;
+        display: inline-block;
+    }
+
+    .pg-card:hover {
+        transform: translateY(-6px);
+        border-color: #4b4b4d;
+    }
+
+    .pg-card:hover:before {
+        opacity: 1;
+    }
+
+    .combo-grid {
+        display: grid;
+        gap: 22px;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    }
+
+    .combo-card {
+        background: linear-gradient(145deg, #17191c, #121315);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 24px 20px 28px;
+        border-radius: 16px;
+        position: relative;
+        overflow: hidden;
+        transition: var(--tr);
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+    }
+
+    .combo-card:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, .07), transparent 70%);
+        opacity: 0;
+        transition: var(--tr);
+    }
+
+    .combo-card h5 {
+        margin: 0 0 8px;
+        font-size: .9rem;
+        letter-spacing: .6px;
+    }
+
+    .combo-card p {
+        margin: 0 0 10px;
+        font-size: .65rem;
+        letter-spacing: .6px;
+        text-transform: uppercase;
+        color: var(--tx-dim);
+    }
+
+    .combo-card .days {
+        font-size: .55rem;
+        letter-spacing: .8px;
+        padding: 4px 10px 5px;
+        border: 1px solid var(--br-soft);
+        border-radius: 30px;
+        display: inline-block;
+        color: var(--tx-faint);
+    }
+
+    .combo-card:hover {
+        transform: translateY(-5px);
+        border-color: #4b4b4d;
+    }
+
+    .combo-card:hover:before {
+        opacity: 1;
+    }
+
+    .lifestyle-grid {
+        display: grid;
+        gap: 22px;
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    }
+
+    .life-card {
+        background: linear-gradient(145deg, #17191b, #121315);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 24px 18px 26px;
+        text-align: center;
+        border-radius: 16px;
+        transition: var(--tr);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    }
+
+    .life-card h6 {
+        margin: 0 0 8px;
+        font-size: .6rem;
+        letter-spacing: .7px;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: var(--tx-faint);
+    }
+
+    .life-card p {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .life-card:hover {
+        transform: translateY(-5px);
+        border-color: #4b4b4d;
+    }
+
+    /* Kanban Workout Board */
+    .schedule-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .kanban-board {
+        background: #0f0f15;
+        border-radius: 16px;
+        padding: 32px 24px;
+        border: 1px solid #333;
+    }
+
+    .kanban-columns {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+    }
+
+    .kanban-column {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .column-header-kanban {
+        padding: 18px 16px;
+        border-radius: 12px 12px 0 0;
+        text-align: left;
+    }
+
+    .column-title {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 800;
+        color: #ffffff;
+        letter-spacing: 0.5px;
+    }
+
+    .schedule-header-with-download {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .schedule-header-with-download h3 {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .btn-download {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
+
+    .btn-download:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-download:active {
+        transform: translateY(0);
+    }
+
+    .btn-download:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    .btn-download i {
+        font-size: 1.1rem;
+    }
+
+    @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    .schedule-header-with-download {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .schedule-header-with-download h3 {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .btn-download {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
+
+    .btn-download:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-download:active {
+        transform: translateY(0);
+    }
+
+    .btn-download i {
+        font-size: 1.1rem;
+    }
+
+    .column-subtitle {
+        margin: 6px 0 0 0;
+        font-size: 0.8rem;
+        color: #bbb;
+        font-weight: 500;
+        letter-spacing: 0.3px;
+    }
+
+    .column-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        min-height: 300px;
+    }
+
+    .exercise-card {
+        background: #1a1a22;
+        padding: 16px;
+        border-radius: 10px;
+        border: 1px solid #333;
+        transition: all 0.2s ease;
+        cursor: grab;
+    }
+
+    .exercise-card:hover {
+        border-color: #555;
+        background: #1f1f28;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .exercise-card:active {
+        cursor: grabbing;
+    }
+
+    .card-title {
+        margin: 0 0 8px 0;
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: #ffffff;
+        line-height: 1.3;
+    }
+
+    .card-sets {
+        margin: 0;
+        font-size: 0.8rem;
+        color: #999;
+        font-weight: 500;
+    }
+
+    .card-empty {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        min-height: 300px;
+        border: 2px dashed #555;
+        border-radius: 10px;
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .card-empty:hover {
+        border-color: #888;
+        background: rgba(255, 255, 255, 0.02);
+    }
+
+    .empty-icon {
+        font-size: 2.5rem;
+        color: #666;
+        font-weight: 300;
+        line-height: 1;
+    }
+
+    .empty-text {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #888;
+        font-weight: 500;
+    }
+
+    /* Weekly Schedule CSS */
+    .weekly-schedule {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+        background: #0f0f15;
+        border-radius: 16px;
+        padding: 28px;
+        border: 1px solid #333;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .weekly-day {
+        display: flex;
+        flex-direction: column;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #1a1a22;
+        border: 1px solid #333;
+        transition: all 0.2s ease;
+    }
+
+    .weekly-day:hover {
+        border-color: #555;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .day-header {
+        padding: 18px 16px;
+        text-align: left;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    }
+
+    .day-name {
+        margin: 0;
+        font-size: 0.8rem;
+        color: #ccc;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .day-type {
+        margin: 8px 0 6px 0;
+        font-size: 1.15rem;
+        font-weight: 800;
+        color: #ffffff;
+        letter-spacing: 0.5px;
+    }
+
+    .day-subtitle {
+        margin: 4px 0 0 0;
+        font-size: 0.75rem;
+        color: #bbb;
+        font-weight: 500;
+        line-height: 1.3;
+    }
+
+    .day-content {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px;
+        min-height: 220px;
+        overflow-y: auto;
+    }
+
+    .rest-indicator {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-height: 220px;
+        border: 2px dashed #555;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.02);
+    }
+
+    .rest-text {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #aaa;
+    }
+
+    .rest-desc {
+        margin: 0;
+        font-size: 0.85rem;
+        color: #888;
+    }
+
+    .day-exercise {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 12px 14px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: all 0.15s ease;
+        cursor: pointer;
+    }
+
+    .day-exercise:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .ex-name {
+        margin: 0 0 6px 0;
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.3;
+    }
+
+    .ex-sets {
+        margin: 0;
+        font-size: 0.8rem;
+        color: #bbb;
+        font-weight: 500;
+    }
+
+    .empty-icon {
+        font-size: 2.5rem;
+        color: #666;
+        font-weight: 300;
+    }
+
+    @media (max-width: 1400px) {
+        .kanban-board {
+            padding: 24px 20px;
+        }
+
+        .kanban-columns {
+            gap: 16px;
+        }
+
+        .column-cards {
+            min-height: 250px;
+        }
+
+        .card-empty {
+            min-height: 250px;
+        }
+
+        .weekly-schedule {
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            padding: 20px;
+        }
+
+        .day-content {
+            min-height: 180px;
+        }
+
+        .rest-indicator {
+            min-height: 180px;
+        }
+    }
+
+    @media (max-width: 1200px) {
+        .kanban-columns {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .column-title {
+            font-size: 1rem;
+        }
+
+        .card-title {
+            font-size: 0.9rem;
+        }
+
+        .metric-cards {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .calorie-grid {
+            grid-template-columns: repeat(3, minmax(160px, 220px));
+        }
+
+        .weekly-schedule {
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+            padding: 16px;
+        }
+
+        .day-content {
+            min-height: 160px;
+        }
+
+        .rest-indicator {
+            min-height: 160px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .kanban-board {
+            padding: 20px 16px;
+        }
+
+        .kanban-columns {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .column-header-kanban {
+            padding: 14px 12px;
+        }
+
+        .metric-cards {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+
+        .section-hint {
+            font-size: .95rem;
+            line-height: 1.55;
+        }
+
+        .calorie-grid {
+            grid-template-columns: repeat(2, minmax(150px, 1fr));
+        }
+
+        .weekly-schedule {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 12px;
+        }
+
+        .day-header {
+            padding: 12px 10px;
+        }
+
+        .day-name {
+            font-size: 0.65rem;
+        }
+
+        .day-type {
+            font-size: 0.9rem;
+        }
+
+        .day-subtitle {
+            font-size: 0.65rem;
+        }
+
+        .day-content {
+            padding: 8px;
+            gap: 8px;
+            min-height: 140px;
+        }
+
+        .rest-indicator {
+            min-height: 140px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .kanban-board {
+            padding: 16px 12px;
+        }
+
+        .kanban-columns {
+            grid-template-columns: 1fr;
+        }
+
+        .metric-cards {
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .m-value {
+            font-size: 2rem;
+        }
+
+        .m-status {
+            font-size: .85rem;
+        }
+
+        .section-hint {
+            font-size: .9rem;
+        }
+
+        .calorie-grid {
+            grid-template-columns: 1fr;
+            max-width: 360px;
+        }
+
+        .weekly-schedule {
+            grid-template-columns: 1fr;
+            gap: 8px;
+            padding: 8px;
+        }
+
+        .day-header {
+            padding: 10px 8px;
+        }
+
+        .day-name {
+            font-size: 0.6rem;
+        }
+
+        .day-type {
+            font-size: 0.85rem;
+            margin: 4px 0 2px 0;
+        }
+
+        .day-subtitle {
+            font-size: 0.6rem;
+        }
+
+        .day-content {
+            padding: 6px;
+            gap: 6px;
+            min-height: 120px;
+        }
+
+        .rest-indicator {
+            min-height: 120px;
+        }
+
+        .column-title {
+            font-size: 0.95rem;
+        }
+
+        .column-subtitle {
+            font-size: 0.75rem;
+        }
+
+        .exercise-card {
+            padding: 12px;
+        }
+
+        .card-title {
+            font-size: 0.85rem;
+        }
+
+        .card-sets {
+            font-size: 0.75rem;
+        }
+
+        .column-cards {
+            min-height: 200px;
+        }
+
+        .card-empty {
+            min-height: 200px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .kanban-board {
+            padding: 16px 12px;
+        }
+
+        .kanban-columns {
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .column-cards {
+            min-height: 150px;
+        }
+
+        .card-empty {
+            min-height: 150px;
+        }
+    }
+
+    .loading-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(5, 6, 8, 0.75);
+        backdrop-filter: blur(6px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s ease, visibility 0.2s ease;
+        z-index: 2500;
+    }
+
+    .loading-overlay.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .loading-card {
+        background: linear-gradient(145deg, #1b1d20, #111214);
+        border: 1px solid var(--br);
+        border-radius: 18px;
+        padding: 28px 30px 24px;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+        text-align: center;
+        width: min(320px, 90vw);
+    }
+
+    .loading-spinner {
+        width: 52px;
+        height: 52px;
+        border: 3px solid rgba(255, 255, 255, 0.15);
+        border-top-color: #ff5722;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 14px;
+    }
+
+    .loading-title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: var(--tx);
+        margin-bottom: 6px;
+    }
+
+    .loading-subtitle {
+        font-size: 0.85rem;
+        color: var(--tx-faint);
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .schedule-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .schedule-day {
+            padding: 22px;
+        }
+
+        .schedule-day__badge {
+            width: 48px;
+            height: 48px;
+            font-size: 1.5rem;
+        }
+
+        .schedule-day__title h4 {
+            font-size: 1.15rem;
+        }
+    }
+
+    /* Premium */
+    .premium-upsell {
+        background: linear-gradient(145deg, #1f1f21, #141415);
+        border: 3px solid #ffffff;
+        border-radius: var(--rad-lg);
+        padding: 50px 48px 56px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15);
+        transition: all 0.4s ease;
+    }
+    
+    .premium-upsell::before {
+        content: "";
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        right: -3px;
+        bottom: -3px;
+        border-radius: var(--rad-lg);
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            #ffffff 25%,
+            #ffffff 50%, 
+            transparent 75%,
+            transparent 100%);
+        background-size: 400% 400%;
+        background-position: 0% 0%;
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+        padding: 3px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .premium-upsell:hover::before {
+        opacity: 1;
+        animation: borderSlide 1.5s ease-in-out;
+    }
+    
+    @keyframes borderSlide {
+        0% {
+            background-position: 0% 0%;
+        }
+        25% {
+            background-position: 100% 0%;
+        }
+        50% {
+            background-position: 100% 100%;
+        }
+        75% {
+            background-position: 0% 100%;
+        }
+        100% {
+            background-position: 0% 0%;
+        }
+    }
+    
+    .premium-upsell:hover {
+        box-shadow: 0 12px 32px rgba(255, 255, 255, 0.35);
+        transform: translateY(-2px);
+    }
+
+    .premium-upsell:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, .1), transparent 70%);
+        opacity: .6;
+    }
+
+    .premium-badge {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: #fff;
+        color: #000;
+        font-size: .75rem;
+        font-weight: 900;
+        letter-spacing: 2px;
+        padding: 10px 18px;
+        border-radius: 30px;
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+        animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.05);
+        }
+    }
+
+    .premium-upsell h3 {
+        margin: 0 0 16px;
+        font-size: 2rem;
+        font-weight: 800;
+        background: linear-gradient(90deg, #fff, #e6e6e6);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+    }
+
+    .premium-upsell p {
+        margin: 0 0 28px;
+        line-height: 1.65;
+        color: #d9d9d9;
+        max-width: 780px;
+        font-size: 1rem;
+    }
+
+    .premium-benefits {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 36px;
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .premium-benefits li {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        font-size: .75rem;
+        background: var(--panel-alt);
+        border: 1px solid var(--br);
+        padding: 10px 14px 11px;
+        border-radius: var(--rad-sm);
+        color: var(--tx-dim);
+    }
+
+    .premium-benefits li i {
+        color: #fff;
+        font-size: 1rem;
+        margin-top: 1px;
+    }
+
+    .premium-btn {
+        background: #fff;
+        color: #000;
+        padding: 14px 38px 15px;
+        border-radius: 50px;
+        font-size: .8rem;
+        letter-spacing: .9px;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+    }
+
+    .premium-btn:hover {
+        cursor: pointer;
+        transform: translateY(-4px);
+        box-shadow: 0 10px 28px -10px rgba(255, 255, 255, .45);
+    }
+
+    /* Enhancements */
+    .form-progress {
+        height: 6px;
+        background: #181819;
+        border: 1px solid var(--br);
+        border-radius: 4px;
+        margin: -10px 0 24px;
+        overflow: hidden;
+    }
+
+    .form-progress__bar {
+        height: 100%;
+        background: linear-gradient(90deg, #fff, #5e5e5f);
+        transition: width .4s var(--tr);
+    }
+
+    .input-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .input-wrapper i {
+        position: absolute;
+        left: 12px;
+        color: var(--tx-faint);
+        font-size: 1rem;
+        pointer-events: none;
+    }
+
+    .input-wrapper input {
+        padding-left: 38px !important;
+        width: 100%;
+    }
+
+    .inline-error {
+        font-size: .7rem;
+        color: #ff6b6b;
+        letter-spacing: .5px;
+        font-weight: 600;
+        opacity: 0;
+        transition: opacity .4s;
+        align-self: center;
+    }
+
+    .inline-error.show {
+        opacity: 1;
+    }
+
+    .form-messages {
+        font-size: .7rem;
+        letter-spacing: .6px;
+        color: var(--tx-dim);
+        margin: -6px 0 18px;
+        min-height: 14px;
+    }
+
+    .visually-hidden {
+        position: absolute !important;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    /* Theme & compact toggles */
+    body.alt-theme {
+        --bg: #f7f7f8;
+        --bg-alt: #ffffff;
+        --panel: #ffffff;
+        --panel-alt: #f3f3f5;
+        --br: #e5e6ea;
+        --br-soft: #d7d8dd;
+        --tx: #101114;
+        --tx-dim: #4b4d53;
+        --tx-faint: #8d9096;
+    }
+
+    body.compact .pa-hero {
+        padding: 80px 0 40px;
+    }
+
+    body.compact .pw-form {
+        padding: 26px 28px 30px;
+    }
+
+    body.compact .pw-header p {
+        display: none;
+    }
+
+    body.compact .pw-layout {
+        grid-template-columns: 1fr;
+    }
+
+    body.compact .pw-preview {
+        display: none;
+    }
+
+    /* Responsive */
+    @media (max-width:1080px) {
+        .pa-hero__inner {
+            flex-direction: column;
+        }
+
+        .pa-hero__panel {
+            width: 100%;
+            order: 2;
+        }
+
+        .pa-hero__text {
+            order: 1;
+        }
+
+        .pw-layout {
+            grid-template-columns: 1fr;
+        }
+
+        .pw-preview {
+            position: static;
+        }
+    }
+
+    @media (max-width:780px) {
+        .pa-hero__text h1 {
+            font-size: 2.4rem;
+        }
+
+        .pw-form {
+            padding: 34px 30px 40px;
+        }
+
+        .premium-upsell {
+            padding: 46px 40px 52px;
+        }
+    }
+
+    @media (max-width:560px) {
+        .pa-hero__text h1 {
+            font-size: 2rem;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .pw-actions {
+            flex-direction: column;
+        }
+    }
+</style>
+
+<script>
+    function scrollToSection(sel) { const el = document.querySelector(sel); if (el) el.scrollIntoView({ behavior: 'smooth' }); }
+    const goalCardsHandler = () => { const cards = [...document.querySelectorAll('.goal-card')]; cards.forEach(c => c.addEventListener('click', () => { cards.forEach(o => o.classList.remove('active')); c.classList.add('active'); document.getElementById('goal').value = c.dataset.goal; updatePreviewGoal(); updateProgress(); livePreview(); saveDraft(); })); };
+    document.addEventListener('DOMContentLoaded', () => {
+        goalCardsHandler();
+        ['age', 'height', 'weight', 'hip', 'waist', 'neck', 'manualBf'].forEach(id => { const el = document.getElementById(id); if (el) { el.addEventListener('input', () => { livePreview(); updateProgress(); saveDraft(); }); } });
+        document.getElementById('gender').addEventListener('change', e => { document.querySelector('.female-only').style.display = e.target.value === 'female' ? 'flex' : 'none'; updateProgress(); livePreview(); saveDraft(); });
+        document.getElementById('activity').addEventListener('change', () => { livePreview(); saveDraft(); });
+        document.getElementById('bmrFormula').addEventListener('change', () => { livePreview(); saveDraft(); });
+        loadDraft();
+        updateProgress();
+        initReveal();
+    });
+
+    async function analyzeBody() {
+        clearFormErrors();
+        const btn = document.getElementById('analyzeBtn'); if (btn.classList.contains('loading')) return; const goal = document.getElementById('goal').value; if (!goal) { formError('กรุณาเลือกเป้าหมาย'); return; }
+        const payload = { gender: val('gender'), age: int('age'), height: flt('height'), weight: flt('weight'), hip: (val('gender') === 'female') ? flt('hip') : undefined, waist: flt('waist'), neck: flt('neck'), manual_bf: flt('manualBf'), activity: val('activity'), goal: goal, bmr_formula: val('bmrFormula') };
+        if (!validatePayload(payload)) return; btn.classList.add('loading'); btn.disabled = true; showLoadingOverlay();
+        const minDelay = new Promise(resolve => setTimeout(resolve, 4000));
+        let apiData = null; let usedFallback = false;
+        const fetchPromise = (async () => {
+            try { const r = await fetch('http://localhost:8000/api/analyze', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }); if (r.ok) apiData = await r.json(); } catch (e) { console.warn('API offline using fallback'); }
+        })();
+        await Promise.all([minDelay, fetchPromise]);
+        if (apiData) { await bindAPIResult(apiData, payload); } else { await localFallback(payload); usedFallback = true; }
+        const note = document.getElementById('apiNotice'); if (note) note.style.display = usedFallback ? 'inline-flex' : 'none';
+        document.getElementById('resultsSection').style.display = 'block'; scrollToSection('#resultsSection'); btn.classList.remove('loading'); btn.disabled = false; hideLoadingOverlay();
+    }
+
+    function showLoadingOverlay() {
+        const overlay = document.getElementById('loadingOverlay');
+        if (overlay) overlay.classList.add('show');
+    }
+
+    function hideLoadingOverlay() {
+        const overlay = document.getElementById('loadingOverlay');
+        if (overlay) overlay.classList.remove('show');
+    }
+
+    function val(id) { return document.getElementById(id).value; }
+    function int(id) { return parseInt(val(id)); }
+    function flt(id) { const v = parseFloat(val(id)); return isNaN(v) ? undefined : v; }
+    function validatePayload(p) { const missing = []; if (!p.gender) missing.push('เพศ'); if (!p.age) missing.push('อายุ'); if (!p.height) missing.push('ส่วนสูง'); if (!p.weight) missing.push('น้ำหนัก'); if (missing.length) { formError('กรุณากรอก: ' + missing.join(', ')); return false; } if (!guardInputs(p)) return false; return true; }
+
+    function guardInputs(p) {
+        const errs = [];
+        if (p.age && (p.age < 10 || p.age > 85)) errs.push('อายุผิดปกติ');
+        if (p.height && (p.height < 100 || p.height > 230)) errs.push('ส่วนสูงผิดปกติ');
+        if (p.weight && (p.weight < 30 || p.weight > 250)) errs.push('น้ำหนักผิดปกติ');
+        if (typeof p.manual_bf === 'number' && (p.manual_bf < 3 || p.manual_bf > 60)) errs.push('Body Fat ต้องอยู่ระหว่าง 3-60%');
+        if (typeof p.waist === 'number' && (p.waist < 18 || p.waist > 180)) errs.push('รอบเอวผิดปกติ');
+        if (typeof p.neck === 'number' && (p.neck < 10 || p.neck > 70)) errs.push('รอบคอผิดปกติ');
+        if (p.gender === 'female' && typeof p.hip === 'number' && (p.hip < 20 || p.hip > 190)) errs.push('รอบสะโพกผิดปกติ');
+        if (p.height && p.weight) {
+            const bmi = p.weight / ((p.height / 100) ** 2);
+            if (bmi < 12 || bmi > 55) errs.push('ค่า BMI ที่คำนวณได้ผิดปกติ');
+        }
+        if (p.gender === 'male' && typeof p.waist === 'number' && typeof p.neck === 'number' && p.waist <= p.neck) errs.push('รอบเอวต้องมากกว่ารอบคอสำหรับการคำนวณผู้ชาย');
+        if (p.gender === 'female' && typeof p.waist === 'number' && typeof p.neck === 'number' && typeof p.hip === 'number' && (p.waist + p.hip) <= p.neck) errs.push('รอบเอว + สะโพกต้องมากกว่ารอบคอสำหรับการคำนวณผู้หญิง');
+        if (errs.length) { formError(errs.join(' | ')); return false; }
+        return true;
+    }
+
+    async function localFallback(p) { const bmi = p.weight / ((p.height / 100) ** 2); const bf = resolveBodyFat(p, bmi); const bmr = calcBMR(p.bmr_formula || 'mifflin', p.gender, p.weight, p.height, p.age, bf); const act = { sedentary: 1.2, light: 1.375, moderate: 1.55, active: 1.725, 'very-active': 1.9 }; const tdee = bmr * act[p.activity]; const profile = buildAnalysisProfile(p, bmi, bf, tdee); const macros = macroSuggestion(p.goal, p.weight, profile); renderMetrics({ bmi: bmi.toFixed(2), bmr: Math.round(bmr), tdee: Math.round(tdee), body_fat: bf }, p.gender); renderMacros(macros); renderCaloriePlan(tdee, false, profile); programSuggest(p.goal); await renderWorkoutSchedule({ ...p, bmi, body_fat: bf, tdee }); renderCombos(p); renderLifestyle(p, tdee); togglePremium(p, bmi); updateQuick(bmi, bmr, tdee, bf); summaryLine(p, bmi); }
+    async function bindAPIResult(api, payload) {
+        let metrics = { ...api.metrics }; // override BMR/TDEE if user chose different formula
+        const formula = payload.bmr_formula || 'mifflin';
+        if (formula !== 'harris' || payload.manual_bf || payload.waist || payload.neck) { // recompute when user chose other formula or supplied improved BF
+            const bmiVal = parseFloat(metrics.bmi);
+            const bfEst = resolveBodyFat(payload, bmiVal, metrics.body_fat);
+            const newBmr = calcBMR(formula, payload.gender, payload.weight, payload.height, payload.age, bfEst);
+            const act = { sedentary: 1.2, light: 1.375, moderate: 1.55, active: 1.725, 'very-active': 1.9 };
+            metrics.bmr = Math.round(newBmr);
+            metrics.tdee = Math.round(newBmr * act[payload.activity]);
+            metrics.body_fat = bfEst;
+        }
+        const profile = buildAnalysisProfile(payload, parseFloat(metrics.bmi), metrics.body_fat, metrics.tdee);
+        const computedMacros = macroSuggestion(payload.goal, payload.weight, profile);
+        const macros = (api.macros && typeof api.macros.protein_g === 'number' && typeof api.macros.fat_g === 'number') ? api.macros : computedMacros;
+        renderMetrics(metrics, payload.gender, api.status); renderMacros(macros); renderCaloriePlan(api.calorie_plan, true, profile); programSuggest(payload.goal, api.program_suggestions); await renderWorkoutSchedule({ ...payload, bmi: parseFloat(metrics.bmi), body_fat: metrics.body_fat, tdee: metrics.tdee }); renderCombos(payload); renderLifestyle(payload, metrics.tdee); togglePremium(payload, metrics.bmi); updateQuick(metrics.bmi, metrics.bmr, metrics.tdee, metrics.body_fat); summaryLine(payload, metrics.bmi);
+    }
+
+    function renderMetrics(m, gender, status) { document.getElementById('r-bmi').textContent = m.bmi; document.getElementById('qm-bmi').textContent = m.bmi; document.getElementById('r-bmr').textContent = m.bmr; document.getElementById('qm-bmr').textContent = m.bmr; document.getElementById('r-tdee').textContent = m.tdee; document.getElementById('qm-tdee').textContent = m.tdee; const bmiStat = status ? status.bmi : bmiStatus(parseFloat(m.bmi)); document.getElementById('r-bmi-status').textContent = bmiStat; let bfText = '—', bfStat = '-'; if (m.body_fat !== null && m.body_fat !== undefined) { bfText = m.body_fat + '%'; bfStat = status ? status.body_fat : bodyFatStatus(parseFloat(m.body_fat), gender); } document.getElementById('r-bf').textContent = bfText; document.getElementById('qm-bf').textContent = bfText; document.getElementById('r-bf-status').textContent = bfStat; }
+    function bmiStatus(v) { if (v < 18.5) return 'น้ำหนักต่ำ'; if (v < 23) return 'ปกติ'; if (v < 25) return 'เริ่มเกิน'; if (v < 30) return 'น้ำหนักเกิน'; return 'อ้วน'; }
+    function bodyFatStatus(v, g) { if (g === 'male') { if (v < 10) return 'ต่ำมาก'; if (v < 15) return 'ต่ำ'; if (v < 20) return 'ปกติ'; return 'สูง'; } else { if (v < 16) return 'ต่ำมาก'; if (v < 20) return 'ต่ำ'; if (v < 25) return 'ปกติ'; return 'สูง'; } }
+    function buildAnalysisProfile(p, bmi, bodyFat, tdee) {
+        const bf = Number(bodyFat);
+        const activity = p.activity || 'moderate';
+        const age = Number(p.age) || 30;
+        const isBeginner = activity === 'sedentary' || activity === 'light';
+        const isAdvanced = activity === 'active' || activity === 'very-active';
+        const isHighFat = (Number.isFinite(bf) && bf >= 25) || bmi >= 27;
+        const isVeryHighFat = (Number.isFinite(bf) && bf >= 32) || bmi >= 32;
+        const isSenior = age >= 50;
+        const lowImpactOnly = isVeryHighFat || isSenior;
+        return {
+            gender: p.gender,
+            age,
+            bmi,
+            bodyFat: Number.isFinite(bf) ? bf : null,
+            tdee: Number(tdee) || 0,
+            activity,
+            goal: p.goal || 'maintain',
+            isBeginner,
+            isAdvanced,
+            isHighFat,
+            isVeryHighFat,
+            isSenior,
+            lowImpactOnly
+        };
+    }
+    function macroSuggestion(goal, w, profile = {}) {
+        const bodyFat = Number(profile.bodyFat);
+        const hasHighFat = Number.isFinite(bodyFat) ? bodyFat >= 25 : (Number(profile.bmi) >= 27);
+        const activity = profile.activity || 'moderate';
+        const isVeryActive = activity === 'active' || activity === 'very-active';
+        let proteinPerKg = 1.6;
+        if (goal === 'build-muscle') proteinPerKg = isVeryActive ? 2.2 : 2.0;
+        if (goal === 'tone') proteinPerKg = 1.9;
+        if (goal === 'lose-weight') proteinPerKg = hasHighFat ? 1.8 : 2.0;
+        let fatPerKg = 0.8;
+        if (goal === 'lose-weight') fatPerKg = hasHighFat ? 0.7 : 0.75;
+        if (goal === 'build-muscle') fatPerKg = 0.9;
+        if (goal === 'maintain') fatPerKg = 0.8;
+        const protein = Math.max(60, Math.round(proteinPerKg * w));
+        const fat = Math.max(35, Math.round(fatPerKg * w));
+        return { protein_g: protein, fat_g: fat };
+    }
+    function renderMacros(mac) { document.getElementById('r-protein').textContent = mac.protein_g; document.getElementById('r-fat').textContent = mac.fat_g; }
+    function renderCaloriePlan(data, fromAPI = false, profile = {}) {
+        const c = document.getElementById('caloriePlan');
+        const safeFloor = profile.gender === 'male' ? 1500 : 1200;
+        const maintain = Math.round(Number(profile.tdee || data || 0));
+        let plan = {};
+        if (fromAPI && data && typeof data === 'object') {
+            plan = data;
+        } else {
+            plan = {
+                maintain: maintain,
+                lose_weight: Math.max(safeFloor, maintain - 500),
+                build_muscle: Math.max(safeFloor, maintain + 300),
+                mild_deficit: Math.max(safeFloor, maintain - 250),
+                mild_surplus: Math.max(safeFloor, maintain + 150)
+            };
+        }
+        c.innerHTML = Object.entries(plan).map(([k, v]) => `<div class='cal-box reveal'><h5>${labelCal(k)}</h5><div class='cal-val'>${Math.round(Number(v) || 0)}</div></div>`).join('');
+        initReveal(true);
+    }
+    function labelCal(k) { return { maintain: 'Maintain', lose_weight: 'Cut (-500)', build_muscle: 'Bulk (+300)', mild_deficit: 'Mild -250', mild_surplus: 'Mild +150' }[k] || k; }
+    function programSuggest(goal, apiPrograms) { const baseMap = { 'lose-weight': [{ name: 'Cardio Training', desc: 'ระบบเผาผลาญ + หัวใจ', link: '/src/program/cardio/cardio.html' }, { name: 'Weight Training', desc: 'รักษากล้ามเนื้อ while cutting', link: '/src/program/weight/weight.html' }], 'build-muscle': [{ name: 'Weight Training', desc: 'Progressive Overload', link: '/src/program/weight/weight.html' }, { name: 'Calisthenics', desc: 'ควบคุมร่างกาย + Core', link: '/src/program/calisthenics/calisthenics.html' }], 'maintain': [{ name: 'Bodyweight', desc: 'ง่าย คล่องตัว', link: '/src/program/bodyweight/bodyweight.html' }, { name: 'Cardio', desc: 'สมดุลหัวใจหลอดเลือด', link: '/src/program/cardio/cardio.html' }], 'tone': [{ name: 'Calisthenics', desc: 'กระชับ คมชัด', link: '/src/program/calisthenics/calisthenics.html' }, { name: 'Cardio', desc: 'ลดไขมันบางส่วน', link: '/src/program/cardio/cardio.html' }] }; const arr = apiPrograms ? apiPrograms : baseMap[goal] || []; document.getElementById('programSuggest').innerHTML = arr.map(p => `<div class='pg-card reveal'><h4>${p.name}</h4><p>${p.description || p.desc}</p><a href='${p.link}'>เริ่ม</a></div>`).join(''); initReveal(true); }
+    function renderCombos(input) { const combos = [{ n: 'Push / Pull / Legs', d: 'เพิ่มกล้ามเนื้อกระจาย', days: 6 }, { n: 'Upper / Lower', d: 'บาลานซ์ ฟื้นตัวไว', days: 4 }, { n: 'Full Body + Cardio', d: 'เผาผลาญ + รักษากล้ามเนื้อ', days: 3 }, { n: 'Strength + MetCon', d: 'กำลัง + เผาผลาญ', days: 5 }]; document.getElementById('comboGrid').innerHTML = combos.map(c => `<div class='combo-card reveal'><h5>${c.n}</h5><p>${c.d}</p><span class='days'>${c.days} วัน/สัปดาห์</span></div>`).join(''); initReveal(true); }
+    
+    async function renderWorkoutSchedule(profileInput) {
+        const profile = (typeof profileInput === 'string')
+            ? { goal: profileInput, activity: 'moderate', bmi: 23, body_fat: 20, tdee: 2200 }
+            : (profileInput || { goal: 'maintain', activity: 'moderate', bmi: 23, body_fat: 20, tdee: 2200 });
+
+        const normalizeBodyFat = () => {
+            const bf = Number(profile.body_fat);
+            return Number.isFinite(bf) ? bf : 20;
+        };
+
+        const hashSeed = (value) => {
+            const text = String(value || 'default');
+            let hash = 0;
+            for (let index = 0; index < text.length; index += 1) {
+                hash = ((hash << 5) - hash) + text.charCodeAt(index);
+                hash |= 0;
+            }
+            return Math.abs(hash);
+        };
+
+        const pickExercises = (pool, count, seedText) => {
+            if (!pool || pool.length === 0) return [];
+            const picked = [];
+            const safeCount = Math.min(count, Math.max(1, pool.length));
+            const start = hashSeed(seedText) % pool.length;
+            for (let index = 0; index < safeCount; index += 1) {
+                picked.push(pool[(start + index) % pool.length]);
+            }
+            return picked;
+        };
+
+        function getTrainingStrategy(goal, activity, bmi, bodyFat, age) {
+            const isHighFat = bodyFat >= 25 || bmi >= 27;
+            const isVeryHighFat = bodyFat >= 32 || bmi >= 32;
+            const isBeginner = activity === 'sedentary' || activity === 'light';
+            const isAdvanced = activity === 'active' || activity === 'very-active';
+            const isSenior = age >= 50;
+
+            let strengthCount = isAdvanced ? 6 : isBeginner ? 4 : 5;
+            if (goal === 'build-muscle') strengthCount += 1;
+            if (goal === 'lose-weight' && isHighFat) strengthCount -= 1;
+            if (isSenior) strengthCount -= 1;
+            strengthCount = Math.max(3, Math.min(7, strengthCount));
+
+            let legCount = Math.max(3, Math.min(6, strengthCount - (isBeginner ? 1 : 0)));
+            if (goal === 'build-muscle') legCount = Math.min(6, legCount + 1);
+
+            let cardioCount = 3;
+            if (goal === 'lose-weight') cardioCount = isVeryHighFat ? 5 : 4;
+            else if (goal === 'tone') cardioCount = 4;
+            else if (goal === 'build-muscle') cardioCount = isHighFat ? 3 : 2;
+            else if (isHighFat) cardioCount = 4;
+
+            let cardioMinutes = 25;
+            if (goal === 'lose-weight') cardioMinutes = isVeryHighFat ? 40 : 32;
+            if (goal === 'tone') cardioMinutes = 28;
+            if (goal === 'build-muscle') cardioMinutes = isHighFat ? 22 : 18;
+            if (isSenior) cardioMinutes += 5;
+
+            const lowImpactOnly = isVeryHighFat || isSenior;
+            return { strengthCount, legCount, cardioCount, cardioMinutes, lowImpactOnly, isBeginner, isHighFat };
+        }
+
+        const goal = profile.goal || 'maintain';
+        const activity = profile.activity || 'moderate';
+        const bmi = Number(profile.bmi) || 23;
+        const bodyFat = normalizeBodyFat();
+        const age = Number(profile.age) || 30;
+
+        const isHighFat = bodyFat >= 25 || bmi >= 27;
+        const isBeginner = activity === 'sedentary' || activity === 'light';
+        const isAdvanced = activity === 'active' || activity === 'very-active';
+
+        const strengthPrescription = {
+            'build-muscle': '4 sets • 6-10',
+            'lose-weight': '3 sets • 10-15',
+            'tone': '3 sets • 12-15',
+            'maintain': '3 sets • 8-12'
+        };
+
+        const strategy = getTrainingStrategy(goal, activity, bmi, bodyFat, age);
+        const cardioMinutes = strategy.cardioMinutes;
+
+        const strengthSets = strengthPrescription[goal] || strengthPrescription['maintain'];
+
+        // Fallback exercise pool if API fails
+        const exercisePool = {
+            push: ['Bench Press', 'Incline Dumbbell Press', 'Machine Chest Press', 'Lateral Raise', 'Cable Chest Fly', 'Shoulder Press', 'Triceps Pushdown', 'Overhead Triceps Extension', 'Dips (Assisted)'],
+            pull: ['Lat Pulldown', 'Seated Cable Row', 'One-Arm Dumbbell Row', 'Pull-ups (Assisted)', 'Face Pull', 'Barbell Curl', 'Hammer Curl', 'Rear Delt Fly', 'Straight Arm Pulldown'],
+            legs: ['Back Squat', 'Romanian Deadlift', 'Leg Press', 'Walking Lunges', 'Leg Curl', 'Leg Extension', 'Bulgarian Split Squat', 'Standing Calf Raise', 'Hip Thrust'],
+            cardio: ['Treadmill (Incline Walk/Run)', 'Rowing Machine', 'Stationary Bike', 'Elliptical', 'Jump Rope', 'Stair Climber', 'High Knees', 'Jumping Jacks', 'Shadow Boxing']
+        };
+
+        const lowImpactPool = {
+            push: ['Machine Chest Press', 'Incline Dumbbell Press', 'Cable Chest Fly', 'Shoulder Press', 'Triceps Pushdown', 'Overhead Triceps Extension'],
+            pull: ['Lat Pulldown', 'Seated Cable Row', 'One-Arm Dumbbell Row', 'Face Pull', 'Hammer Curl', 'Straight Arm Pulldown'],
+            legs: ['Leg Press', 'Leg Curl', 'Leg Extension', 'Hip Thrust', 'Standing Calf Raise', 'Walking Lunges'],
+            cardio: ['Treadmill (Incline Walk/Run)', 'Stationary Bike', 'Elliptical', 'Rowing Machine', 'Stair Climber']
+        };
+
+        const goalPriority = {
+            'build-muscle': ['Press', 'Row', 'Squat', 'Deadlift', 'Pull', 'Hip Thrust'],
+            'lose-weight': ['Machine', 'Cable', 'Incline', 'Bike', 'Elliptical', 'Walk'],
+            'tone': ['Dumbbell', 'Cable', 'Row', 'Lunge', 'Bike', 'Elliptical'],
+            'maintain': ['Press', 'Row', 'Squat', 'Bike', 'Walk']
+        };
+
+        const mergeUnique = (first, second) => {
+            const set = new Set();
+            const out = [];
+            [...(first || []), ...(second || [])].forEach((item) => {
+                const name = String(item || '').trim();
+                if (!name) return;
+                const key = name.toLowerCase();
+                if (set.has(key)) return;
+                set.add(key);
+                out.push(name);
+            });
+            return out;
+        };
+
+        const prioritizeByGoal = (list, goalKey) => {
+            const keywords = goalPriority[goalKey] || [];
+            return [...(list || [])].sort((a, b) => {
+                const av = keywords.some(k => String(a).toLowerCase().includes(k.toLowerCase())) ? 1 : 0;
+                const bv = keywords.some(k => String(b).toLowerCase().includes(k.toLowerCase())) ? 1 : 0;
+                return bv - av;
+            });
+        };
+
+        // Fetch exercises from API by targetMuscle
+        const fetchExercisesByMuscle = async (muscle) => {
+            try {
+                const response = await fetch(`http://localhost:8000/api/exercises?targetMuscle=${muscle}`);
+                if (response.ok) {
+                    const exercises = await response.json();
+                    if (Array.isArray(exercises) && exercises.length > 0) {
+                        const names = exercises.map(e => e.name).filter(n => n && n.trim() !== '');
+                        return names.length > 0 ? names : exercisePool[muscle.toLowerCase()] || [];
+                    }
+                }
+            } catch (e) {
+                console.warn(`Failed to fetch ${muscle} exercises:`, e);
+            }
+            return exercisePool[muscle.toLowerCase()] || [];
+        };
+
+        // Type colors for weekly display
+        const typeColors = {
+            'PUSH': '#5C3D2D',
+            'PULL': '#2C4A63',
+            'LEGS': '#3D3D2D',
+            'CARDIO': '#5C4939',
+            'REST': '#404040'
+        };
+
+        const typeSubtitles = {
+            'PUSH': 'Chest • Shoulder • Triceps',
+            'PULL': 'Back • Biceps',
+            'LEGS': 'Leg & Glute',
+            'CARDIO': 'Cardio • Endurance',
+            'REST': 'Recovery & Stretching'
+        };
+
+        const dayNames = ['จันทร์', 'อังคาร', 'พุธ', 'พฤหัสบดี', 'ศุกร์'];
+
+        const allocateAdaptiveWeek = (goalKey, currentStrategy) => {
+            const restDays = 0; // ไม่มีวันพัก เพราะเป็น 5 วันทำงาน
+            let cardioDays = 2;
+            if (goalKey === 'lose-weight') cardioDays = currentStrategy.isHighFat ? 3 : 2;
+            if (goalKey === 'tone') cardioDays = 2;
+            if (goalKey === 'build-muscle') cardioDays = currentStrategy.isHighFat ? 1 : 1;
+            cardioDays = Math.max(1, Math.min(3, cardioDays));
+
+            let strengthDays = 5 - restDays - cardioDays;
+            if (strengthDays < 2) {
+                cardioDays = Math.max(1, cardioDays - (2 - strengthDays));
+                strengthDays = 5 - restDays - cardioDays;
+            }
+
+            const legsDays = strengthDays >= 4 ? (goalKey === 'build-muscle' ? 2 : 1) : 1;
+            const upperDays = Math.max(1, strengthDays - legsDays);
+            const pushDays = Math.ceil(upperDays / 2);
+            const pullDays = Math.max(1, upperDays - pushDays);
+
+            const quota = {
+                PUSH: pushDays,
+                PULL: pullDays,
+                LEGS: legsDays,
+                CARDIO: cardioDays,
+                REST: restDays
+            };
+
+            const templates = {
+                'lose-weight': ['CARDIO', 'PUSH', 'CARDIO', 'PULL', 'LEGS'],
+                'build-muscle': ['PUSH', 'PULL', 'LEGS', 'PUSH', 'CARDIO'],
+                'tone': ['CARDIO', 'PUSH', 'PULL', 'CARDIO', 'LEGS'],
+                'maintain': ['PUSH', 'CARDIO', 'PULL', 'LEGS', 'PUSH']
+            };
+
+            const template = templates[goalKey] || templates['maintain'];
+            const typeRank = ['PUSH', 'PULL', 'LEGS', 'CARDIO'];
+            const week = [];
+
+            for (let index = 0; index < 5; index += 1) {
+                const preferred = template[index] || 'CARDIO';
+                let selected = preferred;
+                if ((quota[selected] || 0) <= 0) {
+                    selected = typeRank
+                        .filter(type => (quota[type] || 0) > 0)
+                        .sort((a, b) => (quota[b] || 0) - (quota[a] || 0))[0] || 'CARDIO';
+                }
+
+                const prev = week[week.length - 1];
+                if (prev && prev === selected) {
+                    const alternative = typeRank.find(type => type !== selected && (quota[type] || 0) > 0);
+                    if (alternative) selected = alternative;
+                }
+
+                week.push(selected);
+                quota[selected] = Math.max(0, (quota[selected] || 0) - 1);
+            }
+
+            return week;
+        };
+
+        // Fetch exercise data
+        const pushExercises = await fetchExercisesByMuscle('chest');
+        const pullExercises = await fetchExercisesByMuscle('back');
+        const legExercises = await fetchExercisesByMuscle('legs');
+
+        const perDayStrengthCount = goal === 'build-muscle'
+            ? (strategy.isBeginner ? 3 : 4)
+            : goal === 'lose-weight'
+                ? 3
+                : 3;
+
+        const cardioPerDayCount = goal === 'lose-weight' ? 2 : 1;
+
+        const pushBase = strategy.lowImpactOnly ? lowImpactPool.push : exercisePool.push;
+        const pullBase = strategy.lowImpactOnly ? lowImpactPool.pull : exercisePool.pull;
+        const legBase = strategy.lowImpactOnly ? lowImpactPool.legs : exercisePool.legs;
+        const cardioBase = strategy.lowImpactOnly ? lowImpactPool.cardio : exercisePool.cardio;
+
+        const pushList = prioritizeByGoal(mergeUnique(pushExercises, pushBase), goal);
+        const pullList = prioritizeByGoal(mergeUnique(pullExercises, pullBase), goal);
+        const legList = prioritizeByGoal(mergeUnique(legExercises, legBase), goal);
+        const cardioList = prioritizeByGoal(mergeUnique([], cardioBase), goal);
+
+        const createRotator = (list) => {
+            const source = Array.isArray(list) ? list : [];
+            let cursor = 0;
+            return (count) => {
+                if (source.length === 0) return [];
+                const amount = Math.max(1, Math.min(count, source.length));
+                const selected = [];
+                for (let index = 0; index < amount; index += 1) {
+                    selected.push(source[(cursor + index) % source.length]);
+                }
+                cursor = (cursor + amount) % source.length;
+                return selected;
+            };
+        };
+
+        const pushPick = createRotator(pushList);
+        const pullPick = createRotator(pullList);
+        const legPick = createRotator(legList);
+        const cardioPick = createRotator(cardioList);
+
+        const weekSchedule = allocateAdaptiveWeek(goal, strategy);
+        const weeklyDays = weekSchedule.map((type, index) => {
+            if (type === 'REST') {
+                return { dayName: dayNames[index], type, subtitle: typeSubtitles[type], exercises: [] };
+            }
+
+            if (type === 'CARDIO') {
+                const cardioExercises = cardioPick(cardioPerDayCount).map((name, idx) => ({
+                    name,
+                    sets: idx === 0
+                        ? `1 sets • ${cardioMinutes} min`
+                        : `1 sets • ${Math.max(12, cardioMinutes - 8)} min`
+                }));
+                return { dayName: dayNames[index], type, subtitle: typeSubtitles[type], exercises: cardioExercises };
+            }
+
+            const picker = type === 'PUSH' ? pushPick : type === 'PULL' ? pullPick : legPick;
+            const exercises = picker(type === 'LEGS' ? Math.max(3, perDayStrengthCount - 1) : perDayStrengthCount)
+                .map(name => ({ name, sets: strengthSets }));
+            return { dayName: dayNames[index], type, subtitle: typeSubtitles[type], exercises };
+        });
+
+        // Render adaptive weekly schedule
+        const block = document.getElementById('workoutScheduleBlock');
+        const grid = document.getElementById('workoutScheduleGrid');
+        if (!block || !grid) return;
+
+        let weekHTML = `
+            <div class="weekly-schedule">
+        `;
+
+        weeklyDays.forEach((day) => {
+            const bgColor = typeColors[day.type];
+            const isRest = day.type === 'REST';
+            weekHTML += `
+                <div class="weekly-day">
+                    <div class="day-header" style="background-color: ${bgColor};">
+                        <h5 class="day-name">${day.dayName}</h5>
+                        <h4 class="day-type">${day.type}</h4>
+                        <p class="day-subtitle">${day.subtitle}</p>
+                    </div>
+                    <div class="day-content">
+            `;
+
+            if (isRest) {
+                weekHTML += `
+                    <div class="rest-indicator">
+                        <div class="empty-icon">+</div>
+                        <p class="rest-text">พักฟื้น</p>
+                        <p class="rest-desc">เน้นนอน/ยืดเหยียด</p>
+                    </div>
+                `;
+            } else {
+                day.exercises
+                    .filter(ex => ex && ex.name && ex.name.trim() !== '')
+                    .forEach((exercise) => {
+                        weekHTML += `
+                            <div class="day-exercise">
+                                <h5 class="ex-name">${exercise.name}</h5>
+                                <p class="ex-sets">${exercise.sets}</p>
+                            </div>
+                        `;
+                    });
+            }
+
+            weekHTML += `
+                    </div>
+                </div>
+            `;
+        });
+
+        weekHTML += `</div>`;
+
+        grid.innerHTML = weekHTML;
+        block.style.display = 'block';
+        initReveal(true);
+    }
+
+    function renderLifestyle(p, tdee) { const sleep = p.goal === 'build-muscle' ? '7.5 - 9 ชม.' : p.goal === 'lose-weight' ? '7 - 8 ชม.' : '7 - 8 ชม.'; const water = Math.round(p.weight * 35); const steps = p.activity === 'sedentary' ? '7,000+' : p.activity === 'light' ? '8,500+' : p.activity === 'moderate' ? '10,000+' : '11,500+'; const recovery = p.goal === 'build-muscle' ? 'เว้น 48 ชม. ต่อกล้ามเนื้อใหญ่' : 'Active Recovery 1 วัน'; document.getElementById('lifestyleGrid').innerHTML = `<div class='life-card reveal'><h6>การนอน</h6><p>${sleep}</p></div><div class='life-card reveal'><h6>น้ำ (ml)</h6><p>${water.toLocaleString()}</p></div><div class='life-card reveal'><h6>ก้าวเดิน</h6><p>${steps}</p></div><div class='life-card reveal'><h6>Recovery</h6><p>${recovery}</p></div>`; initReveal(true); }
+    function togglePremium(p, bmi) { const show = p.goal === 'build-muscle' || p.goal === 'tone' || bmi < 18.5 || bmi >= 30; document.getElementById('premiumUpsell').style.display = show ? 'block' : 'none'; }
+    function updateQuick(bmi, bmr, tdee, bf) {
+        if (document.getElementById('qm-bmi')) { const isNum = typeof bmi === 'number' && !isNaN(bmi); document.getElementById('qm-bmi').textContent = isNum ? parseFloat(bmi).toFixed(1) : '—'; document.getElementById('qm-bmr').textContent = bmr && !isNaN(bmr) ? Math.round(bmr) : '—'; document.getElementById('qm-tdee').textContent = tdee && !isNaN(tdee) ? Math.round(tdee) : '—'; document.getElementById('qm-bf').textContent = (typeof bf === 'number') ? (bf + "%") : '—'; }
+        const pvBmi = document.getElementById('pv-bmi'); if (pvBmi) { if (typeof bmi === 'number' && !isNaN(bmi)) { pvBmi.textContent = bmi.toFixed(1); const gauge = document.getElementById('pv-bmi-gauge'); if (gauge) { const v = Math.max(10, Math.min(40, bmi)); const pct = (v - 10) / 30; const angle = Math.round(270 * pct); gauge.style.setProperty('--ang', angle + 'deg'); } } else { pvBmi.textContent = '—'; const gauge = document.getElementById('pv-bmi-gauge'); if (gauge) gauge.style.setProperty('--ang', '0deg'); } }
+        const pvBmr = document.getElementById('pv-bmr'); if (pvBmr) pvBmr.textContent = (bmr && !isNaN(bmr)) ? Math.round(bmr) : '—';
+        const pvTdee = document.getElementById('pv-tdee'); if (pvTdee) pvTdee.textContent = (tdee && !isNaN(tdee)) ? Math.round(tdee) : '—';
+        const pvBf = document.getElementById('pv-bf'); if (pvBf) pvBf.textContent = (typeof bf === 'number') ? (bf + '%') : '—';
+    }
+    function summaryLine(p, bmi) { const text = `เพศ ${p.gender === 'male' ? 'ชาย' : 'หญิง'} | อายุ ${p.age} | BMI ${bmi.toFixed ? bmi.toFixed(1) : bmi}`; document.getElementById('resultSummary').textContent = text; }
+    
+    async function downloadSchedule() {
+        const scheduleElement = document.querySelector('.weekly-schedule');
+        if (!scheduleElement) {
+            alert('ไม่พบตารางออกกำลังกาย');
+            return;
+        }
+
+        try {
+            // แสดง loading
+            const btn = event.target.closest('.btn-download');
+            const originalHTML = btn.innerHTML;
+            btn.innerHTML = '<i class="ri-loader-4-line" style="animation: spin 1s linear infinite;"></i> กำลังสร้าง...';
+            btn.disabled = true;
+
+            // ใช้ html2canvas
+            if (typeof html2canvas === 'undefined') {
+                // Load html2canvas dynamically
+                await loadScript('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js');
+            }
+
+            const canvas = await html2canvas(scheduleElement, {
+                backgroundColor: '#0f0f15',
+                scale: 2,
+                logging: false,
+                useCORS: true
+            });
+
+            // Convert to blob and download
+            canvas.toBlob((blob) => {
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                const date = new Date().toISOString().split('T')[0];
+                link.download = `Workout-Schedule-${date}.png`;
+                link.href = url;
+                link.click();
+                URL.revokeObjectURL(url);
+
+                // Reset button
+                btn.innerHTML = originalHTML;
+                btn.disabled = false;
+            });
+        } catch (error) {
+            console.error('Error downloading schedule:', error);
+            alert('เกิดข้อผิดพลาดในการดาวน์โหลด กรุณาลองใหม่อีกครั้ง');
+            const btn = event.target.closest('.btn-download');
+            if (btn) {
+                btn.innerHTML = '<i class="ri-download-2-line"></i> ดาวน์โหลด';
+                btn.disabled = false;
+            }
+        }
+    }
+
+    function loadScript(src) {
+        return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = src;
+            script.onload = resolve;
+            script.onerror = reject;
+            document.head.appendChild(script);
+        });
+    }
+    
+    function resetForm() { document.getElementById('analysisForm').reset(); document.getElementById('goal').value = ''; document.querySelectorAll('.goal-card').forEach(c => c.classList.remove('active')); clearFormErrors(); localStorage.removeItem('paDraft'); updateProgress(); updatePreviewGoal(); updateQuick('—', '—', '—', null); }
+    function formError(msg) { const box = document.getElementById('inlineError'); if (box) { box.textContent = msg; box.classList.add('show'); } }
+    function clearFormErrors() { const box = document.getElementById('inlineError'); if (box) { box.textContent = ''; box.classList.remove('show'); } }
+    function livePreview() { const gender = val('gender'); const age = int('age'); const h = flt('height'); const w = flt('weight'); if (!gender || !age || !h || !w) { updateQuick(null, null, null, null); return; } const bmi = w / ((h / 100) ** 2); const bf = resolveBodyFat({ gender, age, height: h, weight: w, hip: flt('hip'), waist: flt('waist'), neck: flt('neck'), manual_bf: flt('manualBf') }, bmi); const formula = val('bmrFormula') || 'mifflin'; const bmr = calcBMR(formula, gender, w, h, age, bf); const act = { sedentary: 1.2, light: 1.375, moderate: 1.55, active: 1.725, 'very-active': 1.9 }; const tdee = bmr * (act[val('activity')] || 1.2); updateQuick(bmi, bmr, tdee, bf); document.getElementById('liveStatus').textContent = 'อัพเดทตัวอย่าง BMI ' + bmi.toFixed(1); toggleKatchAvailability(); }
+    function updateProgress() { const required = ['gender', 'age', 'height', 'weight']; let filled = 0; required.forEach(id => { const el = document.getElementById(id); if (el && el.value) filled++; }); if (document.getElementById('goal').value) filled++; const percent = Math.round((filled / 5) * 100); const bar = document.getElementById('formProgressBar'); if (bar) { bar.style.width = percent + '%'; bar.setAttribute('aria-valuenow', percent); } }
+
+    function toggleMode() { document.body.classList.toggle('compact'); }
+    function toggleTheme() { document.body.classList.toggle('alt-theme'); }
+    function updatePreviewGoal() { const tag = document.getElementById('pv-goal-tag'); if (!tag) return; const g = document.getElementById('goal').value; const map = { 'lose-weight': 'ลดน้ำหนัก', 'build-muscle': 'เพิ่มกล้ามเนื้อ', 'maintain': 'รักษาสุขภาพ', 'tone': 'กระชับ' }; tag.textContent = g ? (map[g] || g) : '-'; }
+    function saveDraft() { const f = { gender: val('gender'), age: val('age'), height: val('height'), weight: val('weight'), hip: val('hip'), waist: val('waist'), neck: val('neck'), manualBf: val('manualBf'), activity: val('activity'), goal: document.getElementById('goal').value, bmrFormula: val('bmrFormula'), adv: document.getElementById('advancedSection').style.display !== 'none' }; try { localStorage.setItem('paDraft', JSON.stringify(f)); } catch (e) { } }
+    function loadDraft() { try { const s = localStorage.getItem('paDraft'); if (!s) return; const f = JSON.parse(s); Object.entries(f).forEach(([k, v]) => { if (v == null) return; const el = document.getElementById(k); if (el) el.value = v; }); if (f.goal) { document.getElementById('goal').value = f.goal; document.querySelectorAll('.goal-card').forEach(c => { if (c.dataset.goal === f.goal) c.classList.add('active'); }); } if (f.adv) document.getElementById('advancedSection').style.display = 'block'; document.querySelector('.female-only').style.display = val('gender') === 'female' ? 'flex' : 'none'; updatePreviewGoal(); livePreview(); } catch (e) { } }
+    // BMI-based body fat estimate (CUN-BAE for adults, Deurenberg fallback)
+    function estimateBodyFatFromBMI(bmi, age, gender) {
+        if (!bmi || !age || !gender) return null;
+        const sex = (gender === 'male') ? 0 : 1;
+        const isAdultRange = age >= 18 && age <= 65 && bmi >= 18 && bmi <= 40;
+        if (isAdultRange) {
+            const bmi2 = bmi * bmi;
+            const bf = -44.988 + (0.503 * age) + (10.689 * sex) + (3.172 * bmi) - (0.026 * bmi2) + (0.181 * bmi * sex) - (0.02 * bmi * age) - (0.005 * bmi2 * sex) + (0.00021 * bmi2 * age);
+            return clampBf(bf);
+        }
+        const sexFlag = (gender === 'male') ? 1 : 0;
+        const bf = 1.20 * bmi + 0.23 * age - 10.8 * sexFlag - 5.4;
+        return clampBf(bf);
+    }
+    // US Navy body fat formula (metric inputs in cm)
+    function estimateBodyFatUSNavy(gender, waist, neck, hip, height) {
+        if (!gender || !waist || !neck || !height) return null;
+        const h = height;
+        if (gender === 'male') {
+            if (waist <= neck) return null;
+            const v = 495 / (1.0324 - 0.19077 * Math.log10(waist - neck) + 0.15456 * Math.log10(h)) - 450;
+            return clampBf(v);
+        } else {
+            if (!hip) return null;
+            if (waist + hip <= neck) return null;
+            const v = 495 / (1.29579 - 0.35004 * Math.log10(waist + hip - neck) + 0.22100 * Math.log10(h)) - 450;
+            return clampBf(v);
+        }
+    }
+    function clampBf(v) { if (!isFinite(v)) return null; return +Math.max(3, Math.min(60, v)).toFixed(1); }
+    function resolveBodyFat(p, bmi, existing) {
+        // Priority: manual > US Navy > existing (API) > BMI estimate
+        if (typeof p.manual_bf === 'number' && !isNaN(p.manual_bf)) return clampBf(p.manual_bf);
+        const us = estimateBodyFatUSNavy(p.gender, p.waist, p.neck, p.hip, p.height);
+        if (typeof us === 'number') return us;
+        if (typeof existing === 'number') return clampBf(existing);
+        return estimateBodyFatFromBMI(bmi, p.age, p.gender);
+    }
+    function calcBMR(formula, gender, weight, height, age, bodyFat) {
+        switch (formula) {
+            case 'harris': return gender === 'male' ? (88.362 + 13.397 * weight + 4.799 * height - 5.677 * age) : (447.593 + 9.247 * weight + 3.098 * height - 4.330 * age);
+            case 'katch':
+                if (typeof bodyFat !== 'number') return gender === 'male' ? (88.362 + 13.397 * weight + 4.799 * height - 5.677 * age) : (447.593 + 9.247 * weight + 3.098 * height - 4.330 * age);
+                const lbm = weight * (1 - bodyFat / 100); return 370 + 21.6 * lbm;
+            case 'mifflin':
+            default:
+                return gender === 'male' ? (10 * weight + 6.25 * height - 5 * age + 5) : (10 * weight + 6.25 * height - 5 * age - 161);
+        }
+    }
+    function toggleKatchAvailability() { const sel = document.getElementById('bmrFormula'); if (!sel) return; const gender = val('gender'); const age = int('age'); const h = flt('height'); const w = flt('weight'); const can = gender && age && h && w;[...sel.options].forEach(o => { if (o.value === 'katch') { o.disabled = !can; if (o.disabled && sel.value === 'katch') { sel.value = 'mifflin'; } } }); }
+    function toggleAdvanced() { const sec = document.getElementById('advancedSection'); const btn = document.getElementById('advToggleBtn'); if (!sec || !btn) return; const open = sec.style.display === 'none'; sec.style.display = open ? 'block' : 'none'; btn.setAttribute('aria-expanded', open ? 'true' : 'false'); const st = btn.querySelector('.adv-state'); if (st) st.textContent = open ? 'On' : 'Off'; saveDraft(); }
+    let revealIO; function initReveal(refresh = false) { if (!('IntersectionObserver' in window)) return; if (!revealIO || refresh) { revealIO = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); revealIO.unobserve(e.target); } }); }, { threshold: .15 }); } document.querySelectorAll('.reveal').forEach(el => { if (!el.classList.contains('show')) revealIO.observe(el); }); }
+</script>

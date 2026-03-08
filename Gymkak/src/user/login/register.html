@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/png" href="/Gymkak/assets/logo_w.png" />
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+	<link rel="stylesheet" href="register.css" />
+	<title>Register | Gymkak</title>
+</head>
+
+<body class="auth-body">
+	<header class="main-header">
+		<nav class="nav">
+			<div class="nav__logo">
+				<a href="#" onclick="return false;"><img src="/Gymkak/assets/Logo main color w.png" alt="logo" /></a>
+			</div>
+			<div class="nav__cta">
+				<a class="btn-ghost delay-link" href="/Gymkak/src/user/login/login.html">Login</a>
+			</div>
+		</nav>
+	</header>
+
+	<main class="auth-main">
+		<section class="auth-card">
+			<div class="auth-header">
+				<span class="auth-badge"><i class="ri-shield-user-line"></i> Secure Register</span>
+				<h1>สร้างบัญชีใหม่</h1>
+				<p>สมัครสมาชิกเพื่อเริ่มใช้งานโปรแกรมฝึกและแผนโภชนาการแบบส่วนตัว</p>
+			</div>
+
+			<div class="stepper">
+				<div id="step1Indicator" class="step active">
+					<span class="step-number">1</span>
+					<span class="step-label">บัญชี</span>
+				</div>
+				<div id="step2Indicator" class="step">
+					<span class="step-number">2</span>
+					<span class="step-label">โปรไฟล์</span>
+				</div>
+				<div class="progress-bar">
+					<span id="progressFill" class="progress-fill"></span>
+				</div>
+			</div>
+
+			<div id="step-1" class="step-panel">
+				<form id="registerFormStep1">
+					<div class="form-group">
+						<label for="username">ชื่อผู้ใช้</label>
+						<div class="input-wrap">
+							<i class="ri-user-3-line"></i>
+							<input type="text" id="username" placeholder="ชื่อผู้ใช้ของคุณ" required />
+						</div>
+						<div id="usernameValidation" class="validation-message"></div>
+					</div>
+
+					<div class="form-group">
+						<label for="password">รหัสผ่าน</label>
+						<div class="input-wrap">
+							<i class="ri-lock-2-line"></i>
+							<input type="password" id="password" placeholder="อย่างน้อย 6 ตัวอักษร" required />
+						</div>
+						<div class="password-strength">
+							<span id="strengthFill" class="strength-fill"></span>
+						</div>
+						<div id="strengthText" class="strength-text">Password strength</div>
+						<div id="passwordValidation" class="validation-message"></div>
+					</div>
+
+					<div class="form-group">
+						<label for="confirmPassword">ยืนยันรหัสผ่าน</label>
+						<div class="input-wrap">
+							<i class="ri-lock-password-line"></i>
+							<input type="password" id="confirmPassword" placeholder="พิมพ์รหัสผ่านอีกครั้ง"
+								required />
+						</div>
+					</div>
+
+					<button type="submit" class="btn-primary full">ถัดไป</button>
+					<p class="form-foot">มีบัญชีแล้ว? <a class="delay-link" href="/Gymkak/src/user/login/login.html">เข้าสู่ระบบ</a></p>
+				</form>
+			</div>
+
+			<div id="step-2" class="step-panel hidden">
+				<form id="registerFormStep2">
+					<div class="form-group">
+						<label for="name">ชื่อ-นามสกุล</label>
+						<div class="input-wrap">
+							<i class="ri-user-heart-line"></i>
+							<input type="text" id="name" placeholder="ชื่อจริงของคุณ" required />
+						</div>
+						<div id="nameValidation" class="validation-message"></div>
+					</div>
+
+					<div class="form-actions">
+						<button type="button" id="backToStep1" class="btn-ghost">ย้อนกลับ</button>
+						<button type="submit" class="btn-primary complete-btn">สร้างบัญชี</button>
+					</div>
+				</form>
+			</div>
+		</section>
+	</main>
+
+	<script src="register.js"></script>
+</body>
+
+</html>

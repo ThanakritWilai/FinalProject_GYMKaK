@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/Gymkak/assets/logo_w.png" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="weight.css" />
+    <title>Weight Training</title>
+</head>
+
+<body>
+    <header class="main-header">
+        <nav>
+            <div class="nav__logo">
+                <a href="/Gymkak/src/dashboard/dashboard.html"><img src="/Gymkak/assets/Logo main color w.png" alt="logo" /></a>
+            </div>
+            <ul class="nav__links">
+                <li class="link"><a href="/Gymkak/src/dashboard/dashboard.html">Home</a></li>
+                <li class="link"><a href="/Gymkak/src/dashboard/dashboard.html#program">Program</a></li>
+                <li class="link"><a href="/Gymkak/src/membership/regisgym/regisgym.html">Membership</a></li>
+                <li class="link"><a href="/Gymkak/src/bodyanalysis/bodyanalysis.html">Bodyanalysis</a></li>
+                <li class="link"><a href="/Gymkak/src/dashboard/dashboard.html#about">About</a></li>
+            </ul>
+            <!-- Redesigned dropdown menu for simplicity and elegance -->
+            <div class="dropdown-container" style="position: relative;">
+                <button class="btn dropdown-toggle redesigned-menu" id="menuButton" data-bs-toggle="dropdown"
+                    aria-expanded="false" style="background: var(--primary-color-extra-light); color: var(--white); border-radius: 10px; box-shadow: 0 3px 16px rgba(0,0,0,0.16); padding: 0.48rem 1.05rem; font-size: 0.97rem; font-weight: 600; border: none; letter-spacing: 0.4px; display: flex; align-items: center; gap: 0.4rem; min-width: 135px; justify-content: center;">
+                    <i class="ri-menu-line" style="font-size: 1.05rem;"></i> Menu
+                </button>
+                <ul class="dropdown-menu redesigned-dropdown" aria-labelledby="menuButton" style="position: absolute; top: calc(100% + 12px); right: 0; background: var(--primary-color-light); border-radius: 11px; min-width: 135px; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: all 0.19s cubic-bezier(.4,1.3,.6,1); z-index: 1000; overflow: visible; border: none; box-shadow: 0 6px 22px rgba(0,0,0,0.19); padding: 0.35rem 0; list-style: none; margin: 0;">
+                    <li><a class="dropdown-item redesigned-item" href="/Gymkak/src/user/profile/profile.html" style="display: flex; align-items: center; gap: 0.6rem; padding: 0.62rem 1rem; color: var(--white); text-decoration: none; font-size: 0.93rem; background: none; border-bottom: none; border-radius: 6px; transition: background 0.14s, color 0.14s;">
+                            <i class="ri-user-line" style="font-size: 0.98rem; color: var(--text-light); margin-right: 0.22rem; transition: color 0.14s;"></i> Profile
+                        </a></li>
+                    <li><a class="dropdown-item redesigned-item" href="/Gymkak/src/user/plans/plans.html" style="display: flex; align-items: center; gap: 0.6rem; padding: 0.62rem 1rem; color: var(--white); text-decoration: none; font-size: 0.93rem; background: none; border-bottom: none; border-radius: 6px; transition: background 0.14s, color 0.14s;">
+                            <i class="ri-calendar-line" style="font-size: 0.98rem; color: var(--text-light); margin-right: 0.22rem; transition: color 0.14s;"></i> Plans
+                        </a></li>
+                    <li><a class="dropdown-item redesigned-item" href="/Gymkak/src/user/login/login.html" style="display: flex; align-items: center; gap: 0.6rem; padding: 0.62rem 1rem; color: var(--white); text-decoration: none; font-size: 0.93rem; background: none; border-bottom: none; border-radius: 6px; transition: background 0.14s, color 0.14s;">
+                            <i class="ri-logout-box-line" style="font-size: 0.98rem; color: var(--text-light); margin-right: 0.22rem; transition: color 0.14s;"></i> Logout
+                        </a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Image Section -->
+    <section id="weight-training"></section>
+    <div class="hero-section">
+        <div class="hero-image">
+            <img src="/Gymkak/assets/bg-gym2.jpg" alt="Weight Training">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <h2>Unleash Your Strength</h2>
+                    <p>Build muscle, power, and confidence with weight training</p>
+                    <div class="hero-actions">
+                        <a class="hero-btn hero-btn--secondary" href="/Gymkak/src/user/plans/plans.html">Create Your Plan</a>
+                        <button class="hero-btn" onclick="scrollToTraining()">Start Lifting</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Introduction Section -->
+    <div class="intro-section">
+        <div class="intro-content">
+            <h2>Master Weight Training</h2>
+            <p>Weight training is the foundation of building muscle mass, increasing strength, and transforming your physique. By utilizing free weights and resistance machines, you can target every major muscle group, improve bone density, boost metabolism, and enhance athletic performance. Whether you're new to lifting or an experienced lifter, weight training offers endless progression and challenge.</p>
+
+            <div class="benefits">
+                <h3>Why Choose Weight Training?</h3>
+                <ul>
+                    <li><strong>Build Muscle Mass:</strong> Stimulate hypertrophy and sculpt your body</li>
+                    <li><strong>Increase Strength:</strong> Progressively overload your muscles for real power</li>
+                    <li><strong>Boost Metabolism:</strong> Burn more calories even at rest</li>
+                    <li><strong>Improve Bone Health:</strong> Strengthen bones and joints through resistance</li>
+                    <li><strong>Versatile & Customizable:</strong> Train for size, strength, endurance, or power</li>
+                    <li><strong>Enhance Athletic Performance:</strong> Improve speed, agility, and explosiveness</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Headers -->
+    <section id="start-training"></section>
+    <div class="section-header">
+        <div class="section-tab active" data-target="push-section">
+            <div class="tab-content">
+                <h3>CHEST & SHOULDERS</h3>
+                <p>Bench • Overhead Press • Flyes</p>
+            </div>
+        </div>
+        <div class="section-tab" data-target="pull-section">
+            <div class="tab-content">
+                <h3>BACK & ARMS</h3>
+                <p>Rows • Deadlift • Curls</p>
+            </div>
+        </div>
+        <div class="section-tab" data-target="legs-section">
+            <div class="tab-content">
+                <h3>LEGS & CORE</h3>
+                <p>Squats • Lunges • Core</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PUSH Section -->
+    <section id="push-section" class="exercise-section">
+        <div class="section-title">
+            <h2>PUSH EXERCISES</h2>
+            <p>Exercises targeting chest, shoulders, and triceps</p>
+        </div>
+        <div class="exercise-list">
+            <div class="exercise-item">
+                <div class="exercise-header">
+                    <div class="exercise-image">
+                        <img src="/Gymkak/assets/Bench Press.gif" alt="Bench Press">
+                    </div>
+                    <div class="exercise-info">
+                        <h3 class="exercise-name">Bench Press</h3>
+                        <div class="exercise-details">
+                            <span class="detail-tag">Chest</span>
+                            <span class="detail-tag">Shoulders</span>
+                            <span class="detail-tag">Triceps</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-actions">
+                    <a href="datails.weight/Bench Press.html" class="btn-details">Details</a>
+                </div>
+            </div>
+
+            <div class="exercise-item">
+                <div class="exercise-header">
+                    <div class="exercise-image">
+                        <img src="/Gymkak/assets/Incline Dumbbell Bench Press.gif" alt="Dumbbell-Press">
+                    </div>
+                    <div class="exercise-info">
+                        <h3 class="exercise-name">Incline Dumbbell Press</h3>
+                        <div class="exercise-details">
+                            <span class="detail-tag">Chest</span>
+                            <span class="detail-tag">Triceps</span>
+                            <span class="detail-tag">Shoulders</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-actions">
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+
+            <div class="exercise-item">
+                <div class="exercise-header">
+                    <div class="exercise-image">
+                        <img src="/Gymkak/assets/Chest Fly.gif" alt="Chest-Fly">
+                    </div>
+                    <div class="exercise-info">
+                        <h3 class="exercise-name">Chest Fly</h3>
+                        <div class="exercise-details">
+                            <span class="detail-tag">Shoulders</span>
+                            <span class="detail-tag">Deltoids</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-actions">
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <div class="exercise-header">
+                    <div class="exercise-image">
+                        <img src="/Gymkak/assets/Shoulder Press.gif" alt="Shoulder-Press">
+                    </div>
+                    <div class="exercise-info">
+                        <h3 class="exercise-name">Shoulder Press</h3>
+                        <div class="exercise-details">
+                            <span class="detail-tag">Shoulders</span>
+                            <span class="detail-tag">Deltoids</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-actions">
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <div class="exercise-header">
+                    <div class="exercise-image">
+                        <img src="/Gymkak/assets/Lateral Raise.gif" alt="Lateral-Raise">
+                    </div>
+                    <div class="exercise-info">
+                        <h3 class="exercise-name">Lateral Raise</h3>
+                        <div class="exercise-details">
+                            <span class="detail-tag">Shoulders</span>
+                            <span class="detail-tag">Deltoids</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-actions">
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <div class="exercise-header">
+                    <div class="exercise-image">
+                        <img src="/Gymkak/assets/Arnold-Press.gif" alt="Arnold-Press">
+                    </div>
+                    <div class="exercise-info">
+                        <h3 class="exercise-name">Arnold Press</h3>
+                        <div class="exercise-details">
+                            <span class="detail-tag">Triceps</span>
+                            <span class="detail-tag">Shoulders</span>
+                            <span class="detail-tag">Deltoids</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-actions">
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <div class="exercise-header">
+                    <div class="exercise-image">
+                        <img src="/Gymkak/assets/Skullcrusher.gif" alt="Skullcrusher">
+                    </div>
+                    <div class="exercise-info">
+                        <h3 class="exercise-name">Skullcrusher</h3>
+                        <div class="exercise-details">
+                            <span class="detail-tag">Triceps</span>
+                            <span class="detail-tag">Shoulders</span>
+                            <span class="detail-tag">Deltoids</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-actions">
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <div class="exercise-header">
+                    <div class="exercise-image">
+                        <img src="/Gymkak/assets/Triceps Pushdown.gif" alt="Triceps-Pushdown">
+                    </div>
+                    <div class="exercise-info">
+                        <h3 class="exercise-name">Triceps Pushdown</h3>
+                        <div class="exercise-details">
+                            <span class="detail-tag">Triceps</span>
+                            <span class="detail-tag">Shoulders</span>
+                            <span class="detail-tag">Deltoids</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-actions">
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <div class="exercise-header">
+                    <div class="exercise-image">
+                        <img src="/Gymkak/assets/Triceps Dips.gif" alt="Triceps Dips">
+                    </div>
+                    <div class="exercise-info">
+                        <h3 class="exercise-name">Triceps Dips</h3>
+                        <div class="exercise-details">
+                            <span class="detail-tag">Triceps</span>
+                            <span class="detail-tag">Shoulders</span>
+                            <span class="detail-tag">Deltoids</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-actions">
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PULL Section -->
+    <section id="pull-section" class="exercise-section">
+        <div class="section-title">
+            <h2>PULL EXERCISES</h2>
+            <p>Movements focusing on back, biceps, and rear delts</p>
+        </div>
+        <div class="exercise-list">
+            <div class="exercise-item">
+                <div class="exercise-header">
+                    <div class="exercise-image">
+                        <img src="/Gymkak/assets/Pull-ups.gif" alt="Pull-ups">
+                    </div>
+                    <div class="exercise-info">
+                        <h3 class="exercise-name">Pull-ups</h3>
+                        <div class="exercise-details">
+                            <span class="detail-tag">Back</span>
+                            <span class="detail-tag">Biceps</span>
+                            <span class="detail-tag">Shoulders</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-actions">
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+
+            <div class="exercise-item">
+                <div class="exercise-header">
+                    <div class="exercise-image">
+                        <img src="/Gymkak/assets/Lat Pulldown.gif" alt="Lat-Pulldown">
+                    </div>
+                    <div class="exercise-info">
+                        <h3 class="exercise-name">Lat Pulldown</h3>
+                        <div class="exercise-details">
+                            <span class="detail-tag">Back</span>
+                            <span class="detail-tag">Rear Delts</span>
+                            <span class="detail-tag">Biceps</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-actions">
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <div class="exercise-header">
+                    <div class="exercise-image">
+                        <img src="/Gymkak/assets/Dumbbell Row.gif" alt="Dumbbell-Row">
+                    </div>
+                    <div class="exercise-info">
+                        <h3 class="exercise-name">Dumbbell Row</h3>
+                        <div class="exercise-details">
+                            <span class="detail-tag">Back</span>
+                            <span class="detail-tag">Rear Delts</span>
+                            <span class="detail-tag">Biceps</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-actions">
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <div class="exercise-header">
+                    <div class="exercise-image">
+                        <img src="/Gymkak/assets/Seated Cable Row.gif" alt="SeatedCable-Row">
+                    </div>
+                    <div class="exercise-info">
+                        <h3 class="exercise-name">Seated Cable Row</h3>
+                        <div class="exercise-details">
+                            <span class="detail-tag">Back</span>
+                            <span class="detail-tag">Rear Delts</span>
+                            <span class="detail-tag">Biceps</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-actions">
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <div class="exercise-header">
+                    <div class="exercise-image">
+                        <img src="/Gymkak/assets/Barbell Curl.gif" alt="Barbell Curl">
+                    </div>
+                    <div class="exercise-info">
+                        <h3 class="exercise-name">Barbell Curl</h3>
+                        <div class="exercise-details">
+                            <span class="detail-tag">Biceps </span>
+                            <span class="detail-tag">Forearms</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-actions">
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <div class="exercise-header">
+                    <div class="exercise-image">
+                        <img src="/Gymkak/assets/Hammer Curl.gif" alt="Hammer-Curl">
+                    </div>
+                    <div class="exercise-info">
+                        <h3 class="exercise-name">Hammer Curl</h3>
+                        <div class="exercise-details">
+                            <span class="detail-tag">Biceps</span>
+                            <span class="detail-tag">Forearms</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-actions">
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <div class="exercise-header">
+                    <div class="exercise-image">
+                        <img src="/Gymkak/assets/Wrist Curl.gif" alt="Wrist-Curl">
+                    </div>
+                    <div class="exercise-info">
+                        <h3 class="exercise-name">Wrist Curl</h3>
+                        <div class="exercise-details">
+                            <span class="detail-tag">Forearms</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-actions">
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <div class="exercise-header">
+                    <div class="exercise-image">
+                        <img src="/Gymkak/assets/Reverse Barbell Curl.gif" alt="ReverseBarbell-Curl">
+                    </div>
+                    <div class="exercise-info">
+                        <h3 class="exercise-name">Reverse Barbell Curl</h3>
+                        <div class="exercise-details">
+                            <span class="detail-tag">Forearms</span>
+                            <span class="detail-tag">Biceps</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-actions">
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <div class="exercise-header">
+                    <div class="exercise-image">
+                        <img src="/Gymkak/assets/Rear Delt Machine Fly.gif" alt="Rear-Delt-Machine-Fly">
+                    </div>
+                    <div class="exercise-info">
+                        <h3 class="exercise-name">Rear Delt Machine Fly</h3>
+                        <div class="exercise-details">
+                            <span class="detail-tag">Back</span>
+                            <span class="detail-tag">Rear Delts</span>
+                            <span class="detail-tag">Biceps</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-actions">
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEGS Section -->
+    <section id="legs-section" class="exercise-section">
+        <div class="section-title">
+            <h2>LEGS EXERCISES</h2>
+            <p>Lower body exercises for quadriceps, hamstrings, and glutes</p>
+        </div>
+        <div class="exercise-list">
+            <div class="exercise-item">
+                <div class="exercise-header">
+                    <div class="exercise-image">
+                        <img src="/Gymkak/assets/Squats.gif" alt="Squats">
+                    </div>
+                    <div class="exercise-info">
+                        <h3 class="exercise-name">Squats</h3>
+                        <div class="exercise-details">
+                            <span class="detail-tag">Quads</span>
+                            <span class="detail-tag">Glutes</span>
+                            <span class="detail-tag">Core</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-actions">
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+
+            <div class="exercise-item">
+                <div class="exercise-header">
+                    <div class="exercise-image">
+                        <img src="/Gymkak/assets/Leg Curl.gif" alt="Leg-Curl">
+                    </div>
+                    <div class="exercise-info">
+                        <h3 class="exercise-name">Leg Curl</h3>
+                        <div class="exercise-details">
+                            <span class="detail-tag">Quads</span>
+                            <span class="detail-tag">Glutes</span>
+                            <span class="detail-tag">Hamstrings</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-actions">
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <div class="exercise-header">
+                    <div class="exercise-image">
+                        <img src="/Gymkak/assets/Calf Raise.gif" alt="Calf-Raise">
+                    </div>
+                    <div class="exercise-info">
+                        <h3 class="exercise-name">Calf Raise</h3>
+                        <div class="exercise-details">
+                            <span class="detail-tag">Calves</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-actions">
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <div class="exercise-header">
+                    <div class="exercise-image">
+                        <img src="/Gymkak/assets/Deadlift.gif" alt="Deadlift">
+                    </div>
+                    <div class="exercise-info">
+                        <h3 class="exercise-name">Deadlift</h3>
+                        <div class="exercise-details">
+                            <span class="detail-tag">Quads</span>
+                            <span class="detail-tag">Glutes</span>
+                            <span class="detail-tag">Hamstrings</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-actions">
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <div class="exercise-header">
+                    <div class="exercise-image">
+                        <img src="/Gymkak/assets/Plank.gif" alt="Plank">
+                    </div>
+                    <div class="exercise-info">
+                        <h3 class="exercise-name">Plank</h3>
+                        <div class="exercise-details">
+                            <span class="detail-tag">Core</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-actions">
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <div class="exercise-header">
+                    <div class="exercise-image">
+                        <img src="/Gymkak/assets/Leg Raise.gif" alt="Leg-Raise">
+                    </div>
+                    <div class="exercise-info">
+                        <h3 class="exercise-name">Leg Raise</h3>
+                        <div class="exercise-details">
+                            <span class="detail-tag">Quads</span>
+                            <span class="detail-tag">Glutes</span>
+                            <span class="detail-tag">Hamstrings</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-actions">
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <div class="exercise-header">
+                    <div class="exercise-image">
+                        <img src="/Gymkak/assets/Russian Twist.gif" alt="Russian-Twist">
+                    </div>
+                    <div class="exercise-info">
+                        <h3 class="exercise-name">Russian Twist</h3>
+                        <div class="exercise-details">
+                            <span class="detail-tag">Obliques</span>
+                            <span class="detail-tag">Core</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-actions">
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <div class="exercise-header">
+                    <div class="exercise-image">
+                        <img src="/Gymkak/assets/Sumo Deadlift.gif" alt="Sumo-Deadlift">
+                    </div>
+                    <div class="exercise-info">
+                        <h3 class="exercise-name">Sumo Deadlift</h3>
+                        <div class="exercise-details">
+                            <span class="detail-tag">Quads</span>
+                            <span class="detail-tag">Glutes</span>
+                            <span class="detail-tag">Hamstrings</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-actions">
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <div class="exercise-header">
+                    <div class="exercise-image">
+                        <img src="/Gymkak/assets/Lunges.gif" alt="Lunges">
+                    </div>
+                    <div class="exercise-info">
+                        <h3 class="exercise-name">Lunges</h3>
+                        <div class="exercise-details">
+                            <span class="detail-tag">Quads</span>
+                            <span class="detail-tag">Glutes</span>
+                            <span class="detail-tag">Hamstrings</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-actions">
+                    <button class="btn-details">Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Function to scroll to training section
+        function scrollToTraining() {
+            const trainingSection = document.getElementById('start-training');
+            if (trainingSection) {
+                trainingSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Smooth scrolling for section tabs
+        document.querySelectorAll('.section-tab').forEach(tab => {
+            tab.addEventListener('click', function () {
+                // Remove active class from all tabs
+                document.querySelectorAll('.section-tab').forEach(t => t.classList.remove('active'));
+
+                // Add active class to clicked tab
+                this.classList.add('active');
+
+                // Get target section
+                const targetId = this.getAttribute('data-target');
+                const targetSection = document.getElementById(targetId);
+
+                // Smooth scroll to target section
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Update active tab on scroll
+        window.addEventListener('scroll', function () {
+            const sections = document.querySelectorAll('.exercise-section');
+            const tabs = document.querySelectorAll('.section-tab');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+                if (tab.getAttribute('data-target') === current) {
+                    tab.classList.add('active');
+                }
+            });
+        });
+    </script>
+    <footer class="footer__container">
+        <span class="bg__blur"></span>
+        <span class="bg__blur footer__blur"></span>
+        <div class="footer__content">
+            <div class="footer__col">
+                <div class="footer__logo"> <a href="/Gymkak/src/dashboard/dashboard.html"><img src="/Gymkak/assets/Logo main color w.png" alt="logo" /></a>
+                </div>
+                <p>
+                    Take the first step towards a healthier, stronger you with our
+                    unbeatable pricing plans. Let's sweat, achieve, and conquer together!
+                </p>
+                <div class="footer__socials">
+                    <a href="#"><i class="ri-facebook-fill"></i></a>
+                    <a href="#"><i class="ri-instagram-line"></i></a>
+                    <a href="#"><i class="ri-twitter-fill"></i></a>
+                </div>
+            </div>
+            <div class="footer__col">
+                <h4>Menu</h4>
+                <a href="/Gymkak/src/dashboard/dashboard.html">Home</a>
+                <a href="/Gymkak/src/dashboard/dashboard.html#program">Program</a>
+                <a href="/Gymkak/src/membership/regisgym/regisgym.html">Membership</a>
+                <a href="/Gymkak/src/dashboard/dashboard.html#products">Products</a>
+                <a href="/Gymkak/src/dashboard/dashboard.html#about">About</a>
+            </div>
+            <div class="footer__col">
+                <h4>About Us</h4>
+                <a href="/Gymkak/src/dashboard/dashboard.html#blogs">Blogs</a>
+                <a href="/Gymkak/src/dashboard/dashboard.html#security">Security</a>
+                <a href="/Gymkak/src/dashboard/dashboard.html#careers">Careers</a>
+            </div>
+            <div class="footer__col">
+                <h4>Contact</h4>
+                <a href="/Gymkak/src/dashboard/dashboard.html#contact">Contact Us</a>
+                <a href="/Gymkak/src/dashboard/dashboard.html#privacy">Privacy Policy</a>
+                <a href="/Gymkak/src/dashboard/dashboard.html#terms">Terms & Conditions</a>
+                <a href="/Gymkak/src/bodyanalysis/bodyanalysis.html">BMI Calculator</a>
+            </div>
+        </div>
+    </footer>
+    <div class="footer__bar">
+        Gymkak © 2025 Web Design by yollaex.
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // Dropdown functionality
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdownMenu');
+            const arrow = document.querySelector('.dropdown-arrow');
+
+            dropdown.classList.toggle('show');
+            arrow.classList.toggle('rotated');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function (event) {
+            const dropdown = document.getElementById('dropdownMenu');
+            const dropdownContainer = document.querySelector('.dropdown-container');
+
+            if (dropdownContainer && dropdown && !dropdownContainer.contains(event.target)) {
+                dropdown.classList.remove('show');
+                const arrow = document.querySelector('.dropdown-arrow');
+                if (arrow) {
+                    arrow.classList.remove('rotated');
+                }
+            }
+        });
+
+        // Dropdown functionality for calisthenics page
+        const menuButton = document.getElementById('menuButton');
+        const dropdownMenu = document.querySelector('.dropdown-menu.redesigned-dropdown');
+        if (menuButton && dropdownMenu) {
+            menuButton.addEventListener('click', function (e) {
+                e.stopPropagation();
+                if (dropdownMenu.style.opacity === '1') {
+                    dropdownMenu.style.opacity = '0';
+                    dropdownMenu.style.visibility = 'hidden';
+                    dropdownMenu.style.transform = 'translateY(-8px)';
+                } else {
+                    dropdownMenu.style.opacity = '1';
+                    dropdownMenu.style.visibility = 'visible';
+                    dropdownMenu.style.transform = 'translateY(0)';
+                }
+            });
+            document.addEventListener('click', function (e) {
+                if (!dropdownMenu.contains(e.target) && !menuButton.contains(e.target)) {
+                    dropdownMenu.style.opacity = '0';
+                    dropdownMenu.style.visibility = 'hidden';
+                    dropdownMenu.style.transform = 'translateY(-8px)';
+                }
+            });
+        }
+        // Hover effect for dropdown items
+        document.querySelectorAll('.dropdown-menu.redesigned-dropdown .dropdown-item').forEach(function(item) {
+            item.addEventListener('mouseenter', function() {
+                item.style.background = 'rgba(255,255,255,0.09)';
+                item.style.color = 'var(--white)';
+                item.querySelector('i').style.color = 'var(--white)';
+                item.style.boxShadow = '0 2px 8px rgba(0,0,0,0.10)';
+            });
+            item.addEventListener('mouseleave', function() {
+                item.style.background = 'none';
+                item.style.color = 'var(--white)';
+                item.querySelector('i').style.color = 'var(--text-light)';
+                item.style.boxShadow = 'none';
+            });
+        });
+
+        // Existing scroll function
+        function scrollToTraining() {
+            const trainingSection = document.getElementById('start-training');
+            if (trainingSection) {
+                trainingSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+    </script>
+
+    <!-- Exercise Add to Plan System -->
+    <script src="weight.js"></script>
+    <script src="../programExerciseSelector.js"></script>
+
+</body>
+
+</html>
