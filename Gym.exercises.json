@@ -1,0 +1,1071 @@
+[{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debad"
+  },
+  "name": "Bench Press",
+  "targetMuscle": "Chest",
+  "equipment": "Barbell",
+  "mediaUrl": "/Gymkak/assets/Bench Press.gif",
+  "level": "Intermediate",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.818Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.818Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debae"
+  },
+  "name": "Incline Dumbbell Press",
+  "targetMuscle": "Chest",
+  "equipment": "Dumbbell",
+  "mediaUrl": "/Gymkak/assets/Incline Dumbbell Bench Press.gif",
+  "level": "Intermediate",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.819Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.819Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debaf"
+  },
+  "name": "Chest Fly",
+  "targetMuscle": "Chest",
+  "equipment": "Dumbbell",
+  "mediaUrl": "/Gymkak/assets/Chest Fly.gif",
+  "level": "Beginner",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.819Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.819Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debb0"
+  },
+  "name": "Shoulder Press",
+  "targetMuscle": "Shoulders",
+  "equipment": "Dumbbell",
+  "mediaUrl": "/Gymkak/assets/Shoulder Press.gif",
+  "level": "Intermediate",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.819Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.819Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debb1"
+  },
+  "name": "Lateral Raise",
+  "targetMuscle": "Shoulders",
+  "equipment": "Dumbbell",
+  "mediaUrl": "/Gymkak/assets/Lateral Raise.gif",
+  "level": "Beginner",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.819Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.819Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debb2"
+  },
+  "name": "Arnold Press",
+  "targetMuscle": "Shoulders",
+  "equipment": "Dumbbell",
+  "mediaUrl": "/Gymkak/assets/Arnold-Press.gif",
+  "level": "Advanced",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.819Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.819Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debb3"
+  },
+  "name": "Skullcrusher",
+  "targetMuscle": "Triceps",
+  "equipment": "EZ Bar",
+  "mediaUrl": "/Gymkak/assets/Skullcrusher.gif",
+  "level": "Intermediate",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.819Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.819Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debb4"
+  },
+  "name": "Triceps Pushdown",
+  "targetMuscle": "Triceps",
+  "equipment": "Cable",
+  "mediaUrl": "/Gymkak/assets/Triceps Pushdown.gif",
+  "level": "Beginner",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.819Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.819Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debb5"
+  },
+  "name": "Triceps Dips",
+  "targetMuscle": "Triceps",
+  "equipment": "Dip Bar",
+  "mediaUrl": "/Gymkak/assets/Triceps Dips.gif",
+  "level": "Intermediate",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.819Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.819Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debb6"
+  },
+  "name": "Pull-ups",
+  "targetMuscle": "Back",
+  "equipment": "Pull-up Bar",
+  "mediaUrl": "/Gymkak/assets/Pull-ups.gif",
+  "level": "Intermediate",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.819Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.819Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debb7"
+  },
+  "name": "Lat Pulldown",
+  "targetMuscle": "Back",
+  "equipment": "Cable",
+  "mediaUrl": "/Gymkak/assets/Lat Pulldown.gif",
+  "level": "Beginner",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.819Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.819Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debb8"
+  },
+  "name": "Dumbbell Row",
+  "targetMuscle": "Back",
+  "equipment": "Dumbbell",
+  "mediaUrl": "/Gymkak/assets/Dumbbell Row.gif",
+  "level": "Intermediate",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.819Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.819Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debb9"
+  },
+  "name": "Seated Cable Row",
+  "targetMuscle": "Back",
+  "equipment": "Cable",
+  "mediaUrl": "/Gymkak/assets/Seated Cable Row.gif",
+  "level": "Beginner",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.819Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.819Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debba"
+  },
+  "name": "Barbell Curl",
+  "targetMuscle": "Biceps",
+  "equipment": "Barbell",
+  "mediaUrl": "/Gymkak/assets/Barbell Curl.gif",
+  "level": "Beginner",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.819Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.819Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debbb"
+  },
+  "name": "Hammer Curl",
+  "targetMuscle": "Biceps",
+  "equipment": "Dumbbell",
+  "mediaUrl": "/Gymkak/assets/Hammer Curl.gif",
+  "level": "Beginner",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.819Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.819Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debbc"
+  },
+  "name": "Wrist Curl",
+  "targetMuscle": "Forearms",
+  "equipment": "Dumbbell",
+  "mediaUrl": "/Gymkak/assets/Wrist Curl.gif",
+  "level": "Beginner",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debbd"
+  },
+  "name": "Reverse Barbell Curl",
+  "targetMuscle": "Forearms",
+  "equipment": "Barbell",
+  "mediaUrl": "/Gymkak/assets/Reverse Barbell Curl.gif",
+  "level": "Intermediate",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debbe"
+  },
+  "name": "Rear Delt Machine Fly",
+  "targetMuscle": "Rear Delts",
+  "equipment": "Machine",
+  "mediaUrl": "/Gymkak/assets/Rear Delt Machine Fly.gif",
+  "level": "Beginner",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debbf"
+  },
+  "name": "Squats",
+  "targetMuscle": "Legs",
+  "equipment": "Barbell",
+  "mediaUrl": "/Gymkak/assets/Squats.gif",
+  "level": "Intermediate",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debc0"
+  },
+  "name": "Leg Curl",
+  "targetMuscle": "Hamstrings",
+  "equipment": "Machine",
+  "mediaUrl": "/Gymkak/assets/Leg Curl.gif",
+  "level": "Beginner",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debc1"
+  },
+  "name": "Calf Raise",
+  "targetMuscle": "Calves",
+  "equipment": "Machine",
+  "mediaUrl": "/Gymkak/assets/Calf Raise.gif",
+  "level": "Beginner",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debc2"
+  },
+  "name": "Deadlift",
+  "targetMuscle": "Back",
+  "equipment": "Barbell",
+  "mediaUrl": "/Gymkak/assets/Deadlift.gif",
+  "level": "Advanced",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debc3"
+  },
+  "name": "Plank",
+  "targetMuscle": "Core",
+  "equipment": "None",
+  "mediaUrl": "/Gymkak/assets/Plank.gif",
+  "level": "Beginner",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debc4"
+  },
+  "name": "Leg Raise",
+  "targetMuscle": "Core",
+  "equipment": "None",
+  "mediaUrl": "/Gymkak/assets/Leg Raise.gif",
+  "level": "Intermediate",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debc5"
+  },
+  "name": "Russian Twist",
+  "targetMuscle": "Core",
+  "equipment": "Medicine Ball",
+  "mediaUrl": "/Gymkak/assets/Russian Twist.gif",
+  "level": "Intermediate",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debc6"
+  },
+  "name": "Sumo Deadlift",
+  "targetMuscle": "Legs",
+  "equipment": "Barbell",
+  "mediaUrl": "/Gymkak/assets/Sumo Deadlift.gif",
+  "level": "Advanced",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debc7"
+  },
+  "name": "Lunges",
+  "targetMuscle": "Legs",
+  "equipment": "Dumbbell",
+  "mediaUrl": "/Gymkak/assets/Lunges.gif",
+  "level": "Beginner",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debc8"
+  },
+  "name": "Treadmill (Incline Walk/Run)",
+  "targetMuscle": "Cardio",
+  "equipment": "Treadmill",
+  "mediaUrl": "/Gymkak/assets/Treadmill (Incline WalkRun).png",
+  "level": "Beginner",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debc9"
+  },
+  "name": "Elliptical Trainer",
+  "targetMuscle": "Cardio",
+  "equipment": "Elliptical",
+  "mediaUrl": "/Gymkak/assets/Elliptical Trainer.jpg",
+  "level": "Beginner",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debca"
+  },
+  "name": "Stationary Bike",
+  "targetMuscle": "Cardio",
+  "equipment": "Bike",
+  "mediaUrl": "/Gymkak/assets/Stationary Bike (Sprinting).png",
+  "level": "Beginner",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debcb"
+  },
+  "name": "Rowing Machine",
+  "targetMuscle": "Cardio",
+  "equipment": "Rowing Machine",
+  "mediaUrl": "/Gymkak/assets/Rowing Machine.png",
+  "level": "Intermediate",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debcc"
+  },
+  "name": "Burpees",
+  "targetMuscle": "Full Body",
+  "equipment": "None",
+  "mediaUrl": "/Gymkak/assets/Burpees.png",
+  "level": "Intermediate",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debcd"
+  },
+  "name": "Mountain Climbers",
+  "targetMuscle": "Core",
+  "equipment": "None",
+  "mediaUrl": "/Gymkak/assets/Mountain Climbers.png",
+  "level": "Beginner",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debce"
+  },
+  "name": "Jumping Jacks",
+  "targetMuscle": "Cardio",
+  "equipment": "None",
+  "mediaUrl": "/Gymkak/assets/Jumping Jacks.jpg",
+  "level": "Beginner",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debcf"
+  },
+  "name": "High Knees",
+  "targetMuscle": "Cardio",
+  "equipment": "None",
+  "mediaUrl": "/Gymkak/assets/High Knees.jpg",
+  "level": "Beginner",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debd0"
+  },
+  "name": "SkiErg",
+  "targetMuscle": "Full Body",
+  "equipment": "SkiErg",
+  "mediaUrl": "/Gymkak/assets/SkiErg.jpg",
+  "level": "Intermediate",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debd1"
+  },
+  "name": "Dips",
+  "targetMuscle": "Chest",
+  "equipment": "Dip Bar",
+  "mediaUrl": "/Gymkak/assets/Dips.gif",
+  "level": "Intermediate",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debd2"
+  },
+  "name": "Push-ups",
+  "targetMuscle": "Chest",
+  "equipment": "None",
+  "mediaUrl": "/Gymkak/assets/Push-ups.gif",
+  "level": "Beginner",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debd3"
+  },
+  "name": "Muscle Up",
+  "targetMuscle": "Shoulders",
+  "equipment": "Pull-up Bar",
+  "mediaUrl": "/Gymkak/assets/Muscle Up.gif",
+  "level": "Advanced",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debd4"
+  },
+  "name": "Handstand Push-ups",
+  "targetMuscle": "Shoulders",
+  "equipment": "Wall",
+  "mediaUrl": "/Gymkak/assets/Handstand Push-ups.jpg",
+  "level": "Advanced",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debd5"
+  },
+  "name": "Handstand (Hold)",
+  "targetMuscle": "Shoulders",
+  "equipment": "None",
+  "mediaUrl": "/Gymkak/assets/Handstand (Hold).jpg",
+  "level": "Advanced",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debd6"
+  },
+  "name": "Full Planche",
+  "targetMuscle": "Shoulders",
+  "equipment": "None",
+  "mediaUrl": "/Gymkak/assets/Full Planche.jpg",
+  "level": "Elite",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debd7"
+  },
+  "name": "Wide Grip Pull-Up",
+  "targetMuscle": "Back",
+  "equipment": "Pull-up Bar",
+  "mediaUrl": "/Gymkak/assets/Wide Grip Pull-Up.jpg",
+  "level": "Intermediate",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debd8"
+  },
+  "name": "Archer Push-Up",
+  "targetMuscle": "Chest",
+  "equipment": "None",
+  "mediaUrl": "/Gymkak/assets/Archer Push-Up.jpg",
+  "level": "Advanced",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debd9"
+  },
+  "name": "Diamond Push-Up",
+  "targetMuscle": "Triceps",
+  "equipment": "None",
+  "mediaUrl": "/Gymkak/assets/Diamond Push-Up.gif",
+  "level": "Intermediate",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debda"
+  },
+  "name": "Pull-ups",
+  "targetMuscle": "Back",
+  "equipment": "Pull-up Bar",
+  "mediaUrl": "/Gymkak/assets/Pull-ups.jpg",
+  "level": "Intermediate",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debdb"
+  },
+  "name": "Chin-Up",
+  "targetMuscle": "Biceps",
+  "equipment": "Pull-up Bar",
+  "mediaUrl": "/Gymkak/assets/Chin-Up.gif",
+  "level": "Intermediate",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.820Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debdc"
+  },
+  "name": "Close Grip Pull-Up",
+  "targetMuscle": "Back",
+  "equipment": "Pull-up Bar",
+  "mediaUrl": "/Gymkak/assets/Close Grip Pull-Up.jpg",
+  "level": "Intermediate",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debdd"
+  },
+  "name": "Front Lever",
+  "targetMuscle": "Back",
+  "equipment": "Pull-up Bar",
+  "mediaUrl": "/Gymkak/assets/Front Lever.jpg",
+  "level": "Elite",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debde"
+  },
+  "name": "Tuck Front Lever Pull-Ups",
+  "targetMuscle": "Back",
+  "equipment": "Pull-up Bar",
+  "mediaUrl": "/Gymkak/assets/Tuck Front Lever Pull-Ups.jpg",
+  "level": "Advanced",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debdf"
+  },
+  "name": "L-Sit Pull-Up",
+  "targetMuscle": "Back",
+  "equipment": "Pull-up Bar",
+  "mediaUrl": "/Gymkak/assets/L-Sit Pull-Up.jpg",
+  "level": "Advanced",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debe0"
+  },
+  "name": "Australian Pull-Ups",
+  "targetMuscle": "Back",
+  "equipment": "Low Bar",
+  "mediaUrl": "/Gymkak/assets/Australian Pull-Ups.jpg",
+  "level": "Beginner",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debe1"
+  },
+  "name": "One Arm Pull-Up",
+  "targetMuscle": "Back",
+  "equipment": "Pull-up Bar",
+  "mediaUrl": "/Gymkak/assets/One Arm Pull-Up.gif",
+  "level": "Elite",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debe2"
+  },
+  "name": "Back Lever",
+  "targetMuscle": "Back",
+  "equipment": "Pull-up Bar",
+  "mediaUrl": "/Gymkak/assets/Back Lever.jpg",
+  "level": "Elite",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debe3"
+  },
+  "name": "Squats",
+  "targetMuscle": "Legs",
+  "equipment": "None",
+  "mediaUrl": "/Gymkak/assets/Squats.gif",
+  "level": "Beginner",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debe4"
+  },
+  "name": "Pistol Squat",
+  "targetMuscle": "Legs",
+  "equipment": "None",
+  "mediaUrl": "/Gymkak/assets/Pistol Squat.jpg",
+  "level": "Advanced",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debe5"
+  },
+  "name": "Shrimp Squat",
+  "targetMuscle": "Legs",
+  "equipment": "None",
+  "mediaUrl": "/Gymkak/assets/Shrimp Squat.gif",
+  "level": "Advanced",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debe6"
+  },
+  "name": "Bulgarian Split Squat",
+  "targetMuscle": "Legs",
+  "equipment": "Bench",
+  "mediaUrl": "/Gymkak/assets/Bulgarian Split Squat.gif",
+  "level": "Intermediate",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debe7"
+  },
+  "name": "Nordic Hamstring Curl",
+  "targetMuscle": "Hamstrings",
+  "equipment": "Partner",
+  "mediaUrl": "/Gymkak/assets/Nordic Hamstring Curl.gif",
+  "level": "Advanced",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debe8"
+  },
+  "name": "Explosive Jump Squat",
+  "targetMuscle": "Legs",
+  "equipment": "None",
+  "mediaUrl": "/Gymkak/assets/Explosive Jump Squat.jpg",
+  "level": "Intermediate",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debe9"
+  },
+  "name": "Hanging Leg Raise (on Bar)",
+  "targetMuscle": "Core",
+  "equipment": "Pull-up Bar",
+  "mediaUrl": "/Gymkak/assets/Hanging Leg Raise.jpg",
+  "level": "Intermediate",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debea"
+  },
+  "name": "Dragon Flag",
+  "targetMuscle": "Core",
+  "equipment": "Bench",
+  "mediaUrl": "/Gymkak/assets/Dragon Flag.gif",
+  "level": "Advanced",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3ed9a1fdd5c58df4debeb"
+  },
+  "name": "Toes to Bar",
+  "targetMuscle": "Core",
+  "equipment": "Pull-up Bar",
+  "mediaUrl": "/Gymkak/assets/Toes to Bar.gif",
+  "level": "Advanced",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:41:14.821Z"
+  }
+}]

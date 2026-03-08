@@ -1,0 +1,1483 @@
+[{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5f8a"
+  },
+  "name": "Bench Press",
+  "category": "weight",
+  "section": "push",
+  "targetMuscle": "Chest",
+  "equipment": "Barbell",
+  "level": "Intermediate",
+  "mediaUrl": "./assets/Bench Press.gif",
+  "tags": [
+    "Chest",
+    "Shoulders",
+    "Triceps"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.489Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.489Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5f8b"
+  },
+  "name": "Incline Dumbbell Press",
+  "category": "weight",
+  "section": "push",
+  "targetMuscle": "Chest",
+  "equipment": "Dumbbell",
+  "level": "Intermediate",
+  "mediaUrl": "./assets/Incline Dumbbell Bench Press.gif",
+  "tags": [
+    "Chest",
+    "Shoulders",
+    "Triceps"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.491Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.491Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5f8c"
+  },
+  "name": "Chest Fly",
+  "category": "weight",
+  "section": "push",
+  "targetMuscle": "Chest",
+  "equipment": "Dumbbell",
+  "level": "Beginner",
+  "mediaUrl": "./assets/Chest Fly.gif",
+  "tags": [
+    "Chest",
+    "Triceps"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.491Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.491Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5f8d"
+  },
+  "name": "Shoulder Press",
+  "category": "weight",
+  "section": "push",
+  "targetMuscle": "Shoulders",
+  "equipment": "Dumbbell",
+  "level": "Intermediate",
+  "mediaUrl": "./assets/Shoulder Press.gif",
+  "tags": [
+    "Shoulders",
+    "Deltoids"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.491Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.491Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5f8e"
+  },
+  "name": "Lateral Raise",
+  "category": "weight",
+  "section": "push",
+  "targetMuscle": "Shoulders",
+  "equipment": "Dumbbell",
+  "level": "Beginner",
+  "mediaUrl": "./assets/Lateral Raise.gif",
+  "tags": [
+    "Shoulders",
+    "Deltoids"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.491Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.491Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5f8f"
+  },
+  "name": "Arnold Press",
+  "category": "weight",
+  "section": "push",
+  "targetMuscle": "Shoulders",
+  "equipment": "Dumbbell",
+  "level": "Advanced",
+  "mediaUrl": "./assets/Arnold-Press.gif",
+  "tags": [
+    "Shoulders",
+    "Deltoids"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.492Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.492Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5f90"
+  },
+  "name": "Skullcrusher",
+  "category": "weight",
+  "section": "push",
+  "targetMuscle": "Triceps",
+  "equipment": "EZ Bar",
+  "level": "Intermediate",
+  "mediaUrl": "./assets/Skullcrusher.gif",
+  "tags": [
+    "Triceps"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.492Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.492Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5f91"
+  },
+  "name": "Triceps Pushdown",
+  "category": "weight",
+  "section": "push",
+  "targetMuscle": "Triceps",
+  "equipment": "Cable",
+  "level": "Beginner",
+  "mediaUrl": "./assets/Triceps Pushdown.gif",
+  "tags": [
+    "Triceps"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.492Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.492Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5f92"
+  },
+  "name": "Triceps Dips",
+  "category": "weight",
+  "section": "push",
+  "targetMuscle": "Triceps",
+  "equipment": "Dip Bar",
+  "level": "Intermediate",
+  "mediaUrl": "./assets/Triceps Dips.gif",
+  "tags": [
+    "Triceps",
+    "Chest"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.492Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.492Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5f93"
+  },
+  "name": "Pull-ups",
+  "category": "weight",
+  "section": "pull",
+  "targetMuscle": "Back",
+  "equipment": "Pull-up Bar",
+  "level": "Intermediate",
+  "mediaUrl": "./assets/Pull-ups.gif",
+  "tags": [
+    "Back",
+    "Biceps",
+    "Shoulders"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.492Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.492Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5f94"
+  },
+  "name": "Lat Pulldown",
+  "category": "weight",
+  "section": "pull",
+  "targetMuscle": "Back",
+  "equipment": "Cable",
+  "level": "Beginner",
+  "mediaUrl": "./assets/Lat Pulldown.gif",
+  "tags": [
+    "Back",
+    "Rear Delts",
+    "Biceps"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.492Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.492Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5f95"
+  },
+  "name": "Dumbbell Row",
+  "category": "weight",
+  "section": "pull",
+  "targetMuscle": "Back",
+  "equipment": "Dumbbell",
+  "level": "Intermediate",
+  "mediaUrl": "./assets/Dumbbell Row.gif",
+  "tags": [
+    "Back",
+    "Rear Delts",
+    "Biceps"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.492Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.492Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5f96"
+  },
+  "name": "Seated Cable Row",
+  "category": "weight",
+  "section": "pull",
+  "targetMuscle": "Back",
+  "equipment": "Cable",
+  "level": "Beginner",
+  "mediaUrl": "./assets/Seated Cable Row.gif",
+  "tags": [
+    "Back",
+    "Rear Delts",
+    "Biceps"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.492Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.492Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5f97"
+  },
+  "name": "Barbell Curl",
+  "category": "weight",
+  "section": "pull",
+  "targetMuscle": "Biceps",
+  "equipment": "Barbell",
+  "level": "Beginner",
+  "mediaUrl": "./assets/Barbell Curl.gif",
+  "tags": [
+    "Biceps"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.492Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.492Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5f98"
+  },
+  "name": "Hammer Curl",
+  "category": "weight",
+  "section": "pull",
+  "targetMuscle": "Biceps",
+  "equipment": "Dumbbell",
+  "level": "Beginner",
+  "mediaUrl": "./assets/Hammer Curl.gif",
+  "tags": [
+    "Biceps",
+    "Forearms"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.492Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.492Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5f99"
+  },
+  "name": "Wrist Curl",
+  "category": "weight",
+  "section": "pull",
+  "targetMuscle": "Forearms",
+  "equipment": "Dumbbell",
+  "level": "Beginner",
+  "mediaUrl": "./assets/Wrist Curl.gif",
+  "tags": [
+    "Forearms"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.492Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.492Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5f9a"
+  },
+  "name": "Reverse Barbell Curl",
+  "category": "weight",
+  "section": "pull",
+  "targetMuscle": "Forearms",
+  "equipment": "Barbell",
+  "level": "Intermediate",
+  "mediaUrl": "./assets/Reverse Barbell Curl.gif",
+  "tags": [
+    "Forearms",
+    "Biceps"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5f9b"
+  },
+  "name": "Rear Delt Machine Fly",
+  "category": "weight",
+  "section": "pull",
+  "targetMuscle": "Rear Delts",
+  "equipment": "Machine",
+  "level": "Beginner",
+  "mediaUrl": "./assets/Rear Delt Machine Fly.gif",
+  "tags": [
+    "Rear Delts",
+    "Back"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5f9c"
+  },
+  "name": "Squats",
+  "category": "weight",
+  "section": "legs",
+  "targetMuscle": "Legs",
+  "equipment": "Barbell",
+  "level": "Intermediate",
+  "mediaUrl": "./assets/Squats.gif",
+  "tags": [
+    "Quads",
+    "Glutes",
+    "Core"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5f9d"
+  },
+  "name": "Leg Curl",
+  "category": "weight",
+  "section": "legs",
+  "targetMuscle": "Hamstrings",
+  "equipment": "Machine",
+  "level": "Beginner",
+  "mediaUrl": "./assets/Leg Curl.gif",
+  "tags": [
+    "Hamstrings",
+    "Glutes"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5f9e"
+  },
+  "name": "Calf Raise",
+  "category": "weight",
+  "section": "legs",
+  "targetMuscle": "Calves",
+  "equipment": "Machine",
+  "level": "Beginner",
+  "mediaUrl": "./assets/Calf Raise.gif",
+  "tags": [
+    "Calves"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5f9f"
+  },
+  "name": "Deadlift",
+  "category": "weight",
+  "section": "legs",
+  "targetMuscle": "Back",
+  "equipment": "Barbell",
+  "level": "Advanced",
+  "mediaUrl": "./assets/Deadlift.gif",
+  "tags": [
+    "Back",
+    "Glutes",
+    "Hamstrings"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fa0"
+  },
+  "name": "Plank",
+  "category": "weight",
+  "section": "legs",
+  "targetMuscle": "Core",
+  "equipment": "None",
+  "level": "Beginner",
+  "mediaUrl": "./assets/Plank.gif",
+  "tags": [
+    "Core",
+    "Abs"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fa1"
+  },
+  "name": "Leg Raise",
+  "category": "weight",
+  "section": "legs",
+  "targetMuscle": "Core",
+  "equipment": "None",
+  "level": "Intermediate",
+  "mediaUrl": "./assets/Leg Raise.gif",
+  "tags": [
+    "Core",
+    "Abs"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fa2"
+  },
+  "name": "Russian Twist",
+  "category": "weight",
+  "section": "legs",
+  "targetMuscle": "Core",
+  "equipment": "Medicine Ball",
+  "level": "Intermediate",
+  "mediaUrl": "./assets/Russian Twist.gif",
+  "tags": [
+    "Core",
+    "Obliques"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fa3"
+  },
+  "name": "Sumo Deadlift",
+  "category": "weight",
+  "section": "legs",
+  "targetMuscle": "Legs",
+  "equipment": "Barbell",
+  "level": "Advanced",
+  "mediaUrl": "./assets/Sumo Deadlift.gif",
+  "tags": [
+    "Glutes",
+    "Hamstrings",
+    "Quads"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fa4"
+  },
+  "name": "Lunges",
+  "category": "weight",
+  "section": "legs",
+  "targetMuscle": "Legs",
+  "equipment": "Dumbbell",
+  "level": "Beginner",
+  "mediaUrl": "./assets/Lunges.gif",
+  "tags": [
+    "Quads",
+    "Glutes",
+    "Hamstrings"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fa5"
+  },
+  "name": "Treadmill (Incline Walk/Run)",
+  "category": "cardio",
+  "section": "hiit",
+  "targetMuscle": "Cardio",
+  "equipment": "Treadmill",
+  "level": "Beginner",
+  "mediaUrl": "./assets/Treadmill (Incline WalkRun).png",
+  "tags": [
+    "Cardio",
+    "Legs",
+    "Endurance"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fa6"
+  },
+  "name": "Elliptical Trainer",
+  "category": "cardio",
+  "section": "hiit",
+  "targetMuscle": "Cardio",
+  "equipment": "Elliptical",
+  "level": "Beginner",
+  "mediaUrl": "./assets/Elliptical Trainer.jpg",
+  "tags": [
+    "Cardio",
+    "Legs",
+    "Endurance"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fa7"
+  },
+  "name": "Stationary Bike",
+  "category": "cardio",
+  "section": "hiit",
+  "targetMuscle": "Cardio",
+  "equipment": "Bike",
+  "level": "Beginner",
+  "mediaUrl": "./assets/Stationary Bike (Sprinting).png",
+  "tags": [
+    "Cardio",
+    "Legs",
+    "Endurance"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fa8"
+  },
+  "name": "Rowing Machine",
+  "category": "cardio",
+  "section": "hiit",
+  "targetMuscle": "Cardio",
+  "equipment": "Rowing Machine",
+  "level": "Intermediate",
+  "mediaUrl": "./assets/Rowing Machine.png",
+  "tags": [
+    "Cardio",
+    "Back",
+    "Endurance"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fa9"
+  },
+  "name": "Burpees",
+  "category": "cardio",
+  "section": "hiit",
+  "targetMuscle": "Full Body",
+  "equipment": "None",
+  "level": "Intermediate",
+  "mediaUrl": "./assets/Burpees.png",
+  "tags": [
+    "Cardio",
+    "Full Body",
+    "Endurance"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5faa"
+  },
+  "name": "Mountain Climbers",
+  "category": "cardio",
+  "section": "hiit",
+  "targetMuscle": "Core",
+  "equipment": "None",
+  "level": "Beginner",
+  "mediaUrl": "./assets/Mountain Climbers.png",
+  "tags": [
+    "Cardio",
+    "Full Body",
+    "Endurance"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.493Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fab"
+  },
+  "name": "Jumping Jacks",
+  "category": "cardio",
+  "section": "hiit",
+  "targetMuscle": "Cardio",
+  "equipment": "None",
+  "level": "Beginner",
+  "mediaUrl": "./assets/Jumping Jacks.jpg",
+  "tags": [
+    "Cardio",
+    "Full Body",
+    "Endurance"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fac"
+  },
+  "name": "High Knees",
+  "category": "cardio",
+  "section": "hiit",
+  "targetMuscle": "Cardio",
+  "equipment": "None",
+  "level": "Beginner",
+  "mediaUrl": "./assets/High Knees.jpg",
+  "tags": [
+    "Cardio",
+    "Full Body",
+    "Endurance"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fad"
+  },
+  "name": "SkiErg",
+  "category": "cardio",
+  "section": "hiit",
+  "targetMuscle": "Full Body",
+  "equipment": "SkiErg",
+  "level": "Intermediate",
+  "mediaUrl": "./assets/SkiErg.jpg",
+  "tags": [
+    "Cardio",
+    "Full Body",
+    "Endurance"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fae"
+  },
+  "name": "Dips",
+  "category": "calisthenics",
+  "section": "push",
+  "targetMuscle": "Chest",
+  "equipment": "Dip Bar",
+  "level": "Intermediate",
+  "mediaUrl": "./assets/Dips.gif",
+  "tags": [
+    "Chest",
+    "Shoulders",
+    "Triceps"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5faf"
+  },
+  "name": "Push-ups",
+  "category": "calisthenics",
+  "section": "push",
+  "targetMuscle": "Chest",
+  "equipment": "None",
+  "level": "Beginner",
+  "mediaUrl": "./assets/Push-ups.gif",
+  "tags": [
+    "Chest",
+    "Triceps",
+    "Shoulders"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fb0"
+  },
+  "name": "Muscle Up",
+  "category": "calisthenics",
+  "section": "push",
+  "targetMuscle": "Shoulders",
+  "equipment": "Pull-up Bar",
+  "level": "Advanced",
+  "mediaUrl": "./assets/Muscle Up.gif",
+  "tags": [
+    "Shoulders",
+    "Deltoids"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fb1"
+  },
+  "name": "Handstand Push-ups",
+  "category": "calisthenics",
+  "section": "push",
+  "targetMuscle": "Shoulders",
+  "equipment": "Wall",
+  "level": "Advanced",
+  "mediaUrl": "./assets/Handstand Push-ups.jpg",
+  "tags": [
+    "Shoulders",
+    "Deltoids"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fb2"
+  },
+  "name": "Handstand (Hold)",
+  "category": "calisthenics",
+  "section": "push",
+  "targetMuscle": "Shoulders",
+  "equipment": "None",
+  "level": "Advanced",
+  "mediaUrl": "./assets/Handstand (Hold).jpg",
+  "tags": [
+    "Shoulders",
+    "Deltoids"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fb3"
+  },
+  "name": "Full Planche",
+  "category": "calisthenics",
+  "section": "push",
+  "targetMuscle": "Shoulders",
+  "equipment": "None",
+  "level": "Elite",
+  "mediaUrl": "./assets/Full Planche.jpg",
+  "tags": [
+    "Shoulders",
+    "Deltoids"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fb4"
+  },
+  "name": "Wide Grip Pull-Up",
+  "category": "calisthenics",
+  "section": "push",
+  "targetMuscle": "Back",
+  "equipment": "Pull-up Bar",
+  "level": "Intermediate",
+  "mediaUrl": "./assets/Wide Grip Pull-Up.jpg",
+  "tags": [
+    "Back",
+    "Biceps"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fb5"
+  },
+  "name": "Archer Push-Up",
+  "category": "calisthenics",
+  "section": "push",
+  "targetMuscle": "Chest",
+  "equipment": "None",
+  "level": "Advanced",
+  "mediaUrl": "./assets/Archer Push-Up.jpg",
+  "tags": [
+    "Shoulders",
+    "Deltoids"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fb6"
+  },
+  "name": "Diamond Push-Up",
+  "category": "calisthenics",
+  "section": "push",
+  "targetMuscle": "Triceps",
+  "equipment": "None",
+  "level": "Intermediate",
+  "mediaUrl": "./assets/Diamond Push-Up.gif",
+  "tags": [
+    "Shoulders",
+    "Triceps"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fb7"
+  },
+  "name": "Pull-ups",
+  "category": "calisthenics",
+  "section": "pull",
+  "targetMuscle": "Back",
+  "equipment": "Pull-up Bar",
+  "level": "Intermediate",
+  "mediaUrl": "./assets/Pull-ups.jpg",
+  "tags": [
+    "Back",
+    "Biceps",
+    "Shoulders"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fb8"
+  },
+  "name": "Chin-Up",
+  "category": "calisthenics",
+  "section": "pull",
+  "targetMuscle": "Biceps",
+  "equipment": "Pull-up Bar",
+  "level": "Intermediate",
+  "mediaUrl": "./assets/Chin-Up.gif",
+  "tags": [
+    "Back",
+    "Rear Delts",
+    "Biceps"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fb9"
+  },
+  "name": "Close Grip Pull-Up",
+  "category": "calisthenics",
+  "section": "pull",
+  "targetMuscle": "Back",
+  "equipment": "Pull-up Bar",
+  "level": "Intermediate",
+  "mediaUrl": "./assets/Close Grip Pull-Up.jpg",
+  "tags": [
+    "Back",
+    "Rear Delts",
+    "Biceps"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fba"
+  },
+  "name": "Front Lever",
+  "category": "calisthenics",
+  "section": "pull",
+  "targetMuscle": "Back",
+  "equipment": "Pull-up Bar",
+  "level": "Elite",
+  "mediaUrl": "./assets/Front Lever.jpg",
+  "tags": [
+    "Back",
+    "Rear Delts",
+    "Biceps"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fbb"
+  },
+  "name": "Tuck Front Lever Pull-Ups",
+  "category": "calisthenics",
+  "section": "pull",
+  "targetMuscle": "Back",
+  "equipment": "Pull-up Bar",
+  "level": "Advanced",
+  "mediaUrl": "./assets/Tuck Front Lever Pull-Ups.jpg",
+  "tags": [
+    "Back",
+    "Rear Delts",
+    "Biceps"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fbc"
+  },
+  "name": "L-Sit Pull-Up",
+  "category": "calisthenics",
+  "section": "pull",
+  "targetMuscle": "Back",
+  "equipment": "Pull-up Bar",
+  "level": "Advanced",
+  "mediaUrl": "./assets/L-Sit Pull-Up.jpg",
+  "tags": [
+    "Back",
+    "Rear Delts",
+    "Biceps"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.494Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fbd"
+  },
+  "name": "Australian Pull-Ups",
+  "category": "calisthenics",
+  "section": "pull",
+  "targetMuscle": "Back",
+  "equipment": "Low Bar",
+  "level": "Beginner",
+  "mediaUrl": "./assets/Australian Pull-Ups.jpg",
+  "tags": [
+    "Back",
+    "Rear Delts",
+    "Biceps"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.495Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.495Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fbe"
+  },
+  "name": "One Arm Pull-Up",
+  "category": "calisthenics",
+  "section": "pull",
+  "targetMuscle": "Back",
+  "equipment": "Pull-up Bar",
+  "level": "Elite",
+  "mediaUrl": "./assets/One Arm Pull-Up.gif",
+  "tags": [
+    "Back",
+    "Rear Delts",
+    "Biceps"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.495Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.495Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fbf"
+  },
+  "name": "Back Lever",
+  "category": "calisthenics",
+  "section": "pull",
+  "targetMuscle": "Back",
+  "equipment": "Pull-up Bar",
+  "level": "Elite",
+  "mediaUrl": "./assets/Back Lever.jpg",
+  "tags": [
+    "Back",
+    "Rear Delts",
+    "Biceps"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.495Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.495Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fc0"
+  },
+  "name": "Squats",
+  "category": "calisthenics",
+  "section": "legs",
+  "targetMuscle": "Legs",
+  "equipment": "None",
+  "level": "Beginner",
+  "mediaUrl": "./assets/Squats.gif",
+  "tags": [
+    "Quads",
+    "Glutes",
+    "Core"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.495Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.495Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fc1"
+  },
+  "name": "Pistol Squat",
+  "category": "calisthenics",
+  "section": "legs",
+  "targetMuscle": "Legs",
+  "equipment": "None",
+  "level": "Advanced",
+  "mediaUrl": "./assets/Pistol Squat.jpg",
+  "tags": [
+    "Quads",
+    "Glutes",
+    "Hamstrings"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.495Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.495Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fc2"
+  },
+  "name": "Shrimp Squat",
+  "category": "calisthenics",
+  "section": "legs",
+  "targetMuscle": "Legs",
+  "equipment": "None",
+  "level": "Advanced",
+  "mediaUrl": "./assets/Shrimp Squat.gif",
+  "tags": [
+    "Quads",
+    "Glutes",
+    "Hamstrings"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.495Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.495Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fc3"
+  },
+  "name": "Bulgarian Split Squat",
+  "category": "calisthenics",
+  "section": "legs",
+  "targetMuscle": "Legs",
+  "equipment": "Bench",
+  "level": "Intermediate",
+  "mediaUrl": "./assets/Bulgarian Split Squat.gif",
+  "tags": [
+    "Quads",
+    "Glutes",
+    "Hamstrings"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.495Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.495Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fc4"
+  },
+  "name": "Nordic Hamstring Curl",
+  "category": "calisthenics",
+  "section": "legs",
+  "targetMuscle": "Hamstrings",
+  "equipment": "Partner",
+  "level": "Advanced",
+  "mediaUrl": "./assets/Nordic Hamstring Curl.gif",
+  "tags": [
+    "Quads",
+    "Glutes",
+    "Hamstrings"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.495Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.495Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fc5"
+  },
+  "name": "Explosive Jump Squat",
+  "category": "calisthenics",
+  "section": "legs",
+  "targetMuscle": "Legs",
+  "equipment": "None",
+  "level": "Intermediate",
+  "mediaUrl": "./assets/Explosive Jump Squat.jpg",
+  "tags": [
+    "Quads",
+    "Glutes",
+    "Hamstrings"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.495Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.495Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fc6"
+  },
+  "name": "Hanging Leg Raise (on Bar)",
+  "category": "calisthenics",
+  "section": "legs",
+  "targetMuscle": "Core",
+  "equipment": "Pull-up Bar",
+  "level": "Intermediate",
+  "mediaUrl": "./assets/Hanging Leg Raise.jpg",
+  "tags": [
+    "Quads",
+    "Glutes",
+    "Hamstrings"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.495Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.495Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fc7"
+  },
+  "name": "Dragon Flag",
+  "category": "calisthenics",
+  "section": "legs",
+  "targetMuscle": "Core",
+  "equipment": "Bench",
+  "level": "Advanced",
+  "mediaUrl": "./assets/Dragon Flag.gif",
+  "tags": [
+    "Quads",
+    "Glutes",
+    "Hamstrings"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.495Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.495Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69a3eb4969ae374c816d5fc8"
+  },
+  "name": "Toes to Bar",
+  "category": "calisthenics",
+  "section": "legs",
+  "targetMuscle": "Core",
+  "equipment": "Pull-up Bar",
+  "level": "Advanced",
+  "mediaUrl": "./assets/Toes to Bar.gif",
+  "tags": [
+    "Quads",
+    "Glutes",
+    "Hamstrings"
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-03-01T07:31:21.495Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-01T07:31:21.495Z"
+  }
+}]
